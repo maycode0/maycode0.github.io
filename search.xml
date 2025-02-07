@@ -1,22 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2025/02/06/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><span id="more"></span>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>KMP算法学习</title>
+    <url>/2025/02/07/KMP/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>KMP串匹配算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello C++</title>
+    <url>/2025/02/07/hello-cpp/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>C/C++环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello deepseek</title>
+    <url>/2025/02/07/init_deepseek/</url>
+    <content><![CDATA[<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-下载ollama"><a href="#1-下载ollama" class="headerlink" title="1. 下载ollama"></a>1. 下载ollama</h3><p>官网地址：<a href="https://ollama.com/">Ollama</a></p>
+<blockquote>
+<p>Ollama：是一个开源框架，用户可以使用Ollama在计算机本地创建语言模型。简单的说就是使用它可以在你自己的电脑上创建类似ChatGpt或者kimi那样的AI大模型应用。并且还可以自己训、微调你的大模型，让他为你干活。</p>
+</blockquote>
+<h3 id="2-修改model下载路径"><a href="#2-修改model下载路径" class="headerlink" title="2. 修改model下载路径"></a>2. 修改model下载路径</h3><p>新建系统变量：OLLAMA_MODELS，并选定合适位置。</p>
+<h3 id="3-下载合适model"><a href="#3-下载合适model" class="headerlink" title="3. 下载合适model"></a>3. 下载合适model</h3><p>在该页面<a href="https://ollama.com/library/deepseek-r1">deepseek-r1</a>选择合适model，复制命令，如 <code>ollama run deepseek-r1:14b </code>，打开cmd开始下载。</p>
+<h3 id="4-选择合适图形化界面"><a href="#4-选择合适图形化界面" class="headerlink" title="4. 选择合适图形化界面"></a>4. 选择合适图形化界面</h3><p>这里选择<a href="https://chatboxai.app/zh">Chatbox</a>，进入app后选择ollama api，随后按选项自定义即可。</p>
 ]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>deepseek-r1本地部署</tag>
+        <tag>AI大模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello Hexo</title>
+    <url>/2025/02/06/hello-world/</url>
+    <content><![CDATA[<p>记录Hexo搭建博客使用基本命令与操作。</p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><h3 id="Clean"><a href="#Clean" class="headerlink" title="Clean"></a>Clean</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
+<h3 id="Generate"><a href="#Generate" class="headerlink" title="Generate"></a>Generate</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>启动服务器。 默认情况下，访问网址为： <a href="http://localhost:4000/">http://localhost:4000/</a></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p, –port</td>
+<td>重设端口</td>
+</tr>
+<tr>
+<td>-s, –static</td>
+<td>只使用静态文件</td>
+</tr>
+<tr>
+<td>-l, –log</td>
+<td>启用日志Override logger format.</td>
+</tr>
+</tbody></table>
+<h3 id="Newhexo-new-page-–path-about-me-“About-me”"><a href="#Newhexo-new-page-–path-about-me-“About-me”" class="headerlink" title="Newhexo new page –path about&#x2F;me “About me”"></a>Newhexo new page –path about&#x2F;me “About me”</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new page --path about/me <span class="string">&quot;About me&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上命令会创建一个 <code>source/about/me.md</code> 文件，同时 Front Matter中title 为 <code>&quot;About me&quot;</code></p>
+<h3 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>推送至github远程仓库。</p>
+<h2 id="Front-Matter"><a href="#Front-Matter" class="headerlink" title="Front Matter"></a>Front Matter</h2><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>date</td>
+<td>建立日期</td>
+</tr>
+<tr>
+<td>description</td>
+<td>文章描述</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>标签</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>分类</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>更新日期</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">格式如下</span><br><span class="line">title: Hello Hexo</span><br><span class="line">description: 记录Hexo搭建博客使用操作。</span><br><span class="line">categories:</span><br><span class="line">  - Hello</span><br><span class="line">tags:</span><br><span class="line">  - Hexo入门</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>Hexo入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello markdown</title>
+    <url>/2025/02/07/markdown/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>markdown入门</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见C/C++语法or函数</title>
+    <url>/2025/02/07/noteC/</url>
+    <content><![CDATA[<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>C++风格字符串库 <code>#include&lt;cstring&gt;</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strlen</span>(_string)</span><br></pre></td></tr></table></figure>
+
+<p>返回：_string长度。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strcpy</span>(_s1, _s2)</span><br></pre></td></tr></table></figure>
+
+<p>功能：将_s2的值复制到_s1，返回值为_s1的地址。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strcmp</span>(str1, str2)</span><br></pre></td></tr></table></figure>
+
+<p>功能：比较str1与str2的值。</p>
+<p><strong>逐字符比较</strong> ：</p>
+<ul>
+<li>从字符串的第一个字符开始，逐个比较 <code>str1</code> 和 <code>str2</code> 中对应位置的字符。</li>
+<li>比较的依据是字符的 ASCII 值。</li>
+</ul>
+<p><strong>返回值规则</strong> ：</p>
+<ul>
+<li>如果 <code>str1</code> 和 <code>str2</code> 完全相同，返回 <code>0</code>。</li>
+<li>如果 <code>str1</code> 的第一个不同字符的 ASCII 值小于 <code>str2</code> 的对应字符，返回一个 <strong>负整数</strong> 。</li>
+<li>如果 <code>str1</code> 的第一个不同字符的 ASCII 值大于 <code>str2</code> 的对应字符，返回一个 <strong>正整数</strong> 。</li>
+</ul>
+<p><strong>结束条件</strong> ：</p>
+<ul>
+<li>如果其中一个字符串提前结束（遇到 <code>\0</code>），而另一个字符串还有字符，则较短的字符串被认为是“较小”的。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strchr</span>(str,ch)</span><br></pre></td></tr></table></figure>
+
+<p>功能：返回str中第一个出现ch字符的地址。未找到则返回 <code>null</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strstr</span>(str1, str2)</span><br></pre></td></tr></table></figure>
+
+<p>功能：返回str1中第一次出现str2的位置。未找到则返回<code>null</code></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
   </entry>
 </search>

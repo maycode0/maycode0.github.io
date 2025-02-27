@@ -197,6 +197,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello C++</title>
+    <url>/2025/02/07/hello-cpp/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>C/C++环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello Hexo</title>
     <url>/2025/02/06/hello-world/</url>
     <content><![CDATA[<p>记录Hexo搭建博客使用基本命令与操作。</p>
@@ -294,17 +305,6 @@
       <tags>
         <tag>deepseek-r1本地部署</tag>
         <tag>AI大模型</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello C++</title>
-    <url>/2025/02/07/hello-cpp/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>C/C++环境配置</tag>
       </tags>
   </entry>
   <entry>

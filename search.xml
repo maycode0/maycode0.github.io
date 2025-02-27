@@ -197,37 +197,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello C++</title>
-    <url>/2025/02/07/hello-cpp/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>C/C++环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello deepseek</title>
-    <url>/2025/02/07/init_deepseek/</url>
-    <content><![CDATA[<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-下载ollama"><a href="#1-下载ollama" class="headerlink" title="1. 下载ollama"></a>1. 下载ollama</h3><p>官网地址：<a href="https://ollama.com/">Ollama</a></p>
-<blockquote>
-<p>Ollama：是一个开源框架，用户可以使用Ollama在计算机本地创建语言模型。简单的说就是使用它可以在你自己的电脑上创建类似ChatGpt或者kimi那样的AI大模型应用。并且还可以自己训、微调你的大模型，让他为你干活。</p>
-</blockquote>
-<h3 id="2-修改model下载路径"><a href="#2-修改model下载路径" class="headerlink" title="2. 修改model下载路径"></a>2. 修改model下载路径</h3><p>新建系统变量：OLLAMA_MODELS，并选定合适位置。</p>
-<h3 id="3-下载合适model"><a href="#3-下载合适model" class="headerlink" title="3. 下载合适model"></a>3. 下载合适model</h3><p>在该页面<a href="https://ollama.com/library/deepseek-r1">deepseek-r1</a>选择合适model，复制命令，如 <code>ollama run deepseek-r1:14b </code>，打开cmd开始下载。</p>
-<h3 id="4-选择合适图形化界面"><a href="#4-选择合适图形化界面" class="headerlink" title="4. 选择合适图形化界面"></a>4. 选择合适图形化界面</h3><p>这里选择<a href="https://chatboxai.app/zh">Chatbox</a>，进入app后选择ollama api，随后按选项自定义即可。</p>
-<h3 id="5-Cherry-Studio-API配置"><a href="#5-Cherry-Studio-API配置" class="headerlink" title="5. Cherry Studio API配置"></a>5. Cherry Studio API配置</h3><p>API配置更加适合本地部署不占用内存，在官网申请免费的api即可。</p>
-]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>deepseek-r1本地部署</tag>
-        <tag>AI大模型</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello Hexo</title>
     <url>/2025/02/06/hello-world/</url>
     <content><![CDATA[<p>记录Hexo搭建博客使用基本命令与操作。</p>
@@ -308,14 +277,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello markdown</title>
-    <url>/2025/02/07/markdown/</url>
+    <title>Hello deepseek</title>
+    <url>/2025/02/07/init_deepseek/</url>
+    <content><![CDATA[<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-下载ollama"><a href="#1-下载ollama" class="headerlink" title="1. 下载ollama"></a>1. 下载ollama</h3><p>官网地址：<a href="https://ollama.com/">Ollama</a></p>
+<blockquote>
+<p>Ollama：是一个开源框架，用户可以使用Ollama在计算机本地创建语言模型。简单的说就是使用它可以在你自己的电脑上创建类似ChatGpt或者kimi那样的AI大模型应用。并且还可以自己训、微调你的大模型，让他为你干活。</p>
+</blockquote>
+<h3 id="2-修改model下载路径"><a href="#2-修改model下载路径" class="headerlink" title="2. 修改model下载路径"></a>2. 修改model下载路径</h3><p>新建系统变量：OLLAMA_MODELS，并选定合适位置。</p>
+<h3 id="3-下载合适model"><a href="#3-下载合适model" class="headerlink" title="3. 下载合适model"></a>3. 下载合适model</h3><p>在该页面<a href="https://ollama.com/library/deepseek-r1">deepseek-r1</a>选择合适model，复制命令，如 <code>ollama run deepseek-r1:14b </code>，打开cmd开始下载。</p>
+<h3 id="4-选择合适图形化界面"><a href="#4-选择合适图形化界面" class="headerlink" title="4. 选择合适图形化界面"></a>4. 选择合适图形化界面</h3><p>这里选择<a href="https://chatboxai.app/zh">Chatbox</a>，进入app后选择ollama api，随后按选项自定义即可。</p>
+<h3 id="5-Cherry-Studio-API配置"><a href="#5-Cherry-Studio-API配置" class="headerlink" title="5. Cherry Studio API配置"></a>5. Cherry Studio API配置</h3><p>API配置更加适合本地部署不占用内存，在官网申请免费的api即可。</p>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>deepseek-r1本地部署</tag>
+        <tag>AI大模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello C++</title>
+    <url>/2025/02/07/hello-cpp/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>Hello</category>
       </categories>
       <tags>
-        <tag>markdown入门</tag>
+        <tag>C/C++环境配置</tag>
       </tags>
   </entry>
   <entry>
@@ -384,6 +373,17 @@
       </categories>
       <tags>
         <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello markdown</title>
+    <url>/2025/02/07/markdown/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>markdown入门</tag>
       </tags>
   </entry>
   <entry>

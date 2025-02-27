@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>KMP算法学习</title>
-    <url>/2025/02/07/KMP/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>KMP串匹配算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello CMAKE</title>
     <url>/2025/02/27/cmake/</url>
     <content><![CDATA[]]></content>
@@ -23,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title>KMP算法学习</title>
+    <url>/2025/02/07/KMP/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>KMP串匹配算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello C++</title>
     <url>/2025/02/07/hello-cpp/</url>
     <content><![CDATA[]]></content>
@@ -31,182 +31,6 @@
       </categories>
       <tags>
         <tag>C/C++环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++学习路线</title>
-    <url>/2025/02/27/cpp_stage/</url>
-    <content><![CDATA[<p>以下是一份 <strong>系统化C++学习路线</strong>，覆盖 <strong>基础语法 → 进阶特性 → 工程实践 → 领域深入</strong> 的全流程，结合工业界需求与开源生态设计，适合从零基础到高级开发者的完整路径：</p>
-<hr>
-<h3 id="一、基础阶段（1-3个月）"><a href="#一、基础阶段（1-3个月）" class="headerlink" title="一、基础阶段（1-3个月）"></a><strong>一、基础阶段（1-3个月）</strong></h3><h4 id="目标：掌握C-核心语法与编程思想，写出健壮的面向过程代码"><a href="#目标：掌握C-核心语法与编程思想，写出健壮的面向过程代码" class="headerlink" title="目标：掌握C++核心语法与编程思想，写出健壮的面向过程代码"></a><strong>目标</strong>：掌握C++核心语法与编程思想，写出健壮的面向过程代码</h4><ol>
-<li><strong>语法基础</strong><ul>
-<li><strong>数据类型、运算符、控制流（if&#x2F;for&#x2F;while）</strong></li>
-<li><strong>函数：参数传递（值&#x2F;指针&#x2F;引用）、函数重载</strong></li>
-<li><strong>数组、字符串（C风格字符串与</strong> <code>std::string</code>）</li>
-<li><strong>结构体、枚举、联合体</strong></li>
-<li><strong>关键练习</strong>：实现计算器、学生成绩管理系统</li>
-</ul>
-</li>
-<li><strong>内存管理</strong><ul>
-<li><strong>堆与栈的区别、</strong><code>new</code>&#x2F;<code>delete</code>操作</li>
-<li><strong>指针与引用的本质区别</strong></li>
-<li><strong>动态数组（</strong><code>new int[n]</code>）与内存泄漏检测工具（Valgrind）</li>
-<li><strong>关键练习</strong>：实现自定义动态数组类（模拟 <code>std::vector</code>雏形）</li>
-</ul>
-</li>
-<li><strong>面向对象（OOP）</strong><ul>
-<li><strong>类与对象：封装、构造&#x2F;析构函数</strong></li>
-<li><strong>继承与多态：虚函数、抽象类</strong></li>
-<li><strong>运算符重载（</strong><code>+</code>, <code>&lt;&lt;</code>等）</li>
-<li><strong>关键练习</strong>：设计图形类层次（Shape→Circle&#x2F;Rectangle）</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、进阶阶段（3-6个月）"><a href="#二、进阶阶段（3-6个月）" class="headerlink" title="二、进阶阶段（3-6个月）"></a><strong>二、进阶阶段（3-6个月）</strong></h3><h4 id="目标：深入理解C-标准库与现代特性，掌握工程级代码规范"><a href="#目标：深入理解C-标准库与现代特性，掌握工程级代码规范" class="headerlink" title="目标：深入理解C++标准库与现代特性，掌握工程级代码规范"></a><strong>目标</strong>：深入理解C++标准库与现代特性，掌握工程级代码规范</h4><ol>
-<li><strong>标准库（STL）</strong><ul>
-<li><strong>容器：</strong><code>vector</code>&#x2F;<code>list</code>&#x2F;<code>map</code>&#x2F;<code>unordered_map</code></li>
-<li><strong>算法：</strong><code>sort</code>&#x2F;<code>find</code>&#x2F;<code>transform</code></li>
-<li><strong>迭代器与仿函数（函数对象）</strong></li>
-<li><strong>关键练习</strong>：统计文本词频（<code>map</code>+文件操作）</li>
-</ul>
-</li>
-<li><strong>模板与泛型编程</strong><ul>
-<li><strong>函数模板与类模板</strong></li>
-<li><strong>模板特化与偏特化</strong></li>
-<li><strong>关键练习</strong>：实现泛型排序算法（支持自定义比较）</li>
-</ul>
-</li>
-<li><strong>现代C++（C++11&#x2F;14&#x2F;17）</strong><ul>
-<li><strong>智能指针：</strong><code>unique_ptr</code>&#x2F;<code>shared_ptr</code></li>
-<li><strong>右值引用与移动语义</strong></li>
-<li><strong>Lambda表达式、范围for循环</strong></li>
-<li><strong>关键练习</strong>：重构旧代码，用智能指针替代裸指针</li>
-</ul>
-</li>
-<li><strong>异常处理与RAII</strong><ul>
-<li><code>try</code>&#x2F;<code>catch</code>机制</li>
-<li><strong>资源获取即初始化（RAII）模式</strong></li>
-<li><strong>关键练习</strong>：实现文件自动关闭类（利用析构函数）</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、高阶阶段（6-12个月）"><a href="#三、高阶阶段（6-12个月）" class="headerlink" title="三、高阶阶段（6-12个月）"></a><strong>三、高阶阶段（6-12个月）</strong></h3><h4 id="目标：掌握系统级编程与性能优化，深入特定领域"><a href="#目标：掌握系统级编程与性能优化，深入特定领域" class="headerlink" title="目标：掌握系统级编程与性能优化，深入特定领域"></a><strong>目标</strong>：掌握系统级编程与性能优化，深入特定领域</h4><ol>
-<li><strong>多线程与并发</strong><ul>
-<li><code>std::thread</code>、<code>std::async</code></li>
-<li><strong>互斥锁（</strong><code>mutex</code>）、条件变量（<code>condition_variable</code>）</li>
-<li><strong>原子操作（</strong><code>atomic</code>）与无锁编程</li>
-<li><strong>关键练习</strong>：实现生产者-消费者模型</li>
-</ul>
-</li>
-<li><strong>系统编程</strong><ul>
-<li><strong>文件系统操作（</strong><code>&lt;filesystem&gt;</code>）</li>
-<li><strong>网络编程（Socket、Boost.Asio库）</strong></li>
-<li><strong>内存对齐与缓存优化</strong></li>
-<li><strong>关键练习</strong>：实现简易HTTP服务器</li>
-</ul>
-</li>
-<li><strong>模板元编程与编译期计算</strong><ul>
-<li><strong>类型萃取（Type Traits）</strong></li>
-<li><strong>SFINAE与</strong> <code>constexpr</code></li>
-<li><strong>关键练习</strong>：实现编译期斐波那契数列计算</li>
-</ul>
-</li>
-<li><strong>领域深入（选择1-2个方向）</strong><ul>
-<li><strong>游戏开发</strong>：Unreal Engine C++、OpenGL&#x2F;DirectX</li>
-<li><strong>高频交易</strong>：低延迟优化、锁无关数据结构</li>
-<li><strong>嵌入式</strong>：RTOS、硬件寄存器操作</li>
-<li><strong>开源贡献</strong>：参与LLVM&#x2F;Clang、Chromium等项目</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、工程化实践"><a href="#四、工程化实践" class="headerlink" title="四、工程化实践"></a><strong>四、工程化实践</strong></h3><ol>
-<li><strong>构建工具</strong><ul>
-<li><strong>CMake编写跨平台构建脚本</strong></li>
-<li><strong>包管理：vcpkg&#x2F;conan</strong></li>
-</ul>
-</li>
-<li><strong>调试与性能分析</strong><ul>
-<li><strong>GDB&#x2F;LLDB调试核心转储（Core Dump）</strong></li>
-<li><strong>性能剖析工具：perf、gprof、VTune</strong></li>
-</ul>
-</li>
-<li><strong>代码质量</strong><ul>
-<li><strong>静态分析：Clang-Tidy、Cppcheck</strong></li>
-<li><strong>单元测试：Google Test框架</strong></li>
-<li><strong>代码规范：Google C++ Style Guide</strong></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="五、学习资源推荐"><a href="#五、学习资源推荐" class="headerlink" title="五、学习资源推荐"></a><strong>五、学习资源推荐</strong></h3><h4 id="书籍（按难度排序）："><a href="#书籍（按难度排序）：" class="headerlink" title="书籍（按难度排序）："></a><strong>书籍</strong>（按难度排序）：</h4><ol>
-<li><strong>入门</strong>：《C++ Primer》《Accelerated C++》</li>
-<li><strong>进阶</strong>：《Effective C++》《Effective Modern C++》</li>
-<li><strong>高阶</strong>：《C++ Concurrency in Action》《Template Metaprogramming》</li>
-</ol>
-<h4 id="在线课程："><a href="#在线课程：" class="headerlink" title="在线课程："></a><strong>在线课程</strong>：</h4><ul>
-<li><strong>Coursera：北大《程序设计与算法》</strong></li>
-<li><strong>Udemy：Beginning C++ Programming - From Beginner to Beyond</strong></li>
-</ul>
-<h4 id="开源项目："><a href="#开源项目：" class="headerlink" title="开源项目："></a><strong>开源项目</strong>：</h4><ul>
-<li>**入门级： **<a href="https://github.com/qinguoyi/TinyWebServer">TinyWebServer</a>（学习网络编程）</li>
-<li>**进阶级： **<a href="https://github.com/fmtlib/fmt">fmtlib</a>（学习现代C++库设计）</li>
-</ul>
-<hr>
-<h3 id="六、项目实战建议"><a href="#六、项目实战建议" class="headerlink" title="六、项目实战建议"></a><strong>六、项目实战建议</strong></h3><table>
-<thead>
-<tr>
-<th><strong>阶段</strong></th>
-<th><strong>项目示例</strong></th>
-<th><strong>技术要点</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>初级</strong></td>
-<td><strong>命令行日记本</strong></td>
-<td><strong>文件操作、OOP设计</strong></td>
-</tr>
-<tr>
-<td><strong>中级</strong></td>
-<td><strong>多线程日志库</strong></td>
-<td><strong>线程安全、RAII、性能优化</strong></td>
-</tr>
-<tr>
-<td><strong>高级</strong></td>
-<td><strong>简易数据库引擎（LSM-Tree实现）</strong></td>
-<td><strong>磁盘IO、内存管理、并发控制</strong></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="七、求职与职业发展"><a href="#七、求职与职业发展" class="headerlink" title="七、求职与职业发展"></a><strong>七、求职与职业发展</strong></h3><ol>
-<li><strong>简历重点</strong>：<ul>
-<li><strong>突出高性能&#x2F;高并发项目经验</strong></li>
-<li><strong>展示对内存管理与多线程的深刻理解</strong></li>
-</ul>
-</li>
-<li><strong>面试高频考点</strong>：<ul>
-<li><strong>虚函数表（vtable）实现原理</strong></li>
-<li><code>std::vector</code>扩容机制</li>
-<li><strong>智能指针循环引用问题</strong></li>
-<li><strong>多线程死锁场景分析</strong></li>
-</ul>
-</li>
-<li><strong>职业路径</strong>：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">初级C++开发 → 系统架构师/游戏引擎工程师 → 技术专家（特定领域）</span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h3 id="避坑指南"><a href="#避坑指南" class="headerlink" title="避坑指南"></a><strong>避坑指南</strong></h3><ol>
-<li><strong>避免过早优化</strong>：先保证正确性，再考虑性能（“Make it work, make it right, make it fast”）</li>
-<li><strong>慎用裸指针</strong>：优先使用智能指针和RAII管理资源</li>
-<li><strong>关注C++标准演进</strong>：C++20&#x2F;23的Module、Coroutine等新特性</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习路线</category>
-      </categories>
-      <tags>
-        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>

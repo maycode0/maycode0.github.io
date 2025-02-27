@@ -290,17 +290,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello markdown</title>
-    <url>/2025/02/07/markdown/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>markdown入门</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello deepseek</title>
     <url>/2025/02/07/init_deepseek/</url>
     <content><![CDATA[<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-下载ollama"><a href="#1-下载ollama" class="headerlink" title="1. 下载ollama"></a>1. 下载ollama</h3><p>官网地址：<a href="https://ollama.com/">Ollama</a></p>
@@ -318,6 +307,17 @@
       <tags>
         <tag>deepseek-r1本地部署</tag>
         <tag>AI大模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello markdown</title>
+    <url>/2025/02/07/markdown/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>markdown入门</tag>
       </tags>
   </entry>
   <entry>

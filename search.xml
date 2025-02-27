@@ -23,6 +23,17 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello C++</title>
+    <url>/2025/02/07/hello-cpp/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>C/C++环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>c++学习路线</title>
     <url>/2025/02/27/cpp_stage/</url>
     <content><![CDATA[<p>以下是一份 <strong>系统化C++学习路线</strong>，覆盖 <strong>基础语法 → 进阶特性 → 工程实践 → 领域深入</strong> 的全流程，结合工业界需求与开源生态设计，适合从零基础到高级开发者的完整路径：</p>
@@ -196,17 +207,6 @@
       </categories>
       <tags>
         <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello C++</title>
-    <url>/2025/02/07/hello-cpp/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>C/C++环境配置</tag>
       </tags>
   </entry>
   <entry>

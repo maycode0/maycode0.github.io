@@ -12,36 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello C++</title>
-    <url>/2025/02/07/hello-cpp/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>C/C++环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello deepseek</title>
-    <url>/2025/02/07/init_deepseek/</url>
-    <content><![CDATA[<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-下载ollama"><a href="#1-下载ollama" class="headerlink" title="1. 下载ollama"></a>1. 下载ollama</h3><p>官网地址：<a href="https://ollama.com/">Ollama</a></p>
-<blockquote>
-<p>Ollama：是一个开源框架，用户可以使用Ollama在计算机本地创建语言模型。简单的说就是使用它可以在你自己的电脑上创建类似ChatGpt或者kimi那样的AI大模型应用。并且还可以自己训、微调你的大模型，让他为你干活。</p>
-</blockquote>
-<h3 id="2-修改model下载路径"><a href="#2-修改model下载路径" class="headerlink" title="2. 修改model下载路径"></a>2. 修改model下载路径</h3><p>新建系统变量：OLLAMA_MODELS，并选定合适位置。</p>
-<h3 id="3-下载合适model"><a href="#3-下载合适model" class="headerlink" title="3. 下载合适model"></a>3. 下载合适model</h3><p>在该页面<a href="https://ollama.com/library/deepseek-r1">deepseek-r1</a>选择合适model，复制命令，如 <code>ollama run deepseek-r1:14b </code>，打开cmd开始下载。</p>
-<h3 id="4-选择合适图形化界面"><a href="#4-选择合适图形化界面" class="headerlink" title="4. 选择合适图形化界面"></a>4. 选择合适图形化界面</h3><p>这里选择<a href="https://chatboxai.app/zh">Chatbox</a>，进入app后选择ollama api，随后按选项自定义即可。</p>
-]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>deepseek-r1本地部署</tag>
-        <tag>AI大模型</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello Hexo</title>
     <url>/2025/02/06/hello-world/</url>
     <content><![CDATA[<p>记录Hexo搭建博客使用基本命令与操作。</p>
@@ -122,6 +92,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello C++</title>
+    <url>/2025/02/07/hello-cpp/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>C/C++环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello deepseek</title>
+    <url>/2025/02/07/init_deepseek/</url>
+    <content><![CDATA[<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-下载ollama"><a href="#1-下载ollama" class="headerlink" title="1. 下载ollama"></a>1. 下载ollama</h3><p>官网地址：<a href="https://ollama.com/">Ollama</a></p>
+<blockquote>
+<p>Ollama：是一个开源框架，用户可以使用Ollama在计算机本地创建语言模型。简单的说就是使用它可以在你自己的电脑上创建类似ChatGpt或者kimi那样的AI大模型应用。并且还可以自己训、微调你的大模型，让他为你干活。</p>
+</blockquote>
+<h3 id="2-修改model下载路径"><a href="#2-修改model下载路径" class="headerlink" title="2. 修改model下载路径"></a>2. 修改model下载路径</h3><p>新建系统变量：OLLAMA_MODELS，并选定合适位置。</p>
+<h3 id="3-下载合适model"><a href="#3-下载合适model" class="headerlink" title="3. 下载合适model"></a>3. 下载合适model</h3><p>在该页面<a href="https://ollama.com/library/deepseek-r1">deepseek-r1</a>选择合适model，复制命令，如 <code>ollama run deepseek-r1:14b </code>，打开cmd开始下载。</p>
+<h3 id="4-选择合适图形化界面"><a href="#4-选择合适图形化界面" class="headerlink" title="4. 选择合适图形化界面"></a>4. 选择合适图形化界面</h3><p>这里选择<a href="https://chatboxai.app/zh">Chatbox</a>，进入app后选择ollama api，随后按选项自定义即可。</p>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>deepseek-r1本地部署</tag>
+        <tag>AI大模型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello markdown</title>
     <url>/2025/02/07/markdown/</url>
     <content><![CDATA[]]></content>
@@ -162,16 +162,135 @@
 </ul>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strchr</span>(str,ch)</span><br></pre></td></tr></table></figure>
 
-<p>功能：返回str中第一个出现ch字符的地址。未找到则返回 <code>null</code></p>
+<p>功能：返回str中第一个出现ch字符的地址。未找到则返回 <code>null</code>。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strstr</span>(str1, str2)</span><br></pre></td></tr></table></figure>
 
-<p>功能：返回str1中第一次出现str2的位置。未找到则返回<code>null</code></p>
+<p>功能：返回str1中第一次出现str2的位置。未找到则返回 <code>null</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strcat</span>(str1, str2)</span><br></pre></td></tr></table></figure>
+
+<p>功能：连接两个字符串。</p>
+<h1 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h1><p>C&#x2F;C++常见修饰符</p>
+<table>
+<thead>
+<tr>
+<th align="left">修饰符</th>
+<th>修饰符功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">const</td>
+<td>const 定义常量，表示该变量的值不能被修改。</td>
+</tr>
+<tr>
+<td align="left">volatile</td>
+<td>修饰符<strong>volatile</strong> 告诉该变量的值可能会被程序以外的因素改变，如硬件或其他线程。。</td>
+</tr>
+<tr>
+<td align="left">restrict</td>
+<td>由<strong>restrict</strong> 修饰的指针是唯一一种访问它所指向的对象的方式。只有 C99 增加了新的类型限定符 restrict。</td>
+</tr>
+<tr>
+<td align="left">mutable</td>
+<td>mutable 用于修饰类的成员变量。被 mutable 修饰的成员变量可以被修改，即使它们所在的对象是 const 的。</td>
+</tr>
+<tr>
+<td align="left">static</td>
+<td>用于定义静态变量，表示该变量的作用域仅限于当前文件或当前函数内，不会被其他文件或函数访问。</td>
+</tr>
+<tr>
+<td align="left">register</td>
+<td>用于定义寄存器变量，表示该变量被频繁使用，可以存储在CPU的寄存器中，以提高程序的运行效率。</td>
+</tr>
+</tbody></table>
+<p>const举例</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="type">const</span> *ptr = var;</span><br><span class="line"><span class="type">int</span> var1 = <span class="number">2</span>;</span><br><span class="line">ptr = &amp;var1;<span class="comment">//可修改，不报错</span></span><br><span class="line">*ptr = <span class="number">3</span>;<span class="comment">//报错，const修饰*ptr的值不可更改</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *ptr = &amp;var;</span><br><span class="line">*ptr = <span class="number">3</span>;<span class="comment">// 也会报错</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><p>本质即为存放元素的地址，存在地址的地址即二级地址，以此类推。</p>
+<h2 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h2><p>：：数组存放元素为指针。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> var[<span class="number">3</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span> *ptrs[<span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i&lt;<span class="number">3</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">	ptrs[i] = &amp;var[i];</span><br><span class="line">	std::cout&lt;&lt;*ptrs[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>存放字符串的数组</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span>* strs[<span class="number">3</span>] = &#123;</span><br><span class="line">	<span class="string">&quot;AI&quot;</span>,</span><br><span class="line">	<span class="string">&quot;MechineLearn&quot;</span>,</span><br><span class="line">	<span class="string">&quot;DeepLearn&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>函数返回指针</p>
+<blockquote>
+<p>函数返回值不能返回局部变量的地址，除非该变量声明为static</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> *<span class="title">getValue</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">static</span> <span class="type">int</span> temp = <span class="number">1</span>;</span><br><span class="line">	<span class="comment">//int temp = 1; 则会报错无法返回局部变量值</span></span><br><span class="line">	<span class="keyword">return</span> &amp;temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> *var = <span class="literal">nullptr</span>;</span><br><span class="line">	var = <span class="built_in">getValue</span>();<span class="comment">// var被赋值为1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>编程语言</category>
       </categories>
       <tags>
         <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mysql常用操作</title>
+    <url>/2025/02/27/mysql/</url>
+    <content><![CDATA[<h3 id="一、数据库操作"><a href="#一、数据库操作" class="headerlink" title="一、数据库操作"></a><strong>一、数据库操作</strong></h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1. 创建数据库"></a>1. 创建数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS `test_db` DEFAULT CHARACTER SET utf8mb4;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：创建名为 <code>test_db</code> 的数据库，字符集为 <code>utf8mb4</code>（支持中文和表情符号）。</p>
+<h4 id="2-切换数据库"><a href="#2-切换数据库" class="headerlink" title="2. 切换数据库"></a>2. 切换数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">USE `test_db`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-删除数据库"><a href="#3-删除数据库" class="headerlink" title="3. 删除数据库"></a>3. 删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP DATABASE IF EXISTS `test_db`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、表操作"><a href="#二、表操作" class="headerlink" title="二、表操作"></a><strong>二、表操作</strong></h3><h4 id="1-创建表（含字段约束）"><a href="#1-创建表（含字段约束）" class="headerlink" title="1. 创建表（含字段约束）"></a>1. 创建表（含字段约束）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE `users` (</span><br><span class="line">  `id` INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` VARCHAR(50) NOT NULL,</span><br><span class="line">  `email` VARCHAR(100) UNIQUE,</span><br><span class="line">  `age` INT DEFAULT 18,</span><br><span class="line">  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>字段说明</strong>：</p>
+<ul>
+<li><code>PRIMARY KEY</code>：主键约束</li>
+<li><code>AUTO_INCREMENT</code>：自增</li>
+<li><code>UNIQUE</code>：唯一约束</li>
+<li><code>DEFAULT</code>：默认值</li>
+</ul>
+<h4 id="2-修改表结构"><a href="#2-修改表结构" class="headerlink" title="2. 修改表结构"></a>2. 修改表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 添加新列</span><br><span class="line">ALTER TABLE `users` ADD COLUMN `gender` ENUM(&#x27;male&#x27;, &#x27;female&#x27;) AFTER `age`;</span><br><span class="line"></span><br><span class="line">-- 修改列类型</span><br><span class="line">ALTER TABLE `users` MODIFY COLUMN `name` VARCHAR(100);</span><br><span class="line"></span><br><span class="line">-- 删除列</span><br><span class="line">ALTER TABLE `users` DROP COLUMN `gender`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-删除表"><a href="#3-删除表" class="headerlink" title="3. 删除表"></a>3. 删除表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `users`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、数据操作（CRUD）"><a href="#三、数据操作（CRUD）" class="headerlink" title="三、数据操作（CRUD）"></a><strong>三、数据操作（CRUD）</strong></h3><h4 id="1-插入数据"><a href="#1-插入数据" class="headerlink" title="1. 插入数据"></a>1. 插入数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 插入单条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`, `age`) </span><br><span class="line">VALUES (&#x27;Alice&#x27;, &#x27;alice@example.com&#x27;, 25);</span><br><span class="line"></span><br><span class="line">-- 插入多条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`) </span><br><span class="line">VALUES (&#x27;Bob&#x27;, &#x27;bob@test.com&#x27;), (&#x27;Charlie&#x27;, &#x27;charlie@test.com&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查询数据"><a href="#2-查询数据" class="headerlink" title="2. 查询数据"></a>2. 查询数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查询所有字段</span><br><span class="line">SELECT * FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 条件查询（WHERE）</span><br><span class="line">SELECT `name`, `age` FROM `users` WHERE `age` &gt; 20;</span><br><span class="line"></span><br><span class="line">-- 排序（ORDER BY）</span><br><span class="line">SELECT * FROM `users` ORDER BY `created_at` DESC;</span><br><span class="line"></span><br><span class="line">-- 分页（LIMIT）</span><br><span class="line">SELECT * FROM `users` LIMIT 10 OFFSET 0; -- 第1页，每页10条</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3. 更新数据"></a>3. 更新数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `users` </span><br><span class="line">SET `age` = 30, `email` = &#x27;alice_new@example.com&#x27; </span><br><span class="line">WHERE `id` = 1;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-删除数据"><a href="#4-删除数据" class="headerlink" title="4. 删除数据"></a>4. 删除数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM `users` WHERE `id` = 3;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、复杂查询"><a href="#四、复杂查询" class="headerlink" title="四、复杂查询"></a><strong>四、复杂查询</strong></h3><h4 id="1-聚合函数"><a href="#1-聚合函数" class="headerlink" title="1. 聚合函数"></a>1. 聚合函数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 统计总数、平均值</span><br><span class="line">SELECT COUNT(*) AS total_users, AVG(age) AS avg_age FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 分组统计（GROUP BY）</span><br><span class="line">SELECT `gender`, COUNT(*) AS count FROM `users` GROUP BY `gender`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-连接查询（JOIN）"><a href="#2-连接查询（JOIN）" class="headerlink" title="2. 连接查询（JOIN）"></a>2. 连接查询（JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建订单表</span><br><span class="line">CREATE TABLE `orders` (</span><br><span class="line">  `order_id` INT PRIMARY KEY,</span><br><span class="line">  `user_id` INT,</span><br><span class="line">  `amount` DECIMAL(10,2),</span><br><span class="line">  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 内连接（INNER JOIN）</span><br><span class="line">SELECT u.`name`, o.`order_id`, o.`amount`</span><br><span class="line">FROM `users` u</span><br><span class="line">INNER JOIN `orders` o ON u.`id` = o.`user_id`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-子查询"><a href="#3-子查询" class="headerlink" title="3. 子查询"></a>3. 子查询</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT `name` </span><br><span class="line">FROM `users` </span><br><span class="line">WHERE `id` IN (SELECT `user_id` FROM `orders` WHERE `amount` &gt; 100);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="五、高级功能"><a href="#五、高级功能" class="headerlink" title="五、高级功能"></a><strong>五、高级功能</strong></h3><h4 id="1-索引优化"><a href="#1-索引优化" class="headerlink" title="1. 索引优化"></a>1. 索引优化</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建索引</span><br><span class="line">CREATE INDEX `idx_email` ON `users` (`email`);</span><br><span class="line"></span><br><span class="line">-- 查看索引</span><br><span class="line">SHOW INDEX FROM `users`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-事务处理"><a href="#2-事务处理" class="headerlink" title="2. 事务处理"></a>2. 事务处理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">START TRANSACTION;</span><br><span class="line">UPDATE `account` SET balance = balance - 100 WHERE user_id = 1;</span><br><span class="line">UPDATE `account` SET balance = balance + 100 WHERE user_id = 2;</span><br><span class="line">COMMIT; -- 提交事务</span><br><span class="line">-- ROLLBACK; -- 回滚事务</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-用户权限管理"><a href="#3-用户权限管理" class="headerlink" title="3. 用户权限管理"></a>3. 用户权限管理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建用户并授权</span><br><span class="line">CREATE USER &#x27;dev_user&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password123&#x27;;</span><br><span class="line">GRANT SELECT, INSERT, UPDATE ON `test_db`.* TO &#x27;dev_user&#x27;@&#x27;%&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="六、实用命令"><a href="#六、实用命令" class="headerlink" title="六、实用命令"></a><strong>六、实用命令</strong></h3><h4 id="1-导入-导出数据"><a href="#1-导入-导出数据" class="headerlink" title="1. 导入&#x2F;导出数据"></a>1. 导入&#x2F;导出数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 导出整个数据库（命令行）</span><br><span class="line">mysqldump -u root -p test_db &gt; backup.sql</span><br><span class="line"></span><br><span class="line"># 导入数据</span><br><span class="line">mysql -u root -p test_db &lt; backup.sql</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查看表结构"><a href="#2-查看表结构" class="headerlink" title="2. 查看表结构"></a>2. 查看表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DESC `users`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-查看建表语句"><a href="#3-查看建表语句" class="headerlink" title="3. 查看建表语句"></a>3. 查看建表语句</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE TABLE `users`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="高频场景示例"><a href="#高频场景示例" class="headerlink" title="高频场景示例"></a><strong>高频场景示例</strong></h3><h4 id="场景1：分页查询用户列表（每页5条）"><a href="#场景1：分页查询用户列表（每页5条）" class="headerlink" title="场景1：分页查询用户列表（每页5条）"></a>场景1：分页查询用户列表（每页5条）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">ORDER BY `id` </span><br><span class="line">LIMIT 5 OFFSET 0; -- 第1页</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景2：模糊查询（查找名字包含-“DB”-的用户）"><a href="#场景2：模糊查询（查找名字包含-“DB”-的用户）" class="headerlink" title="场景2：模糊查询（查找名字包含 “DB” 的用户）"></a>场景2：模糊查询（查找名字包含 “DB” 的用户）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">WHERE `name` LIKE &#x27;%DB%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景3：批量更新状态"><a href="#场景3：批量更新状态" class="headerlink" title="场景3：批量更新状态"></a>场景3：批量更新状态</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `products` </span><br><span class="line">SET `status` = &#x27;offline&#x27; </span><br><span class="line">WHERE `stock` = 0;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
       </tags>
   </entry>
 </search>

@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">1.</span> <span class="nav-text">动态内存分配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">1.</span> <span class="nav-text">动态内存分配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88"><span class="nav-number">3.</span> <span class="nav-text">智能指针</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -165,7 +165,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -241,7 +241,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>74</span>
+      <span>994</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -262,7 +262,20 @@
     <div class="post-body" itemprop="articleBody"><h1 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h1><p>例：二维数组分配。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> **array;</span><br><span class="line"><span class="comment">// 假定数组第一维长度为 m， 第二维长度为 n</span></span><br><span class="line"><span class="comment">// 动态分配空间</span></span><br><span class="line">array = <span class="keyword">new</span> <span class="type">int</span> *[m];</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    array[i] = <span class="keyword">new</span> <span class="type">int</span> [n];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> [] array[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">delete</span> [] array;</span><br></pre></td></tr></table></figure>
 
-<h1 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h1>
+<h1 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h1><h1 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h1><ul>
+<li>shared_ptr：共享一个对象</li>
+<li>unique_ptr：独占一个对象</li>
+<li>weak_ptr：</li>
+</ul>
+<blockquote>
+<p>shared_ptr常用 <code>std::make_shared &lt;&gt; ()</code>来创建</p>
+</blockquote>
+<p>shared_ptr使用引用计数来判断是否销毁指针空间，但也存在内存泄漏问题</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">B</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    std::shared_ptr&lt;B&gt; pointer;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;A 被销毁&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    std::shared_ptr&lt;A&gt; pointer;</span><br><span class="line">    ~<span class="built_in">B</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;B 被销毁&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> a = std::<span class="built_in">make_shared</span>&lt;A&gt;();</span><br><span class="line">    <span class="keyword">auto</span> b = std::<span class="built_in">make_shared</span>&lt;B&gt;();</span><br><span class="line">    a-&gt;pointer = b;</span><br><span class="line">    b-&gt;pointer = a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果是 A, B 都不会被销毁，这是因为 a,b 内部的 pointer 同时又引用了 <code>a,b</code>，这使得 <code>a,b</code> 的引用计数均变为了 2，而离开作用域时，<code>a,b</code> 智能指针被析构，却只能造成这块区域的引用计数减一，这样就导致了 <code>a,b</code> 对象指向的内存区域引用计数不为零，而外部已经没有办法找到这块区域了，也就造成了内存泄露。</p>
+<p>解决这个问题的办法就是使用弱引用指针 <code>std::weak_ptr</code>，<code>std::weak_ptr</code>是一种弱引用（相比较而言 <code>std::shared_ptr</code> 就是一种强引用）。弱引用不会引起引用计数增加。</p>
+
     </div>
 
     
@@ -316,13 +329,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">30k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">36 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

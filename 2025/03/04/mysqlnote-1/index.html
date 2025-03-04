@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="泛舟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about me">
-<meta property="og:url" content="http://example.com/about/index.html">
+    <meta name="description" content="mysql中IF函数使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="力扣每日一题——IF函数">
+<meta property="og:url" content="http://example.com/2025/03/04/mysqlnote-1/index.html">
 <meta property="og:site_name" content="May&#39;Blog">
-<meta property="og:description" content="泛舟">
+<meta property="og:description" content="mysql中IF函数使用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-06T15:11:37.000Z">
-<meta property="article:modified_time" content="2025-02-07T02:48:38.829Z">
+<meta property="article:published_time" content="2025-03-04T14:15:04.000Z">
+<meta property="article:modified_time" content="2025-03-04T14:15:04.000Z">
 <meta property="article:author" content="May">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/about/">
+<link rel="canonical" href="http://example.com/2025/03/04/mysqlnote-1/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/about/index.html","path":"about/index.html","title":"about me"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2025/03/04/mysqlnote-1/","path":"2025/03/04/mysqlnote-1/","title":"力扣每日一题——IF函数"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>about me | May'Blog
-</title>
+<title>力扣每日一题——IF函数 | May'Blog</title>
   
 
 
@@ -126,7 +126,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -139,6 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#610-%E5%88%A4%E6%96%AD%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="nav-number">1.</span> <span class="nav-text">610.判断三角形</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -181,35 +182,137 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
 
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+  
 
-<h1 class="post-title" itemprop="name headline">about me
-</h1>
 
-<div class="post-meta-container">
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/04/mysqlnote-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="May">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="May'Blog">
+      <meta itemprop="description" content="泛舟">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="力扣每日一题——IF函数 | May'Blog">
+      <meta itemprop="description" content="mysql中IF函数使用">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          力扣每日一题——IF函数
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-04 22:15:04" itemprop="dateCreated datePublished" datetime="2025-03-04T22:15:04+08:00">2025-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">语法</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>537</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
 </div>
 
-</header>
+            <div class="post-description">mysql中IF函数使用</div>
+        </div>
+      </header>
 
-      
-      
-      
-      <div class="post-body">
-          
-      </div>
-      
-      
-      
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="610-判断三角形"><a href="#610-判断三角形" class="headerlink" title="610.判断三角形"></a>610.判断三角形</h1><p>表: <code>Triangle</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+-------------+------+</span><br><span class="line">| Column Name | Type |</span><br><span class="line">+-------------+------+</span><br><span class="line">| x           | int  |</span><br><span class="line">| y           | int  |</span><br><span class="line">| z           | int  |</span><br><span class="line">+-------------+------+</span><br><span class="line">在 SQL 中，(x, y, z)是该表的主键列。</span><br><span class="line">该表的每一行包含三个线段的长度。</span><br></pre></td></tr></table></figure>
+
+<p>对每三个线段报告它们是否可以形成一个三角形。</p>
+<p>以 **任意顺序 **返回结果表。</p>
+<p>查询结果格式如下所示。</p>
+<p><strong>示例 1:</strong></p>
+<pre><strong>输入:</strong> 
+Triangle 表:
++----+----+----+
+| x  | y  | z  |
++----+----+----+
+| 13 | 15 | 30 |
+| 10 | 20 | 15 |
++----+----+----+
+<strong>输出:</strong> 
++----+----+----+----------+
+| x  | y  | z  | triangle |
++----+----+----+----------+
+| 13 | 15 | 30 | No       |
+| 10 | 20 | 15 | Yes      |
++----+----+----+----------+</pre>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> x,y,z,<span class="keyword">if</span>(x+y&gt;z and x+z&gt;y and y+z&gt;x, <span class="string">&quot;Yes&quot;</span>, <span class="string">&quot;No&quot;</span>) as triangle</span><br><span class="line">from triangle</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/03/04/STL/" rel="prev" title="C++ STL记录">
+                  <i class="fa fa-angle-left"></i> C++ STL记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 </div>

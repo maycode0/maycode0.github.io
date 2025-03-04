@@ -436,7 +436,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
+      <span>976</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -454,191 +454,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>以下是 MySQL 中常用的聚合查询语句及实例，包含核心语法和典型应用场景：</p>
-<h3 id="1-基础聚合函数"><a href="#1-基础聚合函数" class="headerlink" title="1. 基础聚合函数"></a><strong>1. 基础聚合函数</strong></h3><h4 id="1-COUNT：统计行数"><a href="#1-COUNT：统计行数" class="headerlink" title="(1) COUNT：统计行数"></a>(1) <strong><code>COUNT</code></strong>：统计行数</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计所有员工数量</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> total_employees <span class="keyword">FROM</span> employees;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 统计有部门的员工数量（排除 NULL）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(department_id) <span class="keyword">AS</span> employees_with_dept <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-SUM：求和"><a href="#2-SUM：求和" class="headerlink" title="(2) SUM：求和"></a>(2) <strong><code>SUM</code></strong>：求和</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 计算所有订单的总金额</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(amount) <span class="keyword">AS</span> total_amount <span class="keyword">FROM</span> orders;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-AVG：求平均值"><a href="#3-AVG：求平均值" class="headerlink" title="(3) AVG：求平均值"></a>(3) <strong><code>AVG</code></strong>：求平均值</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 计算员工的平均工资</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">AVG</span>(salary) <span class="keyword">AS</span> avg_salary <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-MAX-MIN：最大值-最小值"><a href="#4-MAX-MIN：最大值-最小值" class="headerlink" title="(4) MAX&#x2F;MIN：最大值&#x2F;最小值"></a>(4) <strong><code>MAX</code>&#x2F;<code>MIN</code></strong>：最大值&#x2F;最小值</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 找最高和最低工资</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(salary) <span class="keyword">AS</span> max_salary, <span class="built_in">MIN</span>(salary) <span class="keyword">AS</span> min_salary <span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="2-GROUP-BY：分组聚合"><a href="#2-GROUP-BY：分组聚合" class="headerlink" title="2. GROUP BY：分组聚合"></a><strong>2. <code>GROUP BY</code>：分组聚合</strong></h3><h4 id="示例表结构"><a href="#示例表结构" class="headerlink" title="示例表结构"></a>示例表结构</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> sales (</span><br><span class="line">    product_id <span class="type">INT</span>,</span><br><span class="line">    category <span class="type">VARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">    sale_date <span class="type">DATE</span>,</span><br><span class="line">    amount <span class="type">DECIMAL</span>(<span class="number">10</span>,<span class="number">2</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT INTO</span> sales <span class="keyword">VALUES</span></span><br><span class="line">(<span class="number">1</span>, <span class="string">&#x27;Electronics&#x27;</span>, <span class="string">&#x27;2023-01-01&#x27;</span>, <span class="number">1000</span>),</span><br><span class="line">(<span class="number">1</span>, <span class="string">&#x27;Electronics&#x27;</span>, <span class="string">&#x27;2023-01-02&#x27;</span>, <span class="number">1500</span>),</span><br><span class="line">(<span class="number">2</span>, <span class="string">&#x27;Clothing&#x27;</span>, <span class="string">&#x27;2023-01-01&#x27;</span>, <span class="number">500</span>),</span><br><span class="line">(<span class="number">2</span>, <span class="string">&#x27;Clothing&#x27;</span>, <span class="string">&#x27;2023-01-02&#x27;</span>, <span class="number">800</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="查询示例"><a href="#查询示例" class="headerlink" title="查询示例"></a>查询示例</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按商品类别统计总销售额</span></span><br><span class="line"><span class="keyword">SELECT</span> category, <span class="built_in">SUM</span>(amount) <span class="keyword">AS</span> total_sales</span><br><span class="line"><span class="keyword">FROM</span> sales</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> category;</span><br></pre></td></tr></table></figure>
-
-<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><table>
-<thead>
-<tr>
-<th>category</th>
-<th>total_sales</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Electronics</td>
-<td>2500.00</td>
-</tr>
-<tr>
-<td>Clothing</td>
-<td>1300.00</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="3-HAVING：过滤分组结果"><a href="#3-HAVING：过滤分组结果" class="headerlink" title="3. HAVING：过滤分组结果"></a><strong>3. <code>HAVING</code>：过滤分组结果</strong></h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 筛选总销售额超过 2000 的类别</span></span><br><span class="line"><span class="keyword">SELECT</span> category, <span class="built_in">SUM</span>(amount) <span class="keyword">AS</span> total_sales</span><br><span class="line"><span class="keyword">FROM</span> sales</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> category</span><br><span class="line"><span class="keyword">HAVING</span> total_sales <span class="operator">&gt;</span> <span class="number">2000</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h4><table>
-<thead>
-<tr>
-<th>category</th>
-<th>total_sales</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Electronics</td>
-<td>2500.00</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="4-多字段分组"><a href="#4-多字段分组" class="headerlink" title="4. 多字段分组"></a><strong>4. 多字段分组</strong></h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按商品 ID 和日期统计销售额</span></span><br><span class="line"><span class="keyword">SELECT</span> product_id, sale_date, <span class="built_in">SUM</span>(amount) <span class="keyword">AS</span> daily_sales</span><br><span class="line"><span class="keyword">FROM</span> sales</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> product_id, sale_date;</span><br></pre></td></tr></table></figure>
-
-<h4 id="结果-2"><a href="#结果-2" class="headerlink" title="结果"></a>结果</h4><table>
-<thead>
-<tr>
-<th>product_id</th>
-<th>sale_date</th>
-<th>daily_sales</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>2023-01-01</td>
-<td>1000.00</td>
-</tr>
-<tr>
-<td>1</td>
-<td>2023-01-02</td>
-<td>1500.00</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2023-01-01</td>
-<td>500.00</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2023-01-02</td>
-<td>800.00</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="5-WITH-ROLLUP：生成小计和总计"><a href="#5-WITH-ROLLUP：生成小计和总计" class="headerlink" title="5. WITH ROLLUP：生成小计和总计"></a><strong>5. <code>WITH ROLLUP</code>：生成小计和总计</strong></h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按类别和商品 ID 统计销售额，并生成小计和总计</span></span><br><span class="line"><span class="keyword">SELECT</span> category, product_id, <span class="built_in">SUM</span>(amount) <span class="keyword">AS</span> total_sales</span><br><span class="line"><span class="keyword">FROM</span> sales</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> category, product_id <span class="keyword">WITH</span> <span class="keyword">ROLLUP</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="结果-3"><a href="#结果-3" class="headerlink" title="结果"></a>结果</h4><table>
-<thead>
-<tr>
-<th>category</th>
-<th>product_id</th>
-<th>total_sales</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Clothing</td>
-<td>2</td>
-<td>1300.00</td>
-</tr>
-<tr>
-<td>Clothing</td>
-<td>NULL</td>
-<td>1300.00</td>
-</tr>
-<tr>
-<td>Electronics</td>
-<td>1</td>
-<td>2500.00</td>
-</tr>
-<tr>
-<td>Electronics</td>
-<td>NULL</td>
-<td>2500.00</td>
-</tr>
-<tr>
-<td>NULL</td>
-<td>NULL</td>
-<td>3800.00</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="6-聚合函数结合条件"><a href="#6-聚合函数结合条件" class="headerlink" title="6. 聚合函数结合条件"></a><strong>6. 聚合函数结合条件</strong></h3><h4 id="1-CASE-WHEN-实现条件聚合"><a href="#1-CASE-WHEN-实现条件聚合" class="headerlink" title="(1) CASE WHEN 实现条件聚合"></a>(1) <strong><code>CASE WHEN</code> 实现条件聚合</strong></h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计 2023-01-01 和 2023-01-02 的销售额</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="built_in">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sale_date <span class="operator">=</span> <span class="string">&#x27;2023-01-01&#x27;</span> <span class="keyword">THEN</span> amount <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> sales_day1,</span><br><span class="line">    <span class="built_in">SUM</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> sale_date <span class="operator">=</span> <span class="string">&#x27;2023-01-02&#x27;</span> <span class="keyword">THEN</span> amount <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="keyword">AS</span> sales_day2</span><br><span class="line"><span class="keyword">FROM</span> sales;</span><br></pre></td></tr></table></figure>
-
-<h4 id="结果-4"><a href="#结果-4" class="headerlink" title="结果"></a>结果</h4><table>
-<thead>
-<tr>
-<th>sales_day1</th>
-<th>sales_day2</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1500.00</td>
-<td>2300.00</td>
-</tr>
-</tbody></table>
-<h4 id="2-IF-函数简化条件"><a href="#2-IF-函数简化条件" class="headerlink" title="(2) IF 函数简化条件"></a>(2) <strong><code>IF</code> 函数简化条件</strong></h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计高价商品（金额 &gt; 1000）的销售额</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">SUM</span>(IF(amount <span class="operator">&gt;</span> <span class="number">1000</span>, amount, <span class="number">0</span>)) <span class="keyword">AS</span> high_value_sales <span class="keyword">FROM</span> sales;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="7-聚合函数与去重"><a href="#7-聚合函数与去重" class="headerlink" title="7. 聚合函数与去重"></a><strong>7. 聚合函数与去重</strong></h3><h4 id="使用-DISTINCT"><a href="#使用-DISTINCT" class="headerlink" title="使用 DISTINCT"></a>使用 <code>DISTINCT</code></h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 统计不同商品的销售次数</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> product_id) <span class="keyword">AS</span> unique_products <span class="keyword">FROM</span> sales;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a><strong>注意事项</strong></h3><ol>
-<li><p><strong><code>GROUP BY</code> 与非聚合字段</strong><br>SELECT 中的非聚合字段必须出现在 <code>GROUP BY</code> 中：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 正确写法</span></span><br><span class="line"><span class="keyword">SELECT</span> category, product_id, <span class="built_in">SUM</span>(amount)</span><br><span class="line"><span class="keyword">FROM</span> sales</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> category, product_id;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 错误写法（product_id 未在 GROUP BY 中）</span></span><br><span class="line"><span class="keyword">SELECT</span> category, product_id, <span class="built_in">SUM</span>(amount)</span><br><span class="line"><span class="keyword">FROM</span> sales</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> category;</span><br></pre></td></tr></table></figure></li>
-<li><p><strong><code>HAVING</code> 与 <code>WHERE</code> 的区别</strong></p>
-<ul>
-<li><code>WHERE</code> 在聚合前过滤行。</li>
-<li><code>HAVING</code> 在聚合后过滤分组。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>聚合查询的核心用途：</p>
-<ul>
-<li>统计汇总数据（如总数、总和、平均值）。</li>
-<li>按维度（如时间、类别）分组分析。</li>
-<li>过滤聚合结果（如筛选销售额超过阈值的分组）。</li>
-</ul>
-<p>通过灵活组合聚合函数、<code>GROUP BY</code> 和 <code>HAVING</code>，可以高效实现复杂的数据分析需求。</p>
-<h1 id="力扣已刷相关题"><a href="#力扣已刷相关题" class="headerlink" title="力扣已刷相关题"></a>力扣已刷相关题</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>表: <code>Person</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| email       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">id 是该表的主键（具有唯一值的列）。</span><br><span class="line">此表的每一行都包含一封电子邮件。电子邮件不包含大写字母。</span><br></pre></td></tr></table></figure>
-
-<p>编写解决方案来报告所有重复的电子邮件。 请注意，可以保证电子邮件字段不为 NULL。</p>
-<p>以 **任意顺序 **返回结果表。</p>
-<p>结果格式如下例。</p>
-<p><strong>示例 1:</strong></p>
-<pre><strong>输入:</strong> 
-Person 表:
-+----+---------+
-| id | email   |
-+----+---------+
-| 1  | a@b.com |
-| 2  | c@d.com |
-| 3  | a@b.com |
-+----+---------+
-<strong>输出:</strong> 
-+---------+
-| Email   |
-+---------+
-| a@b.com |
-+---------+
-<strong>解释:</strong> a@b.com 出现了两次。</pre>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> email <span class="keyword">as</span> Email</span><br><span class="line"><span class="keyword">from</span> Person</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> email</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(email) <span class="operator">&gt;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="题目：511-游戏玩法分析I"><a href="#题目：511-游戏玩法分析I" class="headerlink" title="题目：511.游戏玩法分析I"></a>题目：511.游戏玩法分析I</h2><p>活动表 <code>Activity</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+--------------+---------+</span><br><span class="line">| Column Name  | Type    |</span><br><span class="line">+--------------+---------+</span><br><span class="line">| player_id    | int     |</span><br><span class="line">| device_id    | int     |</span><br><span class="line">| event_date   | date    |</span><br><span class="line">| games_played | int     |</span><br><span class="line">+--------------+---------+</span><br><span class="line">在 SQL 中，表的主键是 (player_id, event_date)。</span><br><span class="line">这张表展示了一些游戏玩家在游戏平台上的行为活动。</span><br><span class="line">每行数据记录了一名玩家在退出平台之前，当天使用同一台设备登录平台后打开的游戏的数目（可能是 0 个）。</span><br></pre></td></tr></table></figure>
-
-<p>查询每位玩家 <strong>第一次登录平台的日期</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> player_id, <span class="built_in">min</span>(event_date) <span class="keyword">as</span> first_login</span><br><span class="line"><span class="keyword">from</span> Activity</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> player_id</span><br></pre></td></tr></table></figure>
-
+          <p>MySQL 中常用的聚合查询语句</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/02/groupby/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

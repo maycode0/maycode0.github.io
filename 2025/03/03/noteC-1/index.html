@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">1.</span> <span class="nav-text">动态内存分配</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">1.</span> <span class="nav-text">动态内存分配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -241,7 +241,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>74</span>
+      <span>217</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -262,8 +262,7 @@
     <div class="post-body" itemprop="articleBody"><h1 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h1><p>例：二维数组分配。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> **array;</span><br><span class="line"><span class="comment">// 假定数组第一维长度为 m， 第二维长度为 n</span></span><br><span class="line"><span class="comment">// 动态分配空间</span></span><br><span class="line">array = <span class="keyword">new</span> <span class="type">int</span> *[m];</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    array[i] = <span class="keyword">new</span> <span class="type">int</span> [n];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> [] array[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">delete</span> [] array;</span><br></pre></td></tr></table></figure>
 
-<p>命名空间</p>
-
+<h1 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h1>
     </div>
 
     
@@ -314,13 +313,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">7k</span>
+    <span title="站点总字数">18k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

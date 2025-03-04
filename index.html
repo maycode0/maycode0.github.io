@@ -236,7 +236,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>74</span>
+      <span>217</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>873</span>
+      <span>3.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -508,8 +508,7 @@
 <li>过滤聚合结果（如筛选销售额超过阈值的分组）。</li>
 </ul>
 <p>通过灵活组合聚合函数、<code>GROUP BY</code> 和 <code>HAVING</code>，可以高效实现复杂的数据分析需求。</p>
-<p>力扣已刷相关题</p>
-<p>表: <code>Person</code></p>
+<h1 id="力扣已刷相关题"><a href="#力扣已刷相关题" class="headerlink" title="力扣已刷相关题"></a>力扣已刷相关题</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>表: <code>Person</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| email       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">id 是该表的主键（具有唯一值的列）。</span><br><span class="line">此表的每一行都包含一封电子邮件。电子邮件不包含大写字母。</span><br></pre></td></tr></table></figure>
 
 <p>编写解决方案来报告所有重复的电子邮件。 请注意，可以保证电子邮件字段不为 NULL。</p>
@@ -534,6 +533,12 @@ Person 表:
 <strong>解释:</strong> a@b.com 出现了两次。</pre>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> email <span class="keyword">as</span> Email</span><br><span class="line"><span class="keyword">from</span> Person</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> email</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(email) <span class="operator">&gt;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="题目：511-游戏玩法分析I"><a href="#题目：511-游戏玩法分析I" class="headerlink" title="题目：511.游戏玩法分析I"></a>题目：511.游戏玩法分析I</h2><p>活动表 <code>Activity</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+--------------+---------+</span><br><span class="line">| Column Name  | Type    |</span><br><span class="line">+--------------+---------+</span><br><span class="line">| player_id    | int     |</span><br><span class="line">| device_id    | int     |</span><br><span class="line">| event_date   | date    |</span><br><span class="line">| games_played | int     |</span><br><span class="line">+--------------+---------+</span><br><span class="line">在 SQL 中，表的主键是 (player_id, event_date)。</span><br><span class="line">这张表展示了一些游戏玩家在游戏平台上的行为活动。</span><br><span class="line">每行数据记录了一名玩家在退出平台之前，当天使用同一台设备登录平台后打开的游戏的数目（可能是 0 个）。</span><br></pre></td></tr></table></figure>
+
+<p>查询每位玩家 <strong>第一次登录平台的日期</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> player_id, <span class="built_in">min</span>(event_date) <span class="keyword">as</span> first_login</span><br><span class="line"><span class="keyword">from</span> Activity</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> player_id</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -608,14 +613,14 @@ Person 表:
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -801,7 +806,7 @@ Person 表:
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>646</span>
+      <span>2.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1009,14 +1014,14 @@ Person 表:
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4.1k</span>
+      <span>9.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>15 分钟</span>
+      <span>8 分钟</span>
     </span>
 </div>
 
@@ -1116,7 +1121,7 @@ Person 表:
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>219</span>
+      <span>359</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1385,13 +1390,13 @@ Person 表:
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">7k</span>
+    <span title="站点总字数">18k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

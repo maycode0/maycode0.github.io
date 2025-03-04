@@ -12,202 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello CMAKE</title>
-    <url>/2025/02/27/cmake/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>默认标签</category>
-      </categories>
-      <tags>
-        <tag>默认标签</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++学习路线</title>
-    <url>/2025/02/27/cpp_stage/</url>
-    <content><![CDATA[<h3 id="一、基础阶段（1-3个月）"><a href="#一、基础阶段（1-3个月）" class="headerlink" title="一、基础阶段（1-3个月）"></a><strong>一、基础阶段（1-3个月）</strong></h3><h4 id="目标：掌握C-核心语法与编程思想，写出健壮的面向过程代码"><a href="#目标：掌握C-核心语法与编程思想，写出健壮的面向过程代码" class="headerlink" title="目标：掌握C++核心语法与编程思想，写出健壮的面向过程代码"></a><strong>目标</strong>：掌握C++核心语法与编程思想，写出健壮的面向过程代码</h4><ol>
-<li><strong>语法基础</strong><ul>
-<li><strong>数据类型、运算符、控制流（if&#x2F;for&#x2F;while）</strong></li>
-<li><strong>函数：参数传递（值&#x2F;指针&#x2F;引用）、函数重载</strong></li>
-<li><strong>数组、字符串（C风格字符串与</strong> <code>std::string</code>）</li>
-<li><strong>结构体、枚举、联合体</strong></li>
-<li><strong>关键练习</strong>：实现计算器、学生成绩管理系统</li>
-</ul>
-</li>
-<li><strong>内存管理</strong><ul>
-<li><strong>堆与栈的区别、</strong><code>new</code>&#x2F;<code>delete</code>操作</li>
-<li><strong>指针与引用的本质区别</strong></li>
-<li><strong>动态数组（</strong><code>new int[n]</code>）与内存泄漏检测工具（Valgrind）</li>
-<li><strong>关键练习</strong>：实现自定义动态数组类（模拟 <code>std::vector</code>雏形）</li>
-</ul>
-</li>
-<li><strong>面向对象（OOP）</strong><ul>
-<li><strong>类与对象：封装、构造&#x2F;析构函数</strong></li>
-<li><strong>继承与多态：虚函数、抽象类</strong></li>
-<li><strong>运算符重载（</strong><code>+</code>, <code>&lt;&lt;</code>等）</li>
-<li><strong>关键练习</strong>：设计图形类层次（Shape→Circle&#x2F;Rectangle）</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="二、进阶阶段（3-6个月）"><a href="#二、进阶阶段（3-6个月）" class="headerlink" title="二、进阶阶段（3-6个月）"></a><strong>二、进阶阶段（3-6个月）</strong></h3><h4 id="目标：深入理解C-标准库与现代特性，掌握工程级代码规范"><a href="#目标：深入理解C-标准库与现代特性，掌握工程级代码规范" class="headerlink" title="目标：深入理解C++标准库与现代特性，掌握工程级代码规范"></a><strong>目标</strong>：深入理解C++标准库与现代特性，掌握工程级代码规范</h4><ol>
-<li><strong>标准库（STL）</strong><ul>
-<li><strong>容器：</strong><code>vector</code>&#x2F;<code>list</code>&#x2F;<code>map</code>&#x2F;<code>unordered_map</code></li>
-<li><strong>算法：</strong><code>sort</code>&#x2F;<code>find</code>&#x2F;<code>transform</code></li>
-<li><strong>迭代器与仿函数（函数对象）</strong></li>
-<li><strong>关键练习</strong>：统计文本词频（<code>map</code>+文件操作）</li>
-</ul>
-</li>
-<li><strong>模板与泛型编程</strong><ul>
-<li><strong>函数模板与类模板</strong></li>
-<li><strong>模板特化与偏特化</strong></li>
-<li><strong>关键练习</strong>：实现泛型排序算法（支持自定义比较）</li>
-</ul>
-</li>
-<li><strong>现代C++（C++11&#x2F;14&#x2F;17）</strong><ul>
-<li><strong>智能指针：</strong><code>unique_ptr</code>&#x2F;<code>shared_ptr</code></li>
-<li><strong>右值引用与移动语义</strong></li>
-<li><strong>Lambda表达式、范围for循环</strong></li>
-<li><strong>关键练习</strong>：重构旧代码，用智能指针替代裸指针</li>
-</ul>
-</li>
-<li><strong>异常处理与RAII</strong><ul>
-<li><code>try</code>&#x2F;<code>catch</code>机制</li>
-<li><strong>资源获取即初始化（RAII）模式</strong></li>
-<li><strong>关键练习</strong>：实现文件自动关闭类（利用析构函数）</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="三、高阶阶段（6-12个月）"><a href="#三、高阶阶段（6-12个月）" class="headerlink" title="三、高阶阶段（6-12个月）"></a><strong>三、高阶阶段（6-12个月）</strong></h3><h4 id="目标：掌握系统级编程与性能优化，深入特定领域"><a href="#目标：掌握系统级编程与性能优化，深入特定领域" class="headerlink" title="目标：掌握系统级编程与性能优化，深入特定领域"></a><strong>目标</strong>：掌握系统级编程与性能优化，深入特定领域</h4><ol>
-<li><strong>多线程与并发</strong><ul>
-<li><code>std::thread</code>、<code>std::async</code></li>
-<li><strong>互斥锁（</strong><code>mutex</code>）、条件变量（<code>condition_variable</code>）</li>
-<li><strong>原子操作（</strong><code>atomic</code>）与无锁编程</li>
-<li><strong>关键练习</strong>：实现生产者-消费者模型</li>
-</ul>
-</li>
-<li><strong>系统编程</strong><ul>
-<li><strong>文件系统操作（</strong><code>&lt;filesystem&gt;</code>）</li>
-<li><strong>网络编程（Socket、Boost.Asio库）</strong></li>
-<li><strong>内存对齐与缓存优化</strong></li>
-<li><strong>关键练习</strong>：实现简易HTTP服务器</li>
-</ul>
-</li>
-<li><strong>模板元编程与编译期计算</strong><ul>
-<li><strong>类型萃取（Type Traits）</strong></li>
-<li><strong>SFINAE与</strong> <code>constexpr</code></li>
-<li><strong>关键练习</strong>：实现编译期斐波那契数列计算</li>
-</ul>
-</li>
-<li><strong>领域深入（选择1-2个方向）</strong><ul>
-<li><strong>游戏开发</strong>：Unreal Engine C++、OpenGL&#x2F;DirectX</li>
-<li><strong>高频交易</strong>：低延迟优化、锁无关数据结构</li>
-<li><strong>嵌入式</strong>：RTOS、硬件寄存器操作</li>
-<li><strong>开源贡献</strong>：参与LLVM&#x2F;Clang、Chromium等项目</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="四、工程化实践"><a href="#四、工程化实践" class="headerlink" title="四、工程化实践"></a><strong>四、工程化实践</strong></h3><ol>
-<li><strong>构建工具</strong><ul>
-<li><strong>CMake编写跨平台构建脚本</strong></li>
-<li><strong>包管理：vcpkg&#x2F;conan</strong></li>
-</ul>
-</li>
-<li><strong>调试与性能分析</strong><ul>
-<li><strong>GDB&#x2F;LLDB调试核心转储（Core Dump）</strong></li>
-<li><strong>性能剖析工具：perf、gprof、VTune</strong></li>
-</ul>
-</li>
-<li><strong>代码质量</strong><ul>
-<li><strong>静态分析：Clang-Tidy、Cppcheck</strong></li>
-<li><strong>单元测试：Google Test框架</strong></li>
-<li><strong>代码规范：Google C++ Style Guide</strong></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="五、学习资源推荐"><a href="#五、学习资源推荐" class="headerlink" title="五、学习资源推荐"></a><strong>五、学习资源推荐</strong></h3><h4 id="书籍（按难度排序）："><a href="#书籍（按难度排序）：" class="headerlink" title="书籍（按难度排序）："></a><strong>书籍</strong>（按难度排序）：</h4><ol>
-<li><strong>入门</strong>：《C++ Primer》《Accelerated C++》</li>
-<li><strong>进阶</strong>：《Effective C++》《Effective Modern C++》</li>
-<li><strong>高阶</strong>：《C++ Concurrency in Action》《Template Metaprogramming》</li>
-</ol>
-<h4 id="在线课程："><a href="#在线课程：" class="headerlink" title="在线课程："></a><strong>在线课程</strong>：</h4><ul>
-<li><strong>Coursera：北大《程序设计与算法》</strong></li>
-<li><strong>Udemy：Beginning C++ Programming - From Beginner to Beyond</strong></li>
-</ul>
-<h4 id="开源项目："><a href="#开源项目：" class="headerlink" title="开源项目："></a><strong>开源项目</strong>：</h4><ul>
-<li>入门级： <a href="https://github.com/qinguoyi/TinyWebServer">TinyWebServer</a>（学习网络编程）</li>
-<li>进阶级： <a href="https://github.com/fmtlib/fmt">fmtlib</a>（学习现代C++库设计）</li>
-</ul>
-<hr>
-<h3 id="六、项目实战建议"><a href="#六、项目实战建议" class="headerlink" title="六、项目实战建议"></a><strong>六、项目实战建议</strong></h3><table>
-<thead>
-<tr>
-<th><strong>阶段</strong></th>
-<th><strong>项目示例</strong></th>
-<th><strong>技术要点</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>初级</strong></td>
-<td><strong>命令行日记本</strong></td>
-<td><strong>文件操作、OOP设计</strong></td>
-</tr>
-<tr>
-<td><strong>中级</strong></td>
-<td><strong>多线程日志库</strong></td>
-<td><strong>线程安全、RAII、性能优化</strong></td>
-</tr>
-<tr>
-<td><strong>高级</strong></td>
-<td><strong>简易数据库引擎（LSM-Tree实现）</strong></td>
-<td><strong>磁盘IO、内存管理、并发控制</strong></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="七、求职与职业发展"><a href="#七、求职与职业发展" class="headerlink" title="七、求职与职业发展"></a><strong>七、求职与职业发展</strong></h3><ol>
-<li><strong>简历重点</strong>：<ul>
-<li><strong>突出高性能&#x2F;高并发项目经验</strong></li>
-<li><strong>展示对内存管理与多线程的深刻理解</strong></li>
-</ul>
-</li>
-<li><strong>面试高频考点</strong>：<ul>
-<li><strong>虚函数表（vtable）实现原理</strong></li>
-<li><code>std::vector</code>扩容机制</li>
-<li><strong>智能指针循环引用问题</strong></li>
-<li><strong>多线程死锁场景分析</strong></li>
-</ul>
-</li>
-<li><strong>职业路径</strong>：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">初级C++开发 → 系统架构师/游戏引擎工程师 → 技术专家（特定领域）</span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h3 id="避坑指南"><a href="#避坑指南" class="headerlink" title="避坑指南"></a><strong>避坑指南</strong></h3><ol>
-<li><strong>避免过早优化</strong>：先保证正确性，再考虑性能（“Make it work, make it right, make it fast”）</li>
-<li><strong>慎用裸指针</strong>：优先使用智能指针和RAII管理资源</li>
-<li><strong>关注C++标准演进</strong>：C++20&#x2F;23的Module、Coroutine等新特性</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习路线</category>
-      </categories>
-      <tags>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello C++</title>
-    <url>/2025/02/07/hello-cpp/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>C/C++环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mysql聚合查询</title>
     <url>/2025/03/02/groupby/</url>
     <content><![CDATA[<p>以下是 MySQL 中常用的聚合查询语句及实例，包含核心语法和典型应用场景：</p>
@@ -404,6 +208,202 @@ Person 表:
       </tags>
   </entry>
   <entry>
+    <title>Hello CMAKE</title>
+    <url>/2025/02/27/cmake/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>默认标签</category>
+      </categories>
+      <tags>
+        <tag>默认标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>c++学习路线</title>
+    <url>/2025/02/27/cpp_stage/</url>
+    <content><![CDATA[<h3 id="一、基础阶段（1-3个月）"><a href="#一、基础阶段（1-3个月）" class="headerlink" title="一、基础阶段（1-3个月）"></a><strong>一、基础阶段（1-3个月）</strong></h3><h4 id="目标：掌握C-核心语法与编程思想，写出健壮的面向过程代码"><a href="#目标：掌握C-核心语法与编程思想，写出健壮的面向过程代码" class="headerlink" title="目标：掌握C++核心语法与编程思想，写出健壮的面向过程代码"></a><strong>目标</strong>：掌握C++核心语法与编程思想，写出健壮的面向过程代码</h4><ol>
+<li><strong>语法基础</strong><ul>
+<li><strong>数据类型、运算符、控制流（if&#x2F;for&#x2F;while）</strong></li>
+<li><strong>函数：参数传递（值&#x2F;指针&#x2F;引用）、函数重载</strong></li>
+<li><strong>数组、字符串（C风格字符串与</strong> <code>std::string</code>）</li>
+<li><strong>结构体、枚举、联合体</strong></li>
+<li><strong>关键练习</strong>：实现计算器、学生成绩管理系统</li>
+</ul>
+</li>
+<li><strong>内存管理</strong><ul>
+<li><strong>堆与栈的区别、</strong><code>new</code>&#x2F;<code>delete</code>操作</li>
+<li><strong>指针与引用的本质区别</strong></li>
+<li><strong>动态数组（</strong><code>new int[n]</code>）与内存泄漏检测工具（Valgrind）</li>
+<li><strong>关键练习</strong>：实现自定义动态数组类（模拟 <code>std::vector</code>雏形）</li>
+</ul>
+</li>
+<li><strong>面向对象（OOP）</strong><ul>
+<li><strong>类与对象：封装、构造&#x2F;析构函数</strong></li>
+<li><strong>继承与多态：虚函数、抽象类</strong></li>
+<li><strong>运算符重载（</strong><code>+</code>, <code>&lt;&lt;</code>等）</li>
+<li><strong>关键练习</strong>：设计图形类层次（Shape→Circle&#x2F;Rectangle）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、进阶阶段（3-6个月）"><a href="#二、进阶阶段（3-6个月）" class="headerlink" title="二、进阶阶段（3-6个月）"></a><strong>二、进阶阶段（3-6个月）</strong></h3><h4 id="目标：深入理解C-标准库与现代特性，掌握工程级代码规范"><a href="#目标：深入理解C-标准库与现代特性，掌握工程级代码规范" class="headerlink" title="目标：深入理解C++标准库与现代特性，掌握工程级代码规范"></a><strong>目标</strong>：深入理解C++标准库与现代特性，掌握工程级代码规范</h4><ol>
+<li><strong>标准库（STL）</strong><ul>
+<li><strong>容器：</strong><code>vector</code>&#x2F;<code>list</code>&#x2F;<code>map</code>&#x2F;<code>unordered_map</code></li>
+<li><strong>算法：</strong><code>sort</code>&#x2F;<code>find</code>&#x2F;<code>transform</code></li>
+<li><strong>迭代器与仿函数（函数对象）</strong></li>
+<li><strong>关键练习</strong>：统计文本词频（<code>map</code>+文件操作）</li>
+</ul>
+</li>
+<li><strong>模板与泛型编程</strong><ul>
+<li><strong>函数模板与类模板</strong></li>
+<li><strong>模板特化与偏特化</strong></li>
+<li><strong>关键练习</strong>：实现泛型排序算法（支持自定义比较）</li>
+</ul>
+</li>
+<li><strong>现代C++（C++11&#x2F;14&#x2F;17）</strong><ul>
+<li><strong>智能指针：</strong><code>unique_ptr</code>&#x2F;<code>shared_ptr</code></li>
+<li><strong>右值引用与移动语义</strong></li>
+<li><strong>Lambda表达式、范围for循环</strong></li>
+<li><strong>关键练习</strong>：重构旧代码，用智能指针替代裸指针</li>
+</ul>
+</li>
+<li><strong>异常处理与RAII</strong><ul>
+<li><code>try</code>&#x2F;<code>catch</code>机制</li>
+<li><strong>资源获取即初始化（RAII）模式</strong></li>
+<li><strong>关键练习</strong>：实现文件自动关闭类（利用析构函数）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、高阶阶段（6-12个月）"><a href="#三、高阶阶段（6-12个月）" class="headerlink" title="三、高阶阶段（6-12个月）"></a><strong>三、高阶阶段（6-12个月）</strong></h3><h4 id="目标：掌握系统级编程与性能优化，深入特定领域"><a href="#目标：掌握系统级编程与性能优化，深入特定领域" class="headerlink" title="目标：掌握系统级编程与性能优化，深入特定领域"></a><strong>目标</strong>：掌握系统级编程与性能优化，深入特定领域</h4><ol>
+<li><strong>多线程与并发</strong><ul>
+<li><code>std::thread</code>、<code>std::async</code></li>
+<li><strong>互斥锁（</strong><code>mutex</code>）、条件变量（<code>condition_variable</code>）</li>
+<li><strong>原子操作（</strong><code>atomic</code>）与无锁编程</li>
+<li><strong>关键练习</strong>：实现生产者-消费者模型</li>
+</ul>
+</li>
+<li><strong>系统编程</strong><ul>
+<li><strong>文件系统操作（</strong><code>&lt;filesystem&gt;</code>）</li>
+<li><strong>网络编程（Socket、Boost.Asio库）</strong></li>
+<li><strong>内存对齐与缓存优化</strong></li>
+<li><strong>关键练习</strong>：实现简易HTTP服务器</li>
+</ul>
+</li>
+<li><strong>模板元编程与编译期计算</strong><ul>
+<li><strong>类型萃取（Type Traits）</strong></li>
+<li><strong>SFINAE与</strong> <code>constexpr</code></li>
+<li><strong>关键练习</strong>：实现编译期斐波那契数列计算</li>
+</ul>
+</li>
+<li><strong>领域深入（选择1-2个方向）</strong><ul>
+<li><strong>游戏开发</strong>：Unreal Engine C++、OpenGL&#x2F;DirectX</li>
+<li><strong>高频交易</strong>：低延迟优化、锁无关数据结构</li>
+<li><strong>嵌入式</strong>：RTOS、硬件寄存器操作</li>
+<li><strong>开源贡献</strong>：参与LLVM&#x2F;Clang、Chromium等项目</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、工程化实践"><a href="#四、工程化实践" class="headerlink" title="四、工程化实践"></a><strong>四、工程化实践</strong></h3><ol>
+<li><strong>构建工具</strong><ul>
+<li><strong>CMake编写跨平台构建脚本</strong></li>
+<li><strong>包管理：vcpkg&#x2F;conan</strong></li>
+</ul>
+</li>
+<li><strong>调试与性能分析</strong><ul>
+<li><strong>GDB&#x2F;LLDB调试核心转储（Core Dump）</strong></li>
+<li><strong>性能剖析工具：perf、gprof、VTune</strong></li>
+</ul>
+</li>
+<li><strong>代码质量</strong><ul>
+<li><strong>静态分析：Clang-Tidy、Cppcheck</strong></li>
+<li><strong>单元测试：Google Test框架</strong></li>
+<li><strong>代码规范：Google C++ Style Guide</strong></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="五、学习资源推荐"><a href="#五、学习资源推荐" class="headerlink" title="五、学习资源推荐"></a><strong>五、学习资源推荐</strong></h3><h4 id="书籍（按难度排序）："><a href="#书籍（按难度排序）：" class="headerlink" title="书籍（按难度排序）："></a><strong>书籍</strong>（按难度排序）：</h4><ol>
+<li><strong>入门</strong>：《C++ Primer》《Accelerated C++》</li>
+<li><strong>进阶</strong>：《Effective C++》《Effective Modern C++》</li>
+<li><strong>高阶</strong>：《C++ Concurrency in Action》《Template Metaprogramming》</li>
+</ol>
+<h4 id="在线课程："><a href="#在线课程：" class="headerlink" title="在线课程："></a><strong>在线课程</strong>：</h4><ul>
+<li><strong>Coursera：北大《程序设计与算法》</strong></li>
+<li><strong>Udemy：Beginning C++ Programming - From Beginner to Beyond</strong></li>
+</ul>
+<h4 id="开源项目："><a href="#开源项目：" class="headerlink" title="开源项目："></a><strong>开源项目</strong>：</h4><ul>
+<li>入门级： <a href="https://github.com/qinguoyi/TinyWebServer">TinyWebServer</a>（学习网络编程）</li>
+<li>进阶级： <a href="https://github.com/fmtlib/fmt">fmtlib</a>（学习现代C++库设计）</li>
+</ul>
+<hr>
+<h3 id="六、项目实战建议"><a href="#六、项目实战建议" class="headerlink" title="六、项目实战建议"></a><strong>六、项目实战建议</strong></h3><table>
+<thead>
+<tr>
+<th><strong>阶段</strong></th>
+<th><strong>项目示例</strong></th>
+<th><strong>技术要点</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>初级</strong></td>
+<td><strong>命令行日记本</strong></td>
+<td><strong>文件操作、OOP设计</strong></td>
+</tr>
+<tr>
+<td><strong>中级</strong></td>
+<td><strong>多线程日志库</strong></td>
+<td><strong>线程安全、RAII、性能优化</strong></td>
+</tr>
+<tr>
+<td><strong>高级</strong></td>
+<td><strong>简易数据库引擎（LSM-Tree实现）</strong></td>
+<td><strong>磁盘IO、内存管理、并发控制</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="七、求职与职业发展"><a href="#七、求职与职业发展" class="headerlink" title="七、求职与职业发展"></a><strong>七、求职与职业发展</strong></h3><ol>
+<li><strong>简历重点</strong>：<ul>
+<li><strong>突出高性能&#x2F;高并发项目经验</strong></li>
+<li><strong>展示对内存管理与多线程的深刻理解</strong></li>
+</ul>
+</li>
+<li><strong>面试高频考点</strong>：<ul>
+<li><strong>虚函数表（vtable）实现原理</strong></li>
+<li><code>std::vector</code>扩容机制</li>
+<li><strong>智能指针循环引用问题</strong></li>
+<li><strong>多线程死锁场景分析</strong></li>
+</ul>
+</li>
+<li><strong>职业路径</strong>：<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">初级C++开发 → 系统架构师/游戏引擎工程师 → 技术专家（特定领域）</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="避坑指南"><a href="#避坑指南" class="headerlink" title="避坑指南"></a><strong>避坑指南</strong></h3><ol>
+<li><strong>避免过早优化</strong>：先保证正确性，再考虑性能（“Make it work, make it right, make it fast”）</li>
+<li><strong>慎用裸指针</strong>：优先使用智能指针和RAII管理资源</li>
+<li><strong>关注C++标准演进</strong>：C++20&#x2F;23的Module、Coroutine等新特性</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习路线</category>
+      </categories>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello C++</title>
+    <url>/2025/02/07/hello-cpp/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>C/C++环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello Hexo</title>
     <url>/2025/02/06/hello-world/</url>
     <content><![CDATA[<p>记录Hexo搭建博客使用基本命令与操作。</p>
@@ -577,6 +577,151 @@ Person 表:
 ]]></content>
       <categories>
         <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>力扣Mysql每日一题(interval)</title>
+    <url>/2025/03/03/mysqlnote/</url>
+    <content><![CDATA[<p>在 MySQL 中，<code>INTERVAL</code> 不是一种字段类型，而是一个<strong>用于日期和时间计算的运算符</strong>。它通常与日期函数（如 <code>DATE_ADD()</code>, <code>DATE_SUB()</code>）或直接日期表达式结合使用，用来表示时间间隔。以下是 <code>INTERVAL</code> 的常见用法和示例：</p>
+<h3 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a><strong>1. 基本语法</strong></h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATE_ADD(base_date, <span class="type">INTERVAL</span> <span class="keyword">value</span> unit)</span><br><span class="line">DATE_SUB(base_date, <span class="type">INTERVAL</span> <span class="keyword">value</span> unit)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>base_date</code></strong>：基准日期（如 <code>CURDATE()</code>, <code>NOW()</code> 或字段名）。</li>
+<li><strong><code>value</code></strong>：数值（正负均可）。</li>
+<li><strong><code>unit</code></strong>：时间单位（如 <code>DAY</code>, <code>MONTH</code>, <code>YEAR</code>, <code>HOUR</code>, <code>MINUTE</code> 等）。</li>
+</ul>
+<hr>
+<h3 id="2-常见使用场景"><a href="#2-常见使用场景" class="headerlink" title="2. 常见使用场景"></a><strong>2. 常见使用场景</strong></h3><h4 id="场景-1：日期加减"><a href="#场景-1：日期加减" class="headerlink" title="场景 1：日期加减"></a><strong>场景 1：日期加减</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 当前时间加 7 天</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_ADD(NOW(), <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>) <span class="keyword">AS</span> future_date;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当前时间减 3 小时</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_SUB(NOW(), <span class="type">INTERVAL</span> <span class="number">3</span> <span class="keyword">HOUR</span>) <span class="keyword">AS</span> past_time;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 直接使用 `+ INTERVAL` 简化语法</span></span><br><span class="line"><span class="keyword">SELECT</span> NOW() <span class="operator">+</span> <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">MONTH</span> <span class="keyword">AS</span> next_month;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景-2：计算字段的过期时间"><a href="#场景-2：计算字段的过期时间" class="headerlink" title="场景 2：计算字段的过期时间"></a><strong>场景 2：计算字段的过期时间</strong></h4><p>假设有一个 <code>orders</code> 表，需要计算订单到期时间（创建时间 + 30 天）：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    order_id, </span><br><span class="line">    created_at, </span><br><span class="line">    created_at <span class="operator">+</span> <span class="type">INTERVAL</span> <span class="number">30</span> <span class="keyword">DAY</span> <span class="keyword">AS</span> expire_date</span><br><span class="line"><span class="keyword">FROM</span> orders;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景-3：过滤时间范围"><a href="#场景-3：过滤时间范围" class="headerlink" title="场景 3：过滤时间范围"></a><strong>场景 3：过滤时间范围</strong></h4><p>查询最近 7 天内的订单：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> orders</span><br><span class="line"><span class="keyword">WHERE</span> order_date <span class="operator">&gt;=</span> NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景-4：生成时间序列"><a href="#场景-4：生成时间序列" class="headerlink" title="场景 4：生成时间序列"></a><strong>场景 4：生成时间序列</strong></h4><p>生成过去 12 个月的月份序列：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_FORMAT(NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> n <span class="keyword">MONTH</span>, <span class="string">&#x27;%Y-%m&#x27;</span>) <span class="keyword">AS</span> <span class="keyword">month</span></span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">0</span> <span class="keyword">AS</span> n <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">2</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">3</span> <span class="keyword">UNION</span></span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">4</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">5</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">6</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">7</span> <span class="keyword">UNION</span></span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">8</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">9</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">10</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">11</span></span><br><span class="line">) <span class="keyword">AS</span> numbers;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-支持的-INTERVAL-单位"><a href="#3-支持的-INTERVAL-单位" class="headerlink" title="3. 支持的 INTERVAL 单位"></a><strong>3. 支持的 <code>INTERVAL</code> 单位</strong></h3><p>MySQL 支持以下时间单位：</p>
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>MICROSECOND</code></td>
+<td>微秒</td>
+</tr>
+<tr>
+<td><code>SECOND</code></td>
+<td>秒</td>
+</tr>
+<tr>
+<td><code>MINUTE</code></td>
+<td>分钟</td>
+</tr>
+<tr>
+<td><code>HOUR</code></td>
+<td>小时</td>
+</tr>
+<tr>
+<td><code>DAY</code></td>
+<td>天</td>
+</tr>
+<tr>
+<td><code>WEEK</code></td>
+<td>周</td>
+</tr>
+<tr>
+<td><code>MONTH</code></td>
+<td>月</td>
+</tr>
+<tr>
+<td><code>QUARTER</code></td>
+<td>季度（3 个月）</td>
+</tr>
+<tr>
+<td><code>YEAR</code></td>
+<td>年</td>
+</tr>
+<tr>
+<td><code>SECOND_MICROSECOND</code></td>
+<td>秒和微秒（如 <code>&#39;30.5&#39; SECOND_MICROSECOND</code>）</td>
+</tr>
+<tr>
+<td><code>MINUTE_MICROSECOND</code></td>
+<td>分钟、秒和微秒</td>
+</tr>
+<tr>
+<td>…（其他复合单位）</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="4-存储时间间隔的字段设计"><a href="#4-存储时间间隔的字段设计" class="headerlink" title="4. 存储时间间隔的字段设计"></a><strong>4. 存储时间间隔的字段设计</strong></h3><p>如果需要在表中存储时间间隔（如“有效期 30 天”），通常用以下两种方式：</p>
+<h4 id="方式-1：分开存储数值和单位"><a href="#方式-1：分开存储数值和单位" class="headerlink" title="方式 1：分开存储数值和单位"></a><strong>方式 1：分开存储数值和单位</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> subscriptions (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    duration <span class="type">INT</span>,       <span class="comment">-- 时间长度（如 30）</span></span><br><span class="line">    duration_unit <span class="type">VARCHAR</span>(<span class="number">10</span>)  <span class="comment">-- 单位（如 &#x27;DAY&#x27;）</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 计算过期时间</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_ADD(start_date, <span class="type">INTERVAL</span> duration duration_unit) <span class="keyword">AS</span> expire_date</span><br><span class="line"><span class="keyword">FROM</span> subscriptions;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方式-2：统一存储为秒数"><a href="#方式-2：统一存储为秒数" class="headerlink" title="方式 2：统一存储为秒数"></a><strong>方式 2：统一存储为秒数</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> tasks (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    timeout_seconds <span class="type">INT</span>  <span class="comment">-- 存储总秒数（如 3600 表示 1 小时）</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 转换为时间间隔</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_ADD(start_time, <span class="type">INTERVAL</span> timeout_seconds <span class="keyword">SECOND</span>) <span class="keyword">AS</span> end_time</span><br><span class="line"><span class="keyword">FROM</span> tasks;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-复杂示例：自动分区按时间间隔"><a href="#5-复杂示例：自动分区按时间间隔" class="headerlink" title="5. 复杂示例：自动分区按时间间隔"></a><strong>5. 复杂示例：自动分区按时间间隔</strong></h3><p>使用 <code>INTERVAL</code> 创建按月的自动分区表：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> logs (</span><br><span class="line">    log_date DATETIME,</span><br><span class="line">    content TEXT</span><br><span class="line">)</span><br><span class="line"><span class="keyword">PARTITION</span> <span class="keyword">BY</span> <span class="keyword">RANGE</span> COLUMNS(log_date) (</span><br><span class="line">    <span class="keyword">PARTITION</span> p202301 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-02-01&#x27;</span>),</span><br><span class="line">    <span class="keyword">PARTITION</span> p202302 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-03-01&#x27;</span>),</span><br><span class="line">    <span class="keyword">PARTITION</span> p202303 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-04-01&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-注意事项"><a href="#6-注意事项" class="headerlink" title="6. 注意事项"></a><strong>6. 注意事项</strong></h3><ol>
+<li><p><strong>时区问题</strong><br>使用 <code>INTERVAL</code> 计算时，确保基准日期和结果的时区一致（可通过 <code>CONVERT_TZ()</code> 转换）。</p>
+</li>
+<li><p><strong>闰年和月末</strong><br>加减月份时，MySQL 会自动处理月末：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 2023-01-31 + 1 MONTH → 2023-02-28</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_ADD(<span class="string">&#x27;2023-01-31&#x27;</span>, <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">MONTH</span>); </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>索引失效</strong><br>避免在 <code>WHERE</code> 条件中对字段使用函数（如 <code>DATE_ADD(column, INTERVAL ...)</code>），可能导致索引失效。建议改写为：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 优化前（索引可能失效）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> logs <span class="keyword">WHERE</span> DATE_ADD(log_date, <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>) <span class="operator">&gt;</span> NOW();</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 优化后（直接比较字段）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> logs <span class="keyword">WHERE</span> log_date <span class="operator">&gt;</span> NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p><code>INTERVAL</code> 是 MySQL 中处理日期和时间计算的核心工具，适用于：</p>
+<ul>
+<li>动态计算未来或过去的日期。</li>
+<li>生成时间序列或过滤时间范围。</li>
+<li>设计需要存储时间间隔的业务逻辑。</li>
+</ul>
+<p>结合 <code>DATE_ADD()</code>、<code>DATE_SUB()</code> 和直接日期表达式，可以高效实现复杂的时间操作。</p>
+<h1 id="题目：197-上升的温度"><a href="#题目：197-上升的温度" class="headerlink" title="题目：197.上升的温度"></a>题目：197.上升的温度</h1><p>表： <code>Weather</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+---------------+---------+</span><br><span class="line">| Column Name   | Type    |</span><br><span class="line">+---------------+---------+</span><br><span class="line">| id            | int     |</span><br><span class="line">| recordDate    | date    |</span><br><span class="line">| temperature   | int     |</span><br><span class="line">+---------------+---------+</span><br><span class="line">id 是该表具有唯一值的列。</span><br><span class="line">没有具有相同 recordDate 的不同行。</span><br><span class="line">该表包含特定日期的温度信息</span><br></pre></td></tr></table></figure>
+
+<p>编写解决方案，找出与之前（昨天的）日期相比温度更高的所有日期的 <code>id</code> 。</p>
+<p>返回结果 <strong>无顺序要求</strong> 。</p>
+<p>结果格式如下例子所示。</p>
+<p><strong>示例 1：</strong></p>
+<pre><strong>输入：</strong>
+Weather 表：
++----+------------+-------------+
+| id | recordDate | Temperature |
++----+------------+-------------+
+| 1  | 2015-01-01 | 10          |
+| 2  | 2015-01-02 | 25          |
+| 3  | 2015-01-03 | 20          |
+| 4  | 2015-01-04 | 30          |
++----+------------+-------------+
+<strong>输出：</strong>
++----+
+| id |
++----+
+| 2  |
+| 4  |
++----+
+<strong>解释：</strong>
+2015-01-02 的温度比前一天高（10 -> 25）
+2015-01-04 的温度比前一天高（20 -> 30）</pre>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> w1.id</span><br><span class="line"><span class="keyword">from</span> Weather w1, Weather w2</span><br><span class="line"><span class="keyword">where</span> w1.recordDate <span class="operator">-</span> <span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span> <span class="operator">=</span> w2.recordDate</span><br><span class="line"><span class="keyword">and</span></span><br><span class="line">w1.temperature <span class="operator">&gt;</span> w2.temperature</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>语法</category>
       </categories>
       <tags>
         <tag>mysql</tag>
@@ -924,6 +1069,291 @@ Person 表:
       </categories>
       <tags>
         <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql 连接查询</title>
+    <url>/2025/03/02/mysql_join_connect/</url>
+    <content><![CDATA[<h3 id="1-内连接（INNER-JOIN）"><a href="#1-内连接（INNER-JOIN）" class="headerlink" title="1. 内连接（INNER JOIN）"></a>1. <strong>内连接（INNER JOIN）</strong></h3><ul>
+<li><strong>作用</strong>：返回两个表中匹配的行。</li>
+<li><strong>语法</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 列</span><br><span class="line"><span class="keyword">FROM</span> 表<span class="number">1</span></span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> 表<span class="number">2</span> <span class="keyword">ON</span> 表<span class="number">1.</span>列 <span class="operator">=</span> 表<span class="number">2.</span>列;</span><br></pre></td></tr></table></figure></li>
+<li><strong>示例</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.name, orders.amount</span><br><span class="line"><span class="keyword">FROM</span> users</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="2-左连接（LEFT-JOIN）"><a href="#2-左连接（LEFT-JOIN）" class="headerlink" title="2. 左连接（LEFT JOIN）"></a>2. <strong>左连接（LEFT JOIN）</strong></h3><ul>
+<li><strong>作用</strong>：返回左表所有行，右表无匹配时填充 <code>NULL</code>。</li>
+<li><strong>语法</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 列</span><br><span class="line"><span class="keyword">FROM</span> 表<span class="number">1</span></span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> 表<span class="number">2</span> <span class="keyword">ON</span> 表<span class="number">1.</span>列 <span class="operator">=</span> 表<span class="number">2.</span>列;</span><br></pre></td></tr></table></figure></li>
+<li><strong>示例</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.name, orders.amount</span><br><span class="line"><span class="keyword">FROM</span> users</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="3-右连接（RIGHT-JOIN）"><a href="#3-右连接（RIGHT-JOIN）" class="headerlink" title="3. 右连接（RIGHT JOIN）"></a>3. <strong>右连接（RIGHT JOIN）</strong></h3><ul>
+<li><strong>作用</strong>：返回右表所有行，左表无匹配时填充 <code>NULL</code>。</li>
+<li><strong>语法</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 列</span><br><span class="line"><span class="keyword">FROM</span> 表<span class="number">1</span></span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> 表<span class="number">2</span> <span class="keyword">ON</span> 表<span class="number">1.</span>列 <span class="operator">=</span> 表<span class="number">2.</span>列;</span><br></pre></td></tr></table></figure></li>
+<li><strong>示例</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.name, orders.amount</span><br><span class="line"><span class="keyword">FROM</span> users</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="4-全外连接（FULL-OUTER-JOIN）"><a href="#4-全外连接（FULL-OUTER-JOIN）" class="headerlink" title="4. 全外连接（FULL OUTER JOIN）"></a>4. <strong>全外连接（FULL OUTER JOIN）</strong></h3><ul>
+<li><strong>作用</strong>：返回两表所有行，无匹配时填充 <code>NULL</code>（MySQL需用 <code>UNION</code>模拟）。</li>
+<li><strong>语法</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 列 <span class="keyword">FROM</span> 表<span class="number">1</span> <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> 表<span class="number">2</span> <span class="keyword">ON</span> 条件</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> 列 <span class="keyword">FROM</span> 表<span class="number">1</span> <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> 表<span class="number">2</span> <span class="keyword">ON</span> 条件;</span><br></pre></td></tr></table></figure></li>
+<li><strong>示例</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.name, orders.amount <span class="keyword">FROM</span> users <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> users.name, orders.amount <span class="keyword">FROM</span> users <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> orders <span class="keyword">ON</span> users.id <span class="operator">=</span> orders.user_id;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="5-交叉连接（CROSS-JOIN）"><a href="#5-交叉连接（CROSS-JOIN）" class="headerlink" title="5. 交叉连接（CROSS JOIN）"></a>5. <strong>交叉连接（CROSS JOIN）</strong></h3><ul>
+<li><strong>作用</strong>：返回笛卡尔积（所有可能的行组合）。</li>
+<li><strong>语法</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> 列 <span class="keyword">FROM</span> 表<span class="number">1</span> <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> 表<span class="number">2</span>;</span><br></pre></td></tr></table></figure></li>
+<li><strong>示例</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> users.name, products.price</span><br><span class="line"><span class="keyword">FROM</span> users</span><br><span class="line"><span class="keyword">CROSS</span> <span class="keyword">JOIN</span> products;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="6-自连接（SELF-JOIN）"><a href="#6-自连接（SELF-JOIN）" class="headerlink" title="6. 自连接（SELF JOIN）"></a>6. <strong>自连接（SELF JOIN）</strong></h3><ul>
+<li><strong>作用</strong>：同一表内连接，常用于层级数据（如员工与经理）。</li>
+<li><strong>语法</strong>：<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.列, b.列</span><br><span class="line"><span class="keyword">FROM</span> 表 a</span><br><span class="line"><span class="keyword">JOIN</span> 表 b <span class="keyword">ON</span> a.列 <span class="operator">=</span> b.列;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="一些例子"><a href="#一些例子" class="headerlink" title="一些例子"></a>一些例子</h1><p>以下是每种连接查询的具体实例，包含表结构、示例数据和对应的 SQL 语句：</p>
+<hr>
+<h3 id="1-内连接（INNER-JOIN）-1"><a href="#1-内连接（INNER-JOIN）-1" class="headerlink" title="1. 内连接（INNER JOIN）"></a><strong>1. 内连接（INNER JOIN）</strong></h3><h4 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> employees (</span><br><span class="line">    employee_id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    department_id <span class="type">INT</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE TABLE</span> departments (</span><br><span class="line">    department_id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    department_name <span class="type">VARCHAR</span>(<span class="number">50</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="示例数据"><a href="#示例数据" class="headerlink" title="示例数据"></a>示例数据</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INSERT INTO</span> employees <span class="keyword">VALUES</span> </span><br><span class="line">(<span class="number">1</span>, <span class="string">&#x27;Alice&#x27;</span>, <span class="number">101</span>),</span><br><span class="line">(<span class="number">2</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="number">102</span>),</span><br><span class="line">(<span class="number">3</span>, <span class="string">&#x27;Charlie&#x27;</span>, <span class="keyword">NULL</span>);  <span class="comment">-- 无部门</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT INTO</span> departments <span class="keyword">VALUES</span> </span><br><span class="line">(<span class="number">101</span>, <span class="string">&#x27;HR&#x27;</span>),</span><br><span class="line">(<span class="number">102</span>, <span class="string">&#x27;IT&#x27;</span>),</span><br><span class="line">(<span class="number">103</span>, <span class="string">&#x27;Finance&#x27;</span>);  <span class="comment">-- 无员工</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查询示例"><a href="#查询示例" class="headerlink" title="查询示例"></a>查询示例</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 获取有部门的员工及其部门名称</span></span><br><span class="line"><span class="keyword">SELECT</span> employees.name, departments.department_name</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> departments </span><br><span class="line"><span class="keyword">ON</span> employees.department_id <span class="operator">=</span> departments.department_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th>name</th>
+<th>department_name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice</td>
+<td>HR</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>IT</td>
+</tr>
+</tbody></table>
+<p><strong>说明</strong>：仅返回 <code>employees</code> 和 <code>departments</code> 中 <code>department_id</code> 匹配的行，无部门的员工（Charlie）和无员工的部门（Finance）被过滤。</p>
+<hr>
+<h3 id="2-左连接（LEFT-JOIN）-1"><a href="#2-左连接（LEFT-JOIN）-1" class="headerlink" title="2. 左连接（LEFT JOIN）"></a><strong>2. 左连接（LEFT JOIN）</strong></h3><h4 id="查询示例-1"><a href="#查询示例-1" class="headerlink" title="查询示例"></a>查询示例</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 获取所有员工（包括无部门的员工）</span></span><br><span class="line"><span class="keyword">SELECT</span> employees.name, departments.department_name</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> departments </span><br><span class="line"><span class="keyword">ON</span> employees.department_id <span class="operator">=</span> departments.department_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th>name</th>
+<th>department_name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice</td>
+<td>HR</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>NULL</td>
+</tr>
+</tbody></table>
+<p><strong>说明</strong>：保留左表（<code>employees</code>）的所有行，无部门的员工 <code>department_name</code> 显示为 <code>NULL</code>。</p>
+<hr>
+<h3 id="3-右连接（RIGHT-JOIN）-1"><a href="#3-右连接（RIGHT-JOIN）-1" class="headerlink" title="3. 右连接（RIGHT JOIN）"></a><strong>3. 右连接（RIGHT JOIN）</strong></h3><h4 id="查询示例-2"><a href="#查询示例-2" class="headerlink" title="查询示例"></a>查询示例</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 获取所有部门（包括无员工的部门）</span></span><br><span class="line"><span class="keyword">SELECT</span> employees.name, departments.department_name</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> departments </span><br><span class="line"><span class="keyword">ON</span> employees.department_id <span class="operator">=</span> departments.department_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="结果-2"><a href="#结果-2" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th>name</th>
+<th>department_name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice</td>
+<td>HR</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>NULL</td>
+<td>Finance</td>
+</tr>
+</tbody></table>
+<p><strong>说明</strong>：保留右表（<code>departments</code>）的所有行，无员工的部门对应的 <code>name</code> 显示为 <code>NULL</code>。</p>
+<hr>
+<h3 id="4-全外连接（FULL-OUTER-JOIN）-1"><a href="#4-全外连接（FULL-OUTER-JOIN）-1" class="headerlink" title="4. 全外连接（FULL OUTER JOIN）"></a><strong>4. 全外连接（FULL OUTER JOIN）</strong></h3><h4 id="查询示例-3"><a href="#查询示例-3" class="headerlink" title="查询示例"></a>查询示例</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 使用 UNION 模拟全外连接</span></span><br><span class="line"><span class="keyword">SELECT</span> employees.name, departments.department_name</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> departments <span class="keyword">ON</span> employees.department_id <span class="operator">=</span> departments.department_id</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> employees.name, departments.department_name</span><br><span class="line"><span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> departments <span class="keyword">ON</span> employees.department_id <span class="operator">=</span> departments.department_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="结果-3"><a href="#结果-3" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th>name</th>
+<th>department_name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice</td>
+<td>HR</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>NULL</td>
+<td>Finance</td>
+</tr>
+</tbody></table>
+<p><strong>说明</strong>：结合左连接和右连接的结果，返回所有员工和部门（包含未匹配的行）。</p>
+<hr>
+<h3 id="5-交叉连接（CROSS-JOIN）-1"><a href="#5-交叉连接（CROSS-JOIN）-1" class="headerlink" title="5. 交叉连接（CROSS JOIN）"></a><strong>5. 交叉连接（CROSS JOIN）</strong></h3><h4 id="表结构-1"><a href="#表结构-1" class="headerlink" title="表结构"></a>表结构</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> colors (color <span class="type">VARCHAR</span>(<span class="number">20</span>));</span><br><span class="line"><span class="keyword">CREATE TABLE</span> sizes (size <span class="type">VARCHAR</span>(<span class="number">20</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT INTO</span> colors <span class="keyword">VALUES</span> (<span class="string">&#x27;Red&#x27;</span>), (<span class="string">&#x27;Blue&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT INTO</span> sizes <span class="keyword">VALUES</span> (<span class="string">&#x27;S&#x27;</span>), (<span class="string">&#x27;M&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询示例-4"><a href="#查询示例-4" class="headerlink" title="查询示例"></a>查询示例</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 生成颜色和尺寸的所有组合</span></span><br><span class="line"><span class="keyword">SELECT</span> colors.color, sizes.size</span><br><span class="line"><span class="keyword">FROM</span> colors</span><br><span class="line"><span class="keyword">CROSS</span> <span class="keyword">JOIN</span> sizes;</span><br></pre></td></tr></table></figure>
+
+<h4 id="结果-4"><a href="#结果-4" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th>color</th>
+<th>size</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Red</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>M</td>
+</tr>
+</tbody></table>
+<p><strong>说明</strong>：返回两表的笛卡尔积（所有可能组合）。</p>
+<hr>
+<h3 id="6-自连接（SELF-JOIN）-1"><a href="#6-自连接（SELF-JOIN）-1" class="headerlink" title="6. 自连接（SELF JOIN）"></a><strong>6. 自连接（SELF JOIN）</strong></h3><h4 id="表结构-2"><a href="#表结构-2" class="headerlink" title="表结构"></a>表结构</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> staff (</span><br><span class="line">    employee_id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    name <span class="type">VARCHAR</span>(<span class="number">50</span>),</span><br><span class="line">    manager_id <span class="type">INT</span>  <span class="comment">-- 指向同一表的 employee_id</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT INTO</span> staff <span class="keyword">VALUES</span> </span><br><span class="line">(<span class="number">1</span>, <span class="string">&#x27;Alice&#x27;</span>, <span class="keyword">NULL</span>),   <span class="comment">-- 顶级领导</span></span><br><span class="line">(<span class="number">2</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="number">1</span>),        <span class="comment">-- Alice 的下属</span></span><br><span class="line">(<span class="number">3</span>, <span class="string">&#x27;Charlie&#x27;</span>, <span class="number">1</span>);    <span class="comment">-- Alice 的下属</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查询示例-5"><a href="#查询示例-5" class="headerlink" title="查询示例"></a>查询示例</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 显示员工及其上级经理</span></span><br><span class="line"><span class="keyword">SELECT</span> a.name <span class="keyword">AS</span> employee, b.name <span class="keyword">AS</span> manager</span><br><span class="line"><span class="keyword">FROM</span> staff a</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> staff b </span><br><span class="line"><span class="keyword">ON</span> a.manager_id <span class="operator">=</span> b.employee_id;</span><br></pre></td></tr></table></figure>
+
+<h4 id="结果-5"><a href="#结果-5" class="headerlink" title="结果"></a>结果</h4><table>
+<thead>
+<tr>
+<th>employee</th>
+<th>manager</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alice</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>Alice</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>Alice</td>
+</tr>
+</tbody></table>
+<p><strong>说明</strong>：通过自连接将员工与其上级关联，左表为员工，右表为对应的上级。</p>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过具体示例可以直观理解不同连接的行为：</p>
+<ul>
+<li><strong>INNER JOIN</strong>：仅保留匹配的行。</li>
+<li><strong>LEFT&#x2F;RIGHT JOIN</strong>：保留主表所有行，从表无匹配时填充 <code>NULL</code>。</li>
+<li><strong>FULL OUTER JOIN</strong>：结合左右连接的并集。</li>
+<li><strong>CROSS JOIN</strong>：生成笛卡尔积。</li>
+<li><strong>SELF JOIN</strong>：同一表内关联不同行。</li>
+</ul>
+<p>力扣已刷相关题：</p>
+<p>表: <code>Person</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型     |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| FirstName   | varchar |</span><br><span class="line">| LastName    | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">personId 是该表的主键（具有唯一值的列）。</span><br><span class="line">该表包含一些人的 ID 和他们的姓和名的信息。</span><br></pre></td></tr></table></figure>
+
+<p>表: <code>Address</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| AddressId   | int     |</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| City        | varchar |</span><br><span class="line">| State       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">addressId 是该表的主键（具有唯一值的列）。</span><br><span class="line">该表的每一行都包含一个 ID = PersonId 的人的城市和州的信息。</span><br></pre></td></tr></table></figure>
+
+<p>编写解决方案，报告 <code>Person</code> 表中每个人的姓、名、城市和州。如果 <code>personId</code> 的地址不在 <code>Address</code> 表中，则报告为 <code>null</code> 。</p>
+<p><strong>示例 1:</strong></p>
+<pre><strong>输入:</strong> 
+Person表:
++----------+----------+-----------+
+| personId | lastName | firstName |
++----------+----------+-----------+
+| 1        | Wang     | Allen     |
+| 2        | Alice    | Bob       |
++----------+----------+-----------+
+Address表:
++-----------+----------+---------------+------------+
+| addressId | personId | city          | state      |
++-----------+----------+---------------+------------+
+| 1         | 2        | New York City | New York   |
+| 2         | 3        | Leetcode      | California |
++-----------+----------+---------------+------------+
+<strong>输出:</strong> 
++-----------+----------+---------------+----------+
+| firstName | lastName | city          | state    |
++-----------+----------+---------------+----------+
+| Allen     | Wang     | Null          | Null     |
+| Bob       | Alice    | New York City | New York |
++-----------+----------+---------------+----------+
+<strong>解释:</strong> 
+地址表中没有 personId = 1 的地址，所以它们的城市和州返回 null。
+addressId = 1 包含了 personId = 2 的地址信息。</pre>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 题解</span><br><span class="line"><span class="keyword">select</span> firstName, lastName, city, state </span><br><span class="line"><span class="keyword">from</span> Person <span class="keyword">left</span> <span class="keyword">join</span> Address </span><br><span class="line"><span class="keyword">on</span> Person.PersonID <span class="operator">=</span> Address.PersonID</span><br></pre></td></tr></table></figure>
+
+<p>表：<code>Employee</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| empId       | int     |</span><br><span class="line">| name        | varchar |</span><br><span class="line">| supervisor  | int     |</span><br><span class="line">| salary      | int     |</span><br><span class="line">+-------------+---------+</span><br><span class="line">empId 是该表中具有唯一值的列。</span><br><span class="line">该表的每一行都表示员工的姓名和 id，以及他们的工资和经理的 id。</span><br></pre></td></tr></table></figure>
+
+<p>表：<code>Bonus</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+------+</span><br><span class="line">| Column Name | Type |</span><br><span class="line">+-------------+------+</span><br><span class="line">| empId       | int  |</span><br><span class="line">| bonus       | int  |</span><br><span class="line">+-------------+------+</span><br><span class="line">empId 是该表具有唯一值的列。</span><br><span class="line">empId 是 Employee 表中 empId 的外键(reference 列)。</span><br><span class="line">该表的每一行都包含一个员工的 id 和他们各自的奖金。</span><br></pre></td></tr></table></figure>
+
+<p>编写解决方案，报告每个奖金 <strong>少于</strong> <code>1000</code> 的员工的姓名和奖金数额。</p>
+<p>以 <strong>任意顺序</strong> 返回结果表。</p>
+<p>结果格式如下所示。</p>
+<p><strong>示例 1：</strong></p>
+<pre><b>输入：</b>
+Employee table:
++-------+--------+------------+--------+
+| empId | name   | supervisor | salary |
++-------+--------+------------+--------+
+| 3     | Brad   | null       | 4000   |
+| 1     | John   | 3          | 1000   |
+| 2     | Dan    | 3          | 2000   |
+| 4     | Thomas | 3          | 4000   |
++-------+--------+------------+--------+
+Bonus table:
++-------+-------+
+| empId | bonus |
++-------+-------+
+| 2     | 500   |
+| 4     | 2000  |
++-------+-------+
+<b>输出：</b>
++------+-------+
+| name | bonus |
++------+-------+
+| Brad | null  |
+| John | null  |
+| Dan  | 500   |
++------+-------+</pre>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 题解</span><br><span class="line"><span class="keyword">select</span> name, bonus </span><br><span class="line"><span class="keyword">from</span> Employee <span class="keyword">left</span> <span class="keyword">join</span> Bonus </span><br><span class="line"><span class="keyword">on</span> Employee.empId <span class="operator">=</span> Bonus.empId </span><br><span class="line"><span class="keyword">where</span> bonus <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">or</span> bonus <span class="operator">&lt;</span> <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
       </tags>
   </entry>
 </search>

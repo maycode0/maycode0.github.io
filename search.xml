@@ -14,7 +14,7 @@
   <entry>
     <title>C++ STL记录</title>
     <url>/2025/03/04/STL/</url>
-    <content><![CDATA[<p>C++ STL（标准模板库）中最常用的容器包括：</p>
+    <content><![CDATA[<h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>C++ STL（标准模板库）中最常用的容器包括：</p>
 <ol>
 <li><strong>vector</strong><ul>
 <li>动态数组，支持随机访问，尾部插入和删除高效。</li>
@@ -87,9 +87,37 @@
 </ul>
 </li>
 </ol>
-<h1 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">vec.<span class="built_in">reserve</span>(<span class="number">10</span>); <span class="comment">// 仅仅预留空间大小，若用[]访问会访问野空间，使用at访问则会抛出异常</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">capacity</span>()&lt;&lt;std::endl;</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span>(<span class="type">const</span> std::exception&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">    std::cerr &lt;&lt; e.<span class="built_in">what</span>() &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">vec.<span class="built_in">resize</span>(<span class="number">10</span>); <span class="comment">// 此时分配的空间是实打实的空间，全部初始化为0</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>初始化方法</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1; <span class="comment">// 空的 vector</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>; <span class="comment">//  5 个初始值为 0</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec3</span><span class="params">(<span class="number">5</span>, <span class="number">10</span>)</span></span>;<span class="comment">//包含 5 个元素,初始值为 10</span></span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec4 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; <span class="comment">//初始化列表</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="list"><a href="#list" class="headerlink" title="list"></a>list</h1><h1 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h1><table>
+<p><code>.reserve()</code>与 <code>.resize()方法</code></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">vec.<span class="built_in">reserve</span>(<span class="number">10</span>); <span class="comment">// 仅仅预留空间大小，若用[]访问会访问野空间，使用at访问则会抛出异常</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">capacity</span>()&lt;&lt;std::endl;</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span>(<span class="type">const</span> std::exception&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">    std::cerr &lt;&lt; e.<span class="built_in">what</span>() &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">vec.<span class="built_in">resize</span>(<span class="number">10</span>); <span class="comment">// 此时分配的空间是实打实的空间，全部初始化为0</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+
+<p>添加元素&#x2F;删除元素</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vec.<span class="built_in">push_back</span>(<span class="number">10</span>);<span class="comment">// 在尾部添加元素</span></span><br><span class="line">vec.<span class="built_in">emplace_back</span>(<span class="number">40</span>);<span class="comment">// 使用 emplace_back 直接构造元素</span></span><br><span class="line">vec.<span class="built_in">pop_back</span>();<span class="comment">// 删除最后一个元素</span></span><br><span class="line">vec.<span class="built_in">erase</span>(vec.<span class="built_in">begin</span>() + <span class="number">1</span>);<span class="comment">// 删除指定位置的元素（删除第 2 个元素）</span></span><br></pre></td></tr></table></figure>
+
+<p>访问方法</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::cout &lt;&lt; <span class="string">&quot;Element at index 2: &quot;</span> &lt;&lt; vec[<span class="number">2</span>] &lt;&lt; std::endl;<span class="comment">// 使用下标访问元素  </span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Element at index 3: &quot;</span> &lt;&lt; vec.<span class="built_in">at</span>(<span class="number">3</span>) &lt;&lt; std::endl;<span class="comment">// 使用 at() 访问元素（会检查边界）  </span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;First element: &quot;</span> &lt;&lt; vec.<span class="built_in">front</span>() &lt;&lt; std::endl;<span class="comment">// 访问第一个</span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Last element: &quot;</span> &lt;&lt; vec.<span class="built_in">back</span>() &lt;&lt; std::endl;<span class="comment">//最后一个元素</span></span><br></pre></td></tr></table></figure>
+
+<p>遍历方法</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; vec.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">    std::cout &lt;&lt; vec[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;<span class="comment">// 使用下标遍历  </span></span><br><span class="line"></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Using range-based for loop: &quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">    std::cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;  <span class="comment">// 使用范围 for 循环遍历</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;<span class="comment">// 使用迭代器遍历</span></span><br></pre></td></tr></table></figure>
+
+<p>排序</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());    <span class="comment">// 对 vector 进行升序排序</span></span><br></pre></td></tr></table></figure>
+
+<p>交换</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec2 = &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line">vec<span class="number">1.</span><span class="built_in">swap</span>(vec2);</span><br></pre></td></tr></table></figure>
+
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>初始化与vector保持一致。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">初始化与vector保持一致。</span><br></pre></td></tr></table></figure>
+
+<p>添加元素<br><code>.push_back()</code>在尾部添加元素，<code>.push_front()</code>在头部添加元素。</p>
+<p>访问元素</p>
+<p><code>.front()</code>访问头 <code>.back()</code>访问尾。</p>
+<p>删除</p>
+<p><code>.pop_front()</code>删除头部元素 <code>.pop_back()</code>删除尾部元素。</p>
+<p>成员函数</p>
+<table>
 <thead>
 <tr>
 <th>特性</th>
@@ -130,17 +158,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello CMAKE</title>
-    <url>/2025/02/27/cmake/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>默认标签</category>
-      </categories>
-      <tags>
-        <tag>默认标签</tag>
       </tags>
   </entry>
   <entry>
@@ -315,6 +332,28 @@
       </categories>
       <tags>
         <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello CMAKE</title>
+    <url>/2025/02/27/cmake/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>默认标签</category>
+      </categories>
+      <tags>
+        <tag>默认标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello C++</title>
+    <url>/2025/02/07/hello-cpp/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>C/C++环境配置</tag>
       </tags>
   </entry>
   <entry>
@@ -512,17 +551,6 @@ Person 表:
       </tags>
   </entry>
   <entry>
-    <title>Hello C++</title>
-    <url>/2025/02/07/hello-cpp/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>C/C++环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello Hexo</title>
     <url>/2025/02/06/hello-world/</url>
     <content><![CDATA[<p>记录Hexo搭建博客使用基本命令与操作。</p>
@@ -603,17 +631,6 @@ Person 表:
       </tags>
   </entry>
   <entry>
-    <title>Hello markdown</title>
-    <url>/2025/02/07/markdown/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Hello</category>
-      </categories>
-      <tags>
-        <tag>markdown入门</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello deepseek</title>
     <url>/2025/02/07/init_deepseek/</url>
     <content><![CDATA[<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-下载ollama"><a href="#1-下载ollama" class="headerlink" title="1. 下载ollama"></a>1. 下载ollama</h3><p>官网地址：<a href="https://ollama.com/">Ollama</a></p>
@@ -634,106 +651,14 @@ Person 表:
       </tags>
   </entry>
   <entry>
-    <title>Mysql常用操作</title>
-    <url>/2025/02/27/mysql/</url>
-    <content><![CDATA[<h3 id="一、数据库操作"><a href="#一、数据库操作" class="headerlink" title="一、数据库操作"></a><strong>一、数据库操作</strong></h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1. 创建数据库"></a>1. 创建数据库</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS `test_db` DEFAULT CHARACTER SET utf8mb4;</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例</strong>：创建名为 <code>test_db</code> 的数据库，字符集为 <code>utf8mb4</code>（支持中文和表情符号）。</p>
-<h4 id="2-切换数据库"><a href="#2-切换数据库" class="headerlink" title="2. 切换数据库"></a>2. 切换数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">USE `test_db`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-删除数据库"><a href="#3-删除数据库" class="headerlink" title="3. 删除数据库"></a>3. 删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP DATABASE IF EXISTS `test_db`;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="二、表操作"><a href="#二、表操作" class="headerlink" title="二、表操作"></a><strong>二、表操作</strong></h3><h4 id="1-创建表（含字段约束）"><a href="#1-创建表（含字段约束）" class="headerlink" title="1. 创建表（含字段约束）"></a>1. 创建表（含字段约束）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE `users` (</span><br><span class="line">  `id` INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` VARCHAR(50) NOT NULL,</span><br><span class="line">  `email` VARCHAR(100) UNIQUE,</span><br><span class="line">  `age` INT DEFAULT 18,</span><br><span class="line">  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p><strong>字段说明</strong>：</p>
-<ul>
-<li><code>PRIMARY KEY</code>：主键约束</li>
-<li><code>AUTO_INCREMENT</code>：自增</li>
-<li><code>UNIQUE</code>：唯一约束</li>
-<li><code>DEFAULT</code>：默认值</li>
-</ul>
-<h4 id="2-修改表结构"><a href="#2-修改表结构" class="headerlink" title="2. 修改表结构"></a>2. 修改表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 添加新列</span><br><span class="line">ALTER TABLE `users` ADD COLUMN `gender` ENUM(&#x27;male&#x27;, &#x27;female&#x27;) AFTER `age`;</span><br><span class="line"></span><br><span class="line">-- 修改列类型</span><br><span class="line">ALTER TABLE `users` MODIFY COLUMN `name` VARCHAR(100);</span><br><span class="line"></span><br><span class="line">-- 删除列</span><br><span class="line">ALTER TABLE `users` DROP COLUMN `gender`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-删除表"><a href="#3-删除表" class="headerlink" title="3. 删除表"></a>3. 删除表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `users`;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="三、数据操作（CRUD）"><a href="#三、数据操作（CRUD）" class="headerlink" title="三、数据操作（CRUD）"></a><strong>三、数据操作（CRUD）</strong></h3><h4 id="1-插入数据"><a href="#1-插入数据" class="headerlink" title="1. 插入数据"></a>1. 插入数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 插入单条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`, `age`) </span><br><span class="line">VALUES (&#x27;Alice&#x27;, &#x27;alice@example.com&#x27;, 25);</span><br><span class="line"></span><br><span class="line">-- 插入多条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`) </span><br><span class="line">VALUES (&#x27;Bob&#x27;, &#x27;bob@test.com&#x27;), (&#x27;Charlie&#x27;, &#x27;charlie@test.com&#x27;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-查询数据"><a href="#2-查询数据" class="headerlink" title="2. 查询数据"></a>2. 查询数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查询所有字段</span><br><span class="line">SELECT * FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 条件查询（WHERE）</span><br><span class="line">SELECT `name`, `age` FROM `users` WHERE `age` &gt; 20;</span><br><span class="line"></span><br><span class="line">-- 排序（ORDER BY）</span><br><span class="line">SELECT * FROM `users` ORDER BY `created_at` DESC;</span><br><span class="line"></span><br><span class="line">-- 分页（LIMIT）</span><br><span class="line">SELECT * FROM `users` LIMIT 10 OFFSET 0; -- 第1页，每页10条</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3. 更新数据"></a>3. 更新数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `users` </span><br><span class="line">SET `age` = 30, `email` = &#x27;alice_new@example.com&#x27; </span><br><span class="line">WHERE `id` = 1;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-删除数据"><a href="#4-删除数据" class="headerlink" title="4. 删除数据"></a>4. 删除数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM `users` WHERE `id` = 3;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="四、复杂查询"><a href="#四、复杂查询" class="headerlink" title="四、复杂查询"></a><strong>四、复杂查询</strong></h3><h4 id="1-聚合函数"><a href="#1-聚合函数" class="headerlink" title="1. 聚合函数"></a>1. 聚合函数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 统计总数、平均值</span><br><span class="line">SELECT COUNT(*) AS total_users, AVG(age) AS avg_age FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 分组统计（GROUP BY）</span><br><span class="line">SELECT `gender`, COUNT(*) AS count FROM `users` GROUP BY `gender`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-连接查询（JOIN）"><a href="#2-连接查询（JOIN）" class="headerlink" title="2. 连接查询（JOIN）"></a>2. 连接查询（JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建订单表</span><br><span class="line">CREATE TABLE `orders` (</span><br><span class="line">  `order_id` INT PRIMARY KEY,</span><br><span class="line">  `user_id` INT,</span><br><span class="line">  `amount` DECIMAL(10,2),</span><br><span class="line">  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 内连接（INNER JOIN）</span><br><span class="line">SELECT u.`name`, o.`order_id`, o.`amount`</span><br><span class="line">FROM `users` u</span><br><span class="line">INNER JOIN `orders` o ON u.`id` = o.`user_id`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-子查询"><a href="#3-子查询" class="headerlink" title="3. 子查询"></a>3. 子查询</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT `name` </span><br><span class="line">FROM `users` </span><br><span class="line">WHERE `id` IN (SELECT `user_id` FROM `orders` WHERE `amount` &gt; 100);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="五、高级功能"><a href="#五、高级功能" class="headerlink" title="五、高级功能"></a><strong>五、高级功能</strong></h3><h4 id="1-索引优化"><a href="#1-索引优化" class="headerlink" title="1. 索引优化"></a>1. 索引优化</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建索引</span><br><span class="line">CREATE INDEX `idx_email` ON `users` (`email`);</span><br><span class="line"></span><br><span class="line">-- 查看索引</span><br><span class="line">SHOW INDEX FROM `users`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-事务处理"><a href="#2-事务处理" class="headerlink" title="2. 事务处理"></a>2. 事务处理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">START TRANSACTION;</span><br><span class="line">UPDATE `account` SET balance = balance - 100 WHERE user_id = 1;</span><br><span class="line">UPDATE `account` SET balance = balance + 100 WHERE user_id = 2;</span><br><span class="line">COMMIT; -- 提交事务</span><br><span class="line">-- ROLLBACK; -- 回滚事务</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-用户权限管理"><a href="#3-用户权限管理" class="headerlink" title="3. 用户权限管理"></a>3. 用户权限管理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建用户并授权</span><br><span class="line">CREATE USER &#x27;dev_user&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password123&#x27;;</span><br><span class="line">GRANT SELECT, INSERT, UPDATE ON `test_db`.* TO &#x27;dev_user&#x27;@&#x27;%&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="六、实用命令"><a href="#六、实用命令" class="headerlink" title="六、实用命令"></a><strong>六、实用命令</strong></h3><h4 id="1-导入-导出数据"><a href="#1-导入-导出数据" class="headerlink" title="1. 导入&#x2F;导出数据"></a>1. 导入&#x2F;导出数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 导出整个数据库（命令行）</span><br><span class="line">mysqldump -u root -p test_db &gt; backup.sql</span><br><span class="line"></span><br><span class="line"># 导入数据</span><br><span class="line">mysql -u root -p test_db &lt; backup.sql</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-查看表结构"><a href="#2-查看表结构" class="headerlink" title="2. 查看表结构"></a>2. 查看表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DESC `users`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-查看建表语句"><a href="#3-查看建表语句" class="headerlink" title="3. 查看建表语句"></a>3. 查看建表语句</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE TABLE `users`;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="高频场景示例"><a href="#高频场景示例" class="headerlink" title="高频场景示例"></a><strong>高频场景示例</strong></h3><h4 id="场景1：分页查询用户列表（每页5条）"><a href="#场景1：分页查询用户列表（每页5条）" class="headerlink" title="场景1：分页查询用户列表（每页5条）"></a>场景1：分页查询用户列表（每页5条）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">ORDER BY `id` </span><br><span class="line">LIMIT 5 OFFSET 0; -- 第1页</span><br></pre></td></tr></table></figure>
-
-<h4 id="场景2：模糊查询（查找名字包含-“DB”-的用户）"><a href="#场景2：模糊查询（查找名字包含-“DB”-的用户）" class="headerlink" title="场景2：模糊查询（查找名字包含 “DB” 的用户）"></a>场景2：模糊查询（查找名字包含 “DB” 的用户）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">WHERE `name` LIKE &#x27;%DB%&#x27;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="场景3：批量更新状态"><a href="#场景3：批量更新状态" class="headerlink" title="场景3：批量更新状态"></a>场景3：批量更新状态</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `products` </span><br><span class="line">SET `status` = &#x27;offline&#x27; </span><br><span class="line">WHERE `stock` = 0;</span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>Hello markdown</title>
+    <url>/2025/02/07/markdown/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>Hello</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>力扣每日一题——IF函数</title>
-    <url>/2025/03/04/mysqlnote-1/</url>
-    <content><![CDATA[<h1 id="610-判断三角形"><a href="#610-判断三角形" class="headerlink" title="610.判断三角形"></a>610.判断三角形</h1><p>表: <code>Triangle</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+------+</span><br><span class="line">| Column Name | Type |</span><br><span class="line">+-------------+------+</span><br><span class="line">| x           | int  |</span><br><span class="line">| y           | int  |</span><br><span class="line">| z           | int  |</span><br><span class="line">+-------------+------+</span><br><span class="line">在 SQL 中，(x, y, z)是该表的主键列。</span><br><span class="line">该表的每一行包含三个线段的长度。</span><br></pre></td></tr></table></figure>
-
-<p>对每三个线段报告它们是否可以形成一个三角形。</p>
-<p>以 **任意顺序 **返回结果表。</p>
-<p>查询结果格式如下所示。</p>
-<p><strong>示例 1:</strong></p>
-<pre><strong>输入:</strong> 
-Triangle 表:
-+----+----+----+
-| x  | y  | z  |
-+----+----+----+
-| 13 | 15 | 30 |
-| 10 | 20 | 15 |
-+----+----+----+
-<strong>输出:</strong> 
-+----+----+----+----------+
-| x  | y  | z  | triangle |
-+----+----+----+----------+
-| 13 | 15 | 30 | No       |
-| 10 | 20 | 15 | Yes      |
-+----+----+----+----------+</pre>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> x,y,z,<span class="keyword">if</span>(x+y&gt;z and x+z&gt;y and y+z&gt;x, <span class="string">&quot;Yes&quot;</span>, <span class="string">&quot;No&quot;</span>) as triangle</span><br><span class="line">from triangle</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
+        <tag>markdown入门</tag>
       </tags>
   </entry>
   <entry>
@@ -1013,6 +938,307 @@ Bonus table:
 +------+-------+</pre>
 
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 题解</span><br><span class="line"><span class="keyword">select</span> name, bonus </span><br><span class="line"><span class="keyword">from</span> Employee <span class="keyword">left</span> <span class="keyword">join</span> Bonus </span><br><span class="line"><span class="keyword">on</span> Employee.empId <span class="operator">=</span> Bonus.empId </span><br><span class="line"><span class="keyword">where</span> bonus <span class="keyword">is</span> <span class="keyword">null</span> <span class="keyword">or</span> bonus <span class="operator">&lt;</span> <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mysql常用操作</title>
+    <url>/2025/02/27/mysql/</url>
+    <content><![CDATA[<h3 id="一、数据库操作"><a href="#一、数据库操作" class="headerlink" title="一、数据库操作"></a><strong>一、数据库操作</strong></h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1. 创建数据库"></a>1. 创建数据库</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS `test_db` DEFAULT CHARACTER SET utf8mb4;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：创建名为 <code>test_db</code> 的数据库，字符集为 <code>utf8mb4</code>（支持中文和表情符号）。</p>
+<h4 id="2-切换数据库"><a href="#2-切换数据库" class="headerlink" title="2. 切换数据库"></a>2. 切换数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">USE `test_db`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-删除数据库"><a href="#3-删除数据库" class="headerlink" title="3. 删除数据库"></a>3. 删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP DATABASE IF EXISTS `test_db`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、表操作"><a href="#二、表操作" class="headerlink" title="二、表操作"></a><strong>二、表操作</strong></h3><h4 id="1-创建表（含字段约束）"><a href="#1-创建表（含字段约束）" class="headerlink" title="1. 创建表（含字段约束）"></a>1. 创建表（含字段约束）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE `users` (</span><br><span class="line">  `id` INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` VARCHAR(50) NOT NULL,</span><br><span class="line">  `email` VARCHAR(100) UNIQUE,</span><br><span class="line">  `age` INT DEFAULT 18,</span><br><span class="line">  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>字段说明</strong>：</p>
+<ul>
+<li><code>PRIMARY KEY</code>：主键约束</li>
+<li><code>AUTO_INCREMENT</code>：自增</li>
+<li><code>UNIQUE</code>：唯一约束</li>
+<li><code>DEFAULT</code>：默认值</li>
+</ul>
+<h4 id="2-修改表结构"><a href="#2-修改表结构" class="headerlink" title="2. 修改表结构"></a>2. 修改表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 添加新列</span><br><span class="line">ALTER TABLE `users` ADD COLUMN `gender` ENUM(&#x27;male&#x27;, &#x27;female&#x27;) AFTER `age`;</span><br><span class="line"></span><br><span class="line">-- 修改列类型</span><br><span class="line">ALTER TABLE `users` MODIFY COLUMN `name` VARCHAR(100);</span><br><span class="line"></span><br><span class="line">-- 删除列</span><br><span class="line">ALTER TABLE `users` DROP COLUMN `gender`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-删除表"><a href="#3-删除表" class="headerlink" title="3. 删除表"></a>3. 删除表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `users`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、数据操作（CRUD）"><a href="#三、数据操作（CRUD）" class="headerlink" title="三、数据操作（CRUD）"></a><strong>三、数据操作（CRUD）</strong></h3><h4 id="1-插入数据"><a href="#1-插入数据" class="headerlink" title="1. 插入数据"></a>1. 插入数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 插入单条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`, `age`) </span><br><span class="line">VALUES (&#x27;Alice&#x27;, &#x27;alice@example.com&#x27;, 25);</span><br><span class="line"></span><br><span class="line">-- 插入多条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`) </span><br><span class="line">VALUES (&#x27;Bob&#x27;, &#x27;bob@test.com&#x27;), (&#x27;Charlie&#x27;, &#x27;charlie@test.com&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查询数据"><a href="#2-查询数据" class="headerlink" title="2. 查询数据"></a>2. 查询数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查询所有字段</span><br><span class="line">SELECT * FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 条件查询（WHERE）</span><br><span class="line">SELECT `name`, `age` FROM `users` WHERE `age` &gt; 20;</span><br><span class="line"></span><br><span class="line">-- 排序（ORDER BY）</span><br><span class="line">SELECT * FROM `users` ORDER BY `created_at` DESC;</span><br><span class="line"></span><br><span class="line">-- 分页（LIMIT）</span><br><span class="line">SELECT * FROM `users` LIMIT 10 OFFSET 0; -- 第1页，每页10条</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3. 更新数据"></a>3. 更新数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `users` </span><br><span class="line">SET `age` = 30, `email` = &#x27;alice_new@example.com&#x27; </span><br><span class="line">WHERE `id` = 1;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-删除数据"><a href="#4-删除数据" class="headerlink" title="4. 删除数据"></a>4. 删除数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM `users` WHERE `id` = 3;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、复杂查询"><a href="#四、复杂查询" class="headerlink" title="四、复杂查询"></a><strong>四、复杂查询</strong></h3><h4 id="1-聚合函数"><a href="#1-聚合函数" class="headerlink" title="1. 聚合函数"></a>1. 聚合函数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 统计总数、平均值</span><br><span class="line">SELECT COUNT(*) AS total_users, AVG(age) AS avg_age FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 分组统计（GROUP BY）</span><br><span class="line">SELECT `gender`, COUNT(*) AS count FROM `users` GROUP BY `gender`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-连接查询（JOIN）"><a href="#2-连接查询（JOIN）" class="headerlink" title="2. 连接查询（JOIN）"></a>2. 连接查询（JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建订单表</span><br><span class="line">CREATE TABLE `orders` (</span><br><span class="line">  `order_id` INT PRIMARY KEY,</span><br><span class="line">  `user_id` INT,</span><br><span class="line">  `amount` DECIMAL(10,2),</span><br><span class="line">  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 内连接（INNER JOIN）</span><br><span class="line">SELECT u.`name`, o.`order_id`, o.`amount`</span><br><span class="line">FROM `users` u</span><br><span class="line">INNER JOIN `orders` o ON u.`id` = o.`user_id`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-子查询"><a href="#3-子查询" class="headerlink" title="3. 子查询"></a>3. 子查询</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT `name` </span><br><span class="line">FROM `users` </span><br><span class="line">WHERE `id` IN (SELECT `user_id` FROM `orders` WHERE `amount` &gt; 100);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="五、高级功能"><a href="#五、高级功能" class="headerlink" title="五、高级功能"></a><strong>五、高级功能</strong></h3><h4 id="1-索引优化"><a href="#1-索引优化" class="headerlink" title="1. 索引优化"></a>1. 索引优化</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建索引</span><br><span class="line">CREATE INDEX `idx_email` ON `users` (`email`);</span><br><span class="line"></span><br><span class="line">-- 查看索引</span><br><span class="line">SHOW INDEX FROM `users`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-事务处理"><a href="#2-事务处理" class="headerlink" title="2. 事务处理"></a>2. 事务处理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">START TRANSACTION;</span><br><span class="line">UPDATE `account` SET balance = balance - 100 WHERE user_id = 1;</span><br><span class="line">UPDATE `account` SET balance = balance + 100 WHERE user_id = 2;</span><br><span class="line">COMMIT; -- 提交事务</span><br><span class="line">-- ROLLBACK; -- 回滚事务</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-用户权限管理"><a href="#3-用户权限管理" class="headerlink" title="3. 用户权限管理"></a>3. 用户权限管理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建用户并授权</span><br><span class="line">CREATE USER &#x27;dev_user&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password123&#x27;;</span><br><span class="line">GRANT SELECT, INSERT, UPDATE ON `test_db`.* TO &#x27;dev_user&#x27;@&#x27;%&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="六、实用命令"><a href="#六、实用命令" class="headerlink" title="六、实用命令"></a><strong>六、实用命令</strong></h3><h4 id="1-导入-导出数据"><a href="#1-导入-导出数据" class="headerlink" title="1. 导入&#x2F;导出数据"></a>1. 导入&#x2F;导出数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 导出整个数据库（命令行）</span><br><span class="line">mysqldump -u root -p test_db &gt; backup.sql</span><br><span class="line"></span><br><span class="line"># 导入数据</span><br><span class="line">mysql -u root -p test_db &lt; backup.sql</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查看表结构"><a href="#2-查看表结构" class="headerlink" title="2. 查看表结构"></a>2. 查看表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DESC `users`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-查看建表语句"><a href="#3-查看建表语句" class="headerlink" title="3. 查看建表语句"></a>3. 查看建表语句</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE TABLE `users`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="高频场景示例"><a href="#高频场景示例" class="headerlink" title="高频场景示例"></a><strong>高频场景示例</strong></h3><h4 id="场景1：分页查询用户列表（每页5条）"><a href="#场景1：分页查询用户列表（每页5条）" class="headerlink" title="场景1：分页查询用户列表（每页5条）"></a>场景1：分页查询用户列表（每页5条）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">ORDER BY `id` </span><br><span class="line">LIMIT 5 OFFSET 0; -- 第1页</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景2：模糊查询（查找名字包含-“DB”-的用户）"><a href="#场景2：模糊查询（查找名字包含-“DB”-的用户）" class="headerlink" title="场景2：模糊查询（查找名字包含 “DB” 的用户）"></a>场景2：模糊查询（查找名字包含 “DB” 的用户）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">WHERE `name` LIKE &#x27;%DB%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景3：批量更新状态"><a href="#场景3：批量更新状态" class="headerlink" title="场景3：批量更新状态"></a>场景3：批量更新状态</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `products` </span><br><span class="line">SET `status` = &#x27;offline&#x27; </span><br><span class="line">WHERE `stock` = 0;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>力扣每日一题——IF函数</title>
+    <url>/2025/03/04/mysqlnote-1/</url>
+    <content><![CDATA[<h1 id="610-判断三角形"><a href="#610-判断三角形" class="headerlink" title="610.判断三角形"></a>610.判断三角形</h1><p>表: <code>Triangle</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+------+</span><br><span class="line">| Column Name | Type |</span><br><span class="line">+-------------+------+</span><br><span class="line">| x           | int  |</span><br><span class="line">| y           | int  |</span><br><span class="line">| z           | int  |</span><br><span class="line">+-------------+------+</span><br><span class="line">在 SQL 中，(x, y, z)是该表的主键列。</span><br><span class="line">该表的每一行包含三个线段的长度。</span><br></pre></td></tr></table></figure>
+
+<p>对每三个线段报告它们是否可以形成一个三角形。</p>
+<p>以 **任意顺序 **返回结果表。</p>
+<p>查询结果格式如下所示。</p>
+<p><strong>示例 1:</strong></p>
+<pre><strong>输入:</strong> 
+Triangle 表:
++----+----+----+
+| x  | y  | z  |
++----+----+----+
+| 13 | 15 | 30 |
+| 10 | 20 | 15 |
++----+----+----+
+<strong>输出:</strong> 
++----+----+----+----------+
+| x  | y  | z  | triangle |
++----+----+----+----------+
+| 13 | 15 | 30 | No       |
+| 10 | 20 | 15 | Yes      |
++----+----+----+----------+</pre>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> x,y,z,<span class="keyword">if</span>(x+y&gt;z and x+z&gt;y and y+z&gt;x, <span class="string">&quot;Yes&quot;</span>, <span class="string">&quot;No&quot;</span>) as triangle</span><br><span class="line">from triangle</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS3学习记录</title>
+    <url>/2025/03/11/webNote/</url>
+    <content><![CDATA[<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><p>关键属性：<code>float</code></p>
+<p>值：left、right</p>
+<p>清除浮动：本质是闭合浮动</p>
+<ul>
+<li>方法1：overflow: hidden</li>
+<li>方法2：伪元素</li>
+<li>方法3</li>
+<li>方法4</li>
+</ul>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>关键属性：<code>position</code></p>
+<p>值：static、relative、absolute、fixed、sticky</p>
+<blockquote>
+<p>子绝父相</p>
+</blockquote>
+<p>相对定位可以使用 <code>margin:auto</code>设置居中，绝对定位无法使用，需要计算设置</p>
+<h2 id="其他字段"><a href="#其他字段" class="headerlink" title="其他字段"></a>其他字段</h2><p>z-index:提高层级</p>
+<p>display：none</p>
+<p>visibility：visible &#x2F; hidden</p>
+<p>overflow：</p>
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h1 id="CSS3结构伪类选择器"><a href="#CSS3结构伪类选择器" class="headerlink" title="CSS3结构伪类选择器"></a>CSS3结构伪类选择器</h1><p>E::first-child</p>
+<p>E::last-child</p>
+<p>E:nth-child：nth-child(even)、nth-child(odd)、nth-child(表达式)[n,2n,2n-1,n+1,-n+1] 指定元素E的第几个，先匹配类型后匹配几个</p>
+<p>E:nth-of-type(): 指定元素E的第几个，先匹配指定元素后匹配类型</p>
+<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>并不是真正元素，在文档中找不到。</p>
+<p>E::before()</p>
+<p>E::after()</p>
+<p>都必须存在content属性</p>
+<h1 id="CSS3盒模型"><a href="#CSS3盒模型" class="headerlink" title="CSS3盒模型"></a>CSS3盒模型</h1><p>box-size：border-size、content-size</p>
+<h1 id="css3其他特性"><a href="#css3其他特性" class="headerlink" title="css3其他特性"></a>css3其他特性</h1><p>calc(): calc(100%-15px)</p>
+<p>filter: blur(15px)</p>
+<p>transition: 变化属性  花费时间 运动曲线 开始时间</p>
+<p>transition: all</p>
+<p><strong>动画：</strong></p>
+<p>定义动画</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@keyframes 动画名</span><br><span class="line">&#123;</span><br><span class="line"> 	0%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	100%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>配合使用属性</p>
+<p><code>animation-name</code></p>
+<p><code>animation-duration</code></p>
+<p>translate()：移动元素，并不会改变其他盒子</p>
+<p>animation属性</p>
+]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>CSS3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>力扣Mysql每日一题(interval)</title>
+    <url>/2025/03/03/mysqlnote/</url>
+    <content><![CDATA[<p>在 MySQL 中，<code>INTERVAL</code> 不是一种字段类型，而是一个<strong>用于日期和时间计算的运算符</strong>。它通常与日期函数（如 <code>DATE_ADD()</code>, <code>DATE_SUB()</code>）或直接日期表达式结合使用，用来表示时间间隔。以下是 <code>INTERVAL</code> 的常见用法和示例：</p>
+<h3 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a><strong>1. 基本语法</strong></h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATE_ADD(base_date, <span class="type">INTERVAL</span> <span class="keyword">value</span> unit)</span><br><span class="line">DATE_SUB(base_date, <span class="type">INTERVAL</span> <span class="keyword">value</span> unit)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>base_date</code></strong>：基准日期（如 <code>CURDATE()</code>, <code>NOW()</code> 或字段名）。</li>
+<li><strong><code>value</code></strong>：数值（正负均可）。</li>
+<li><strong><code>unit</code></strong>：时间单位（如 <code>DAY</code>, <code>MONTH</code>, <code>YEAR</code>, <code>HOUR</code>, <code>MINUTE</code> 等）。</li>
+</ul>
+<hr>
+<h3 id="2-常见使用场景"><a href="#2-常见使用场景" class="headerlink" title="2. 常见使用场景"></a><strong>2. 常见使用场景</strong></h3><h4 id="场景-1：日期加减"><a href="#场景-1：日期加减" class="headerlink" title="场景 1：日期加减"></a><strong>场景 1：日期加减</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 当前时间加 7 天</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_ADD(NOW(), <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>) <span class="keyword">AS</span> future_date;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当前时间减 3 小时</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_SUB(NOW(), <span class="type">INTERVAL</span> <span class="number">3</span> <span class="keyword">HOUR</span>) <span class="keyword">AS</span> past_time;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 直接使用 `+ INTERVAL` 简化语法</span></span><br><span class="line"><span class="keyword">SELECT</span> NOW() <span class="operator">+</span> <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">MONTH</span> <span class="keyword">AS</span> next_month;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景-2：计算字段的过期时间"><a href="#场景-2：计算字段的过期时间" class="headerlink" title="场景 2：计算字段的过期时间"></a><strong>场景 2：计算字段的过期时间</strong></h4><p>假设有一个 <code>orders</code> 表，需要计算订单到期时间（创建时间 + 30 天）：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    order_id, </span><br><span class="line">    created_at, </span><br><span class="line">    created_at <span class="operator">+</span> <span class="type">INTERVAL</span> <span class="number">30</span> <span class="keyword">DAY</span> <span class="keyword">AS</span> expire_date</span><br><span class="line"><span class="keyword">FROM</span> orders;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景-3：过滤时间范围"><a href="#场景-3：过滤时间范围" class="headerlink" title="场景 3：过滤时间范围"></a><strong>场景 3：过滤时间范围</strong></h4><p>查询最近 7 天内的订单：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> orders</span><br><span class="line"><span class="keyword">WHERE</span> order_date <span class="operator">&gt;=</span> NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景-4：生成时间序列"><a href="#场景-4：生成时间序列" class="headerlink" title="场景 4：生成时间序列"></a><strong>场景 4：生成时间序列</strong></h4><p>生成过去 12 个月的月份序列：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_FORMAT(NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> n <span class="keyword">MONTH</span>, <span class="string">&#x27;%Y-%m&#x27;</span>) <span class="keyword">AS</span> <span class="keyword">month</span></span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">0</span> <span class="keyword">AS</span> n <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">2</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">3</span> <span class="keyword">UNION</span></span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">4</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">5</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">6</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">7</span> <span class="keyword">UNION</span></span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">8</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">9</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">10</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">11</span></span><br><span class="line">) <span class="keyword">AS</span> numbers;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="3-支持的-INTERVAL-单位"><a href="#3-支持的-INTERVAL-单位" class="headerlink" title="3. 支持的 INTERVAL 单位"></a><strong>3. 支持的 <code>INTERVAL</code> 单位</strong></h3><p>MySQL 支持以下时间单位：</p>
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>MICROSECOND</code></td>
+<td>微秒</td>
+</tr>
+<tr>
+<td><code>SECOND</code></td>
+<td>秒</td>
+</tr>
+<tr>
+<td><code>MINUTE</code></td>
+<td>分钟</td>
+</tr>
+<tr>
+<td><code>HOUR</code></td>
+<td>小时</td>
+</tr>
+<tr>
+<td><code>DAY</code></td>
+<td>天</td>
+</tr>
+<tr>
+<td><code>WEEK</code></td>
+<td>周</td>
+</tr>
+<tr>
+<td><code>MONTH</code></td>
+<td>月</td>
+</tr>
+<tr>
+<td><code>QUARTER</code></td>
+<td>季度（3 个月）</td>
+</tr>
+<tr>
+<td><code>YEAR</code></td>
+<td>年</td>
+</tr>
+<tr>
+<td><code>SECOND_MICROSECOND</code></td>
+<td>秒和微秒（如 <code>&#39;30.5&#39; SECOND_MICROSECOND</code>）</td>
+</tr>
+<tr>
+<td><code>MINUTE_MICROSECOND</code></td>
+<td>分钟、秒和微秒</td>
+</tr>
+<tr>
+<td>…（其他复合单位）</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="4-存储时间间隔的字段设计"><a href="#4-存储时间间隔的字段设计" class="headerlink" title="4. 存储时间间隔的字段设计"></a><strong>4. 存储时间间隔的字段设计</strong></h3><p>如果需要在表中存储时间间隔（如“有效期 30 天”），通常用以下两种方式：</p>
+<h4 id="方式-1：分开存储数值和单位"><a href="#方式-1：分开存储数值和单位" class="headerlink" title="方式 1：分开存储数值和单位"></a><strong>方式 1：分开存储数值和单位</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> subscriptions (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    duration <span class="type">INT</span>,       <span class="comment">-- 时间长度（如 30）</span></span><br><span class="line">    duration_unit <span class="type">VARCHAR</span>(<span class="number">10</span>)  <span class="comment">-- 单位（如 &#x27;DAY&#x27;）</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 计算过期时间</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_ADD(start_date, <span class="type">INTERVAL</span> duration duration_unit) <span class="keyword">AS</span> expire_date</span><br><span class="line"><span class="keyword">FROM</span> subscriptions;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方式-2：统一存储为秒数"><a href="#方式-2：统一存储为秒数" class="headerlink" title="方式 2：统一存储为秒数"></a><strong>方式 2：统一存储为秒数</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> tasks (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    timeout_seconds <span class="type">INT</span>  <span class="comment">-- 存储总秒数（如 3600 表示 1 小时）</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 转换为时间间隔</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_ADD(start_time, <span class="type">INTERVAL</span> timeout_seconds <span class="keyword">SECOND</span>) <span class="keyword">AS</span> end_time</span><br><span class="line"><span class="keyword">FROM</span> tasks;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="5-复杂示例：自动分区按时间间隔"><a href="#5-复杂示例：自动分区按时间间隔" class="headerlink" title="5. 复杂示例：自动分区按时间间隔"></a><strong>5. 复杂示例：自动分区按时间间隔</strong></h3><p>使用 <code>INTERVAL</code> 创建按月的自动分区表：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> logs (</span><br><span class="line">    log_date DATETIME,</span><br><span class="line">    content TEXT</span><br><span class="line">)</span><br><span class="line"><span class="keyword">PARTITION</span> <span class="keyword">BY</span> <span class="keyword">RANGE</span> COLUMNS(log_date) (</span><br><span class="line">    <span class="keyword">PARTITION</span> p202301 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-02-01&#x27;</span>),</span><br><span class="line">    <span class="keyword">PARTITION</span> p202302 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-03-01&#x27;</span>),</span><br><span class="line">    <span class="keyword">PARTITION</span> p202303 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-04-01&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="6-注意事项"><a href="#6-注意事项" class="headerlink" title="6. 注意事项"></a><strong>6. 注意事项</strong></h3><ol>
+<li><p><strong>时区问题</strong><br>使用 <code>INTERVAL</code> 计算时，确保基准日期和结果的时区一致（可通过 <code>CONVERT_TZ()</code> 转换）。</p>
+</li>
+<li><p><strong>闰年和月末</strong><br>加减月份时，MySQL 会自动处理月末：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 2023-01-31 + 1 MONTH → 2023-02-28</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_ADD(<span class="string">&#x27;2023-01-31&#x27;</span>, <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">MONTH</span>); </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>索引失效</strong><br>避免在 <code>WHERE</code> 条件中对字段使用函数（如 <code>DATE_ADD(column, INTERVAL ...)</code>），可能导致索引失效。建议改写为：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 优化前（索引可能失效）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> logs <span class="keyword">WHERE</span> DATE_ADD(log_date, <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>) <span class="operator">&gt;</span> NOW();</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 优化后（直接比较字段）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> logs <span class="keyword">WHERE</span> log_date <span class="operator">&gt;</span> NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p><code>INTERVAL</code> 是 MySQL 中处理日期和时间计算的核心工具，适用于：</p>
+<ul>
+<li>动态计算未来或过去的日期。</li>
+<li>生成时间序列或过滤时间范围。</li>
+<li>设计需要存储时间间隔的业务逻辑。</li>
+</ul>
+<p>结合 <code>DATE_ADD()</code>、<code>DATE_SUB()</code> 和直接日期表达式，可以高效实现复杂的时间操作。</p>
+<h1 id="题目：197-上升的温度"><a href="#题目：197-上升的温度" class="headerlink" title="题目：197.上升的温度"></a>题目：197.上升的温度</h1><p>表： <code>Weather</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+---------------+---------+</span><br><span class="line">| Column Name   | Type    |</span><br><span class="line">+---------------+---------+</span><br><span class="line">| id            | int     |</span><br><span class="line">| recordDate    | date    |</span><br><span class="line">| temperature   | int     |</span><br><span class="line">+---------------+---------+</span><br><span class="line">id 是该表具有唯一值的列。</span><br><span class="line">没有具有相同 recordDate 的不同行。</span><br><span class="line">该表包含特定日期的温度信息</span><br></pre></td></tr></table></figure>
+
+<p>编写解决方案，找出与之前（昨天的）日期相比温度更高的所有日期的 <code>id</code> 。</p>
+<p>返回结果 <strong>无顺序要求</strong> 。</p>
+<p>结果格式如下例子所示。</p>
+<p><strong>示例 1：</strong></p>
+<pre><strong>输入：</strong>
+Weather 表：
++----+------------+-------------+
+| id | recordDate | Temperature |
++----+------------+-------------+
+| 1  | 2015-01-01 | 10          |
+| 2  | 2015-01-02 | 25          |
+| 3  | 2015-01-03 | 20          |
+| 4  | 2015-01-04 | 30          |
++----+------------+-------------+
+<strong>输出：</strong>
++----+
+| id |
++----+
+| 2  |
+| 4  |
++----+
+<strong>解释：</strong>
+2015-01-02 的温度比前一天高（10 -> 25）
+2015-01-04 的温度比前一天高（20 -> 30）</pre>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> w1.id</span><br><span class="line"><span class="keyword">from</span> Weather w1, Weather w2</span><br><span class="line"><span class="keyword">where</span> w1.recordDate <span class="operator">-</span> <span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span> <span class="operator">=</span> w2.recordDate</span><br><span class="line"><span class="keyword">and</span></span><br><span class="line">w1.temperature <span class="operator">&gt;</span> w2.temperature</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>语法</category>
@@ -1376,151 +1602,6 @@ Bonus table:
       </categories>
       <tags>
         <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>力扣Mysql每日一题(interval)</title>
-    <url>/2025/03/03/mysqlnote/</url>
-    <content><![CDATA[<p>在 MySQL 中，<code>INTERVAL</code> 不是一种字段类型，而是一个<strong>用于日期和时间计算的运算符</strong>。它通常与日期函数（如 <code>DATE_ADD()</code>, <code>DATE_SUB()</code>）或直接日期表达式结合使用，用来表示时间间隔。以下是 <code>INTERVAL</code> 的常见用法和示例：</p>
-<h3 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a><strong>1. 基本语法</strong></h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">DATE_ADD(base_date, <span class="type">INTERVAL</span> <span class="keyword">value</span> unit)</span><br><span class="line">DATE_SUB(base_date, <span class="type">INTERVAL</span> <span class="keyword">value</span> unit)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong><code>base_date</code></strong>：基准日期（如 <code>CURDATE()</code>, <code>NOW()</code> 或字段名）。</li>
-<li><strong><code>value</code></strong>：数值（正负均可）。</li>
-<li><strong><code>unit</code></strong>：时间单位（如 <code>DAY</code>, <code>MONTH</code>, <code>YEAR</code>, <code>HOUR</code>, <code>MINUTE</code> 等）。</li>
-</ul>
-<hr>
-<h3 id="2-常见使用场景"><a href="#2-常见使用场景" class="headerlink" title="2. 常见使用场景"></a><strong>2. 常见使用场景</strong></h3><h4 id="场景-1：日期加减"><a href="#场景-1：日期加减" class="headerlink" title="场景 1：日期加减"></a><strong>场景 1：日期加减</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 当前时间加 7 天</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_ADD(NOW(), <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>) <span class="keyword">AS</span> future_date;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当前时间减 3 小时</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_SUB(NOW(), <span class="type">INTERVAL</span> <span class="number">3</span> <span class="keyword">HOUR</span>) <span class="keyword">AS</span> past_time;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 直接使用 `+ INTERVAL` 简化语法</span></span><br><span class="line"><span class="keyword">SELECT</span> NOW() <span class="operator">+</span> <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">MONTH</span> <span class="keyword">AS</span> next_month;</span><br></pre></td></tr></table></figure>
-
-<h4 id="场景-2：计算字段的过期时间"><a href="#场景-2：计算字段的过期时间" class="headerlink" title="场景 2：计算字段的过期时间"></a><strong>场景 2：计算字段的过期时间</strong></h4><p>假设有一个 <code>orders</code> 表，需要计算订单到期时间（创建时间 + 30 天）：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    order_id, </span><br><span class="line">    created_at, </span><br><span class="line">    created_at <span class="operator">+</span> <span class="type">INTERVAL</span> <span class="number">30</span> <span class="keyword">DAY</span> <span class="keyword">AS</span> expire_date</span><br><span class="line"><span class="keyword">FROM</span> orders;</span><br></pre></td></tr></table></figure>
-
-<h4 id="场景-3：过滤时间范围"><a href="#场景-3：过滤时间范围" class="headerlink" title="场景 3：过滤时间范围"></a><strong>场景 3：过滤时间范围</strong></h4><p>查询最近 7 天内的订单：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> orders</span><br><span class="line"><span class="keyword">WHERE</span> order_date <span class="operator">&gt;=</span> NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="场景-4：生成时间序列"><a href="#场景-4：生成时间序列" class="headerlink" title="场景 4：生成时间序列"></a><strong>场景 4：生成时间序列</strong></h4><p>生成过去 12 个月的月份序列：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_FORMAT(NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> n <span class="keyword">MONTH</span>, <span class="string">&#x27;%Y-%m&#x27;</span>) <span class="keyword">AS</span> <span class="keyword">month</span></span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">0</span> <span class="keyword">AS</span> n <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">2</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">3</span> <span class="keyword">UNION</span></span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">4</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">5</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">6</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">7</span> <span class="keyword">UNION</span></span><br><span class="line">    <span class="keyword">SELECT</span> <span class="number">8</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">9</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">10</span> <span class="keyword">UNION</span> <span class="keyword">SELECT</span> <span class="number">11</span></span><br><span class="line">) <span class="keyword">AS</span> numbers;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3-支持的-INTERVAL-单位"><a href="#3-支持的-INTERVAL-单位" class="headerlink" title="3. 支持的 INTERVAL 单位"></a><strong>3. 支持的 <code>INTERVAL</code> 单位</strong></h3><p>MySQL 支持以下时间单位：</p>
-<table>
-<thead>
-<tr>
-<th>单位</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>MICROSECOND</code></td>
-<td>微秒</td>
-</tr>
-<tr>
-<td><code>SECOND</code></td>
-<td>秒</td>
-</tr>
-<tr>
-<td><code>MINUTE</code></td>
-<td>分钟</td>
-</tr>
-<tr>
-<td><code>HOUR</code></td>
-<td>小时</td>
-</tr>
-<tr>
-<td><code>DAY</code></td>
-<td>天</td>
-</tr>
-<tr>
-<td><code>WEEK</code></td>
-<td>周</td>
-</tr>
-<tr>
-<td><code>MONTH</code></td>
-<td>月</td>
-</tr>
-<tr>
-<td><code>QUARTER</code></td>
-<td>季度（3 个月）</td>
-</tr>
-<tr>
-<td><code>YEAR</code></td>
-<td>年</td>
-</tr>
-<tr>
-<td><code>SECOND_MICROSECOND</code></td>
-<td>秒和微秒（如 <code>&#39;30.5&#39; SECOND_MICROSECOND</code>）</td>
-</tr>
-<tr>
-<td><code>MINUTE_MICROSECOND</code></td>
-<td>分钟、秒和微秒</td>
-</tr>
-<tr>
-<td>…（其他复合单位）</td>
-<td></td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="4-存储时间间隔的字段设计"><a href="#4-存储时间间隔的字段设计" class="headerlink" title="4. 存储时间间隔的字段设计"></a><strong>4. 存储时间间隔的字段设计</strong></h3><p>如果需要在表中存储时间间隔（如“有效期 30 天”），通常用以下两种方式：</p>
-<h4 id="方式-1：分开存储数值和单位"><a href="#方式-1：分开存储数值和单位" class="headerlink" title="方式 1：分开存储数值和单位"></a><strong>方式 1：分开存储数值和单位</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> subscriptions (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    duration <span class="type">INT</span>,       <span class="comment">-- 时间长度（如 30）</span></span><br><span class="line">    duration_unit <span class="type">VARCHAR</span>(<span class="number">10</span>)  <span class="comment">-- 单位（如 &#x27;DAY&#x27;）</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 计算过期时间</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_ADD(start_date, <span class="type">INTERVAL</span> duration duration_unit) <span class="keyword">AS</span> expire_date</span><br><span class="line"><span class="keyword">FROM</span> subscriptions;</span><br></pre></td></tr></table></figure>
-
-<h4 id="方式-2：统一存储为秒数"><a href="#方式-2：统一存储为秒数" class="headerlink" title="方式 2：统一存储为秒数"></a><strong>方式 2：统一存储为秒数</strong></h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> tasks (</span><br><span class="line">    id <span class="type">INT</span> <span class="keyword">PRIMARY KEY</span>,</span><br><span class="line">    timeout_seconds <span class="type">INT</span>  <span class="comment">-- 存储总秒数（如 3600 表示 1 小时）</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 转换为时间间隔</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    DATE_ADD(start_time, <span class="type">INTERVAL</span> timeout_seconds <span class="keyword">SECOND</span>) <span class="keyword">AS</span> end_time</span><br><span class="line"><span class="keyword">FROM</span> tasks;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="5-复杂示例：自动分区按时间间隔"><a href="#5-复杂示例：自动分区按时间间隔" class="headerlink" title="5. 复杂示例：自动分区按时间间隔"></a><strong>5. 复杂示例：自动分区按时间间隔</strong></h3><p>使用 <code>INTERVAL</code> 创建按月的自动分区表：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE TABLE</span> logs (</span><br><span class="line">    log_date DATETIME,</span><br><span class="line">    content TEXT</span><br><span class="line">)</span><br><span class="line"><span class="keyword">PARTITION</span> <span class="keyword">BY</span> <span class="keyword">RANGE</span> COLUMNS(log_date) (</span><br><span class="line">    <span class="keyword">PARTITION</span> p202301 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-02-01&#x27;</span>),</span><br><span class="line">    <span class="keyword">PARTITION</span> p202302 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-03-01&#x27;</span>),</span><br><span class="line">    <span class="keyword">PARTITION</span> p202303 <span class="keyword">VALUES</span> LESS THAN (<span class="string">&#x27;2023-04-01&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="6-注意事项"><a href="#6-注意事项" class="headerlink" title="6. 注意事项"></a><strong>6. 注意事项</strong></h3><ol>
-<li><p><strong>时区问题</strong><br>使用 <code>INTERVAL</code> 计算时，确保基准日期和结果的时区一致（可通过 <code>CONVERT_TZ()</code> 转换）。</p>
-</li>
-<li><p><strong>闰年和月末</strong><br>加减月份时，MySQL 会自动处理月末：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 2023-01-31 + 1 MONTH → 2023-02-28</span></span><br><span class="line"><span class="keyword">SELECT</span> DATE_ADD(<span class="string">&#x27;2023-01-31&#x27;</span>, <span class="type">INTERVAL</span> <span class="number">1</span> <span class="keyword">MONTH</span>); </span><br></pre></td></tr></table></figure></li>
-<li><p><strong>索引失效</strong><br>避免在 <code>WHERE</code> 条件中对字段使用函数（如 <code>DATE_ADD(column, INTERVAL ...)</code>），可能导致索引失效。建议改写为：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 优化前（索引可能失效）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> logs <span class="keyword">WHERE</span> DATE_ADD(log_date, <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>) <span class="operator">&gt;</span> NOW();</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 优化后（直接比较字段）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> logs <span class="keyword">WHERE</span> log_date <span class="operator">&gt;</span> NOW() <span class="operator">-</span> <span class="type">INTERVAL</span> <span class="number">7</span> <span class="keyword">DAY</span>;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p><code>INTERVAL</code> 是 MySQL 中处理日期和时间计算的核心工具，适用于：</p>
-<ul>
-<li>动态计算未来或过去的日期。</li>
-<li>生成时间序列或过滤时间范围。</li>
-<li>设计需要存储时间间隔的业务逻辑。</li>
-</ul>
-<p>结合 <code>DATE_ADD()</code>、<code>DATE_SUB()</code> 和直接日期表达式，可以高效实现复杂的时间操作。</p>
-<h1 id="题目：197-上升的温度"><a href="#题目：197-上升的温度" class="headerlink" title="题目：197.上升的温度"></a>题目：197.上升的温度</h1><p>表： <code>Weather</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+---------------+---------+</span><br><span class="line">| Column Name   | Type    |</span><br><span class="line">+---------------+---------+</span><br><span class="line">| id            | int     |</span><br><span class="line">| recordDate    | date    |</span><br><span class="line">| temperature   | int     |</span><br><span class="line">+---------------+---------+</span><br><span class="line">id 是该表具有唯一值的列。</span><br><span class="line">没有具有相同 recordDate 的不同行。</span><br><span class="line">该表包含特定日期的温度信息</span><br></pre></td></tr></table></figure>
-
-<p>编写解决方案，找出与之前（昨天的）日期相比温度更高的所有日期的 <code>id</code> 。</p>
-<p>返回结果 <strong>无顺序要求</strong> 。</p>
-<p>结果格式如下例子所示。</p>
-<p><strong>示例 1：</strong></p>
-<pre><strong>输入：</strong>
-Weather 表：
-+----+------------+-------------+
-| id | recordDate | Temperature |
-+----+------------+-------------+
-| 1  | 2015-01-01 | 10          |
-| 2  | 2015-01-02 | 25          |
-| 3  | 2015-01-03 | 20          |
-| 4  | 2015-01-04 | 30          |
-+----+------------+-------------+
-<strong>输出：</strong>
-+----+
-| id |
-+----+
-| 2  |
-| 4  |
-+----+
-<strong>解释：</strong>
-2015-01-02 的温度比前一天高（10 -> 25）
-2015-01-04 的温度比前一天高（20 -> 30）</pre>
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> w1.id</span><br><span class="line"><span class="keyword">from</span> Weather w1, Weather w2</span><br><span class="line"><span class="keyword">where</span> w1.recordDate <span class="operator">-</span> <span class="type">interval</span> <span class="number">1</span> <span class="keyword">day</span> <span class="operator">=</span> w2.recordDate</span><br><span class="line"><span class="keyword">and</span></span><br><span class="line">w1.temperature <span class="operator">&gt;</span> w2.temperature</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
       </tags>
   </entry>
 </search>

@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vector"><span class="nav-number">1.</span> <span class="nav-text">vector</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#list"><span class="nav-number">2.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">成员函数</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">容器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vector"><span class="nav-number">1.1.</span> <span class="nav-text">vector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">1.2.</span> <span class="nav-text">list</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -165,7 +165,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -241,14 +241,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.3k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -259,7 +259,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>C++ STL（标准模板库）中最常用的容器包括：</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><p>C++ STL（标准模板库）中最常用的容器包括：</p>
 <ol>
 <li><strong>vector</strong><ul>
 <li>动态数组，支持随机访问，尾部插入和删除高效。</li>
@@ -332,9 +332,37 @@
 </ul>
 </li>
 </ol>
-<h1 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">vec.<span class="built_in">reserve</span>(<span class="number">10</span>); <span class="comment">// 仅仅预留空间大小，若用[]访问会访问野空间，使用at访问则会抛出异常</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">capacity</span>()&lt;&lt;std::endl;</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span>(<span class="type">const</span> std::exception&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">    std::cerr &lt;&lt; e.<span class="built_in">what</span>() &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">vec.<span class="built_in">resize</span>(<span class="number">10</span>); <span class="comment">// 此时分配的空间是实打实的空间，全部初始化为0</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+<h2 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h2><p>初始化方法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1; <span class="comment">// 空的 vector</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec2</span><span class="params">(<span class="number">5</span>)</span></span>; <span class="comment">//  5 个初始值为 0</span></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">vec3</span><span class="params">(<span class="number">5</span>, <span class="number">10</span>)</span></span>;<span class="comment">//包含 5 个元素,初始值为 10</span></span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec4 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;; <span class="comment">//初始化列表</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="list"><a href="#list" class="headerlink" title="list"></a>list</h1><h1 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h1><table>
+<p><code>.reserve()</code>与 <code>.resize()方法</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">vec.<span class="built_in">reserve</span>(<span class="number">10</span>); <span class="comment">// 仅仅预留空间大小，若用[]访问会访问野空间，使用at访问则会抛出异常</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">capacity</span>()&lt;&lt;std::endl;</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">catch</span>(<span class="type">const</span> std::exception&amp; e)</span><br><span class="line">&#123;</span><br><span class="line">    std::cerr &lt;&lt; e.<span class="built_in">what</span>() &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">vec.<span class="built_in">resize</span>(<span class="number">10</span>); <span class="comment">// 此时分配的空间是实打实的空间，全部初始化为0</span></span><br><span class="line">std::cout&lt;&lt;vec.<span class="built_in">at</span>(<span class="number">0</span>)&lt;&lt;std::endl;</span><br></pre></td></tr></table></figure>
+
+<p>添加元素&#x2F;删除元素</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vec.<span class="built_in">push_back</span>(<span class="number">10</span>);<span class="comment">// 在尾部添加元素</span></span><br><span class="line">vec.<span class="built_in">emplace_back</span>(<span class="number">40</span>);<span class="comment">// 使用 emplace_back 直接构造元素</span></span><br><span class="line">vec.<span class="built_in">pop_back</span>();<span class="comment">// 删除最后一个元素</span></span><br><span class="line">vec.<span class="built_in">erase</span>(vec.<span class="built_in">begin</span>() + <span class="number">1</span>);<span class="comment">// 删除指定位置的元素（删除第 2 个元素）</span></span><br></pre></td></tr></table></figure>
+
+<p>访问方法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::cout &lt;&lt; <span class="string">&quot;Element at index 2: &quot;</span> &lt;&lt; vec[<span class="number">2</span>] &lt;&lt; std::endl;<span class="comment">// 使用下标访问元素  </span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Element at index 3: &quot;</span> &lt;&lt; vec.<span class="built_in">at</span>(<span class="number">3</span>) &lt;&lt; std::endl;<span class="comment">// 使用 at() 访问元素（会检查边界）  </span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;First element: &quot;</span> &lt;&lt; vec.<span class="built_in">front</span>() &lt;&lt; std::endl;<span class="comment">// 访问第一个</span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Last element: &quot;</span> &lt;&lt; vec.<span class="built_in">back</span>() &lt;&lt; std::endl;<span class="comment">//最后一个元素</span></span><br></pre></td></tr></table></figure>
+
+<p>遍历方法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; vec.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">    std::cout &lt;&lt; vec[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;<span class="comment">// 使用下标遍历  </span></span><br><span class="line"></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Using range-based for loop: &quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i : vec) &#123;</span><br><span class="line">    std::cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;  <span class="comment">// 使用范围 for 循环遍历</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = vec.<span class="built_in">begin</span>(); it != vec.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">    std::cout &lt;&lt; *it &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;<span class="comment">// 使用迭代器遍历</span></span><br></pre></td></tr></table></figure>
+
+<p>排序</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());    <span class="comment">// 对 vector 进行升序排序</span></span><br></pre></td></tr></table></figure>
+
+<p>交换</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec2 = &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;;</span><br><span class="line">vec<span class="number">1.</span><span class="built_in">swap</span>(vec2);</span><br></pre></td></tr></table></figure>
+
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><p>初始化与vector保持一致。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">初始化与vector保持一致。</span><br></pre></td></tr></table></figure>
+
+<p>添加元素<br><code>.push_back()</code>在尾部添加元素，<code>.push_front()</code>在头部添加元素。</p>
+<p>访问元素</p>
+<p><code>.front()</code>访问头 <code>.back()</code>访问尾。</p>
+<p>删除</p>
+<p><code>.pop_front()</code>删除头部元素 <code>.pop_back()</code>删除尾部元素。</p>
+<p>成员函数</p>
+<table>
 <thead>
 <tr>
 <th>特性</th>
@@ -423,13 +451,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">30k</span>
+    <span title="站点总字数">12k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">43 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动

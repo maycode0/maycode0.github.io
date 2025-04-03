@@ -1052,7 +1052,8 @@ Triangle 表:
   <entry>
     <title>CSS3学习记录</title>
     <url>/2025/03/11/webNote/</url>
-    <content><![CDATA[<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><p>关键属性：<code>float</code></p>
+    <content><![CDATA[<hr>
+<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><p>关键属性：<code>float</code></p>
 <p>值：left、right</p>
 <p>清除浮动：本质是闭合浮动</p>
 <ul>
@@ -1087,7 +1088,6 @@ Triangle 表:
 <p><strong>动画：</strong></p>
 <p>定义动画</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@keyframes 动画名</span><br><span class="line">&#123;</span><br><span class="line"> 	0%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	100%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
 <p>配合使用属性</p>
 <p><code>animation-name</code></p>

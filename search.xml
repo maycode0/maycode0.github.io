@@ -1,6 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Css布局——Flex or Grid</title>
+    <url>/2025/04/03/CssLayout/</url>
+    <content><![CDATA[<h1 id="css-布局"><a href="#css-布局" class="headerlink" title="css 布局"></a>css 布局</h1><h2 id="Flex-布局"><a href="#Flex-布局" class="headerlink" title="Flex 布局"></a>Flex 布局</h2><p><strong>开启 flex 布局：</strong><code>display:flex</code></p>
+<p><strong>属性：</strong></p>
+<ul>
+<li><strong>flex-grow：子元素大小等于子元素大小 + grow 的值的计算权重</strong></li>
+<li><strong>flex-shrink：子元素大小等于子元素大小 - shrink 的值的计算权重</strong></li>
+<li><strong>flex-basis：自定义每一个子元素大小</strong></li>
+</ul>
+<p><strong>复合属性：</strong></p>
+<ul>
+<li><strong>flex：</strong><code>flex: flex-grow flex-shrink flex-basis</code> （默认值：0 1 auto）</li>
+<li><strong>：initial：默认值、auto：1 1 auto、none：0 0 auto</strong></li>
+</ul>
+<p><strong>垂直对齐：</strong><code>align-items</code></p>
+<p><strong>设为</strong> <code>display:flex</code>时候，元素被强行拉为一行，等价于 <code>align-items:streatch</code>,此属性管的是元素在交叉轴（垂直轴）的对齐方式，是默认值，还可以设置:</p>
+<ul>
+<li><code>align-items:flex-start</code>：交叉轴起点对齐</li>
+<li><code>align-items:flex-end</code>：交叉轴终点对齐</li>
+<li><code>align-items:center</code>：交叉轴中点对齐</li>
+<li><code>align-items:baseline</code>：文字基线对齐</li>
+</ul>
+<p><strong>水平对齐：</strong><code>justify-content</code></p>
+<p><code>justify-content:flex-start</code>：默认值</p>
+<ul>
+<li><code>justify-content:flex-end</code></li>
+<li><code>justify-content:center</code></li>
+<li><code>justify-content:space-between</code>：首尾元素靠边</li>
+<li><code>justify-content:space-around</code>：中间间距是两边间距两倍</li>
+<li><code>justify-content:space-evenly</code>：均匀分布</li>
+</ul>
+<p><code>flex-wrap</code>：换行</p>
+<ul>
+<li><code>flex-wrap:nowrap</code>：默认值，不换行，子元素不会超过父元素大小</li>
+<li><code>flex-wrap:wrap</code>：换行，每个元素都会编程原来的大小</li>
+</ul>
+<p><strong>使用 flex-wrap 换行之后，调整每行的对齐方式：</strong></p>
+<ul>
+<li><code>align-content:normal</code>：默认值，交叉轴方向</li>
+<li><code>align-content:flex-start</code>：交叉轴开始对齐</li>
+<li><code>align-content:flex-end</code>：交叉轴结束对齐</li>
+<li><code>align-content:space-around</code>：交叉轴中间间距是两边间距两倍</li>
+<li><code>align-content:space-between</code>：首尾元素靠边</li>
+<li><code>align-content:space-evenly</code>：均匀分布</li>
+</ul>
+<p><code>order</code>属性：调整元素顺序</p>
+<hr>
+<h2 id="Grid-布局"><a href="#Grid-布局" class="headerlink" title="Grid 布局"></a>Grid 布局</h2><p><strong>开启 Grid 布局：</strong><code>display:grid</code></p>
+<p><strong>指定列：</strong></p>
+<ul>
+<li><code>grid-template-columns:repeat(3, 50px);</code></li>
+</ul>
+<p><strong>等价于</strong></p>
+<ul>
+<li><code>grid-template-columns:50px 50px 50px;</code></li>
+<li><code>grid-template-columns: 1fr 1fr 1fr;</code>：均分，fr 分数 x+x+x&#x3D;父元素宽度</li>
+</ul>
+<p>** 如果一行还有位置则填充 ,使用**<code>minmax</code>则会调整元素大小</p>
+<ul>
+<li><code>grid-template-columns: repeat(auto-fill,200px);</code></li>
+<li><code>grid-template-columns: repeat(auto-fill,minmax(100px, 1fr));</code></li>
+</ul>
+<p><strong>指定行：</strong></p>
+<ul>
+<li><code>grid-template-rows: 20px 40px 60px;</code></li>
+</ul>
+<blockquote>
+<p>template 优先级大于 auto 指定了的就用指定的 不指定就用 auto 设置的</p>
+</blockquote>
+<p><strong>行列间隙</strong></p>
+<ul>
+<li><code>grid-row-gap: 20px;</code> ：行空</li>
+<li><code>grid-column-gap: 20px;</code>：列空</li>
+<li><code>gap: 10px 50px;</code>：简写， (行，列)</li>
+</ul>
+<p><strong>指定区域：</strong></p>
+<ul>
+<li><strong>划线法：麻烦</strong></li>
+<li><strong>区域法：给元素指定区域：</strong><code>grid-area:</code>，在父元素中指定区域放什么 <code>grid-template-areas</code>，其中可以使用 . 占位</li>
+</ul>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>布局</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KMP算法学习</title>
     <url>/2025/02/07/KMP/</url>
     <content><![CDATA[]]></content>
@@ -158,6 +247,17 @@
       </categories>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello CMAKE</title>
+    <url>/2025/02/27/cmake/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>默认标签</category>
+      </categories>
+      <tags>
+        <tag>默认标签</tag>
       </tags>
   </entry>
   <entry>
@@ -332,17 +432,6 @@
       </categories>
       <tags>
         <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello CMAKE</title>
-    <url>/2025/02/27/cmake/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>默认标签</category>
-      </categories>
-      <tags>
-        <tag>默认标签</tag>
       </tags>
   </entry>
   <entry>
@@ -662,6 +751,74 @@ Person 表:
       </tags>
   </entry>
   <entry>
+    <title>Mysql常用操作</title>
+    <url>/2025/02/27/mysql/</url>
+    <content><![CDATA[<h3 id="一、数据库操作"><a href="#一、数据库操作" class="headerlink" title="一、数据库操作"></a><strong>一、数据库操作</strong></h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1. 创建数据库"></a>1. 创建数据库</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS `test_db` DEFAULT CHARACTER SET utf8mb4;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：创建名为 <code>test_db</code> 的数据库，字符集为 <code>utf8mb4</code>（支持中文和表情符号）。</p>
+<h4 id="2-切换数据库"><a href="#2-切换数据库" class="headerlink" title="2. 切换数据库"></a>2. 切换数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">USE `test_db`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-删除数据库"><a href="#3-删除数据库" class="headerlink" title="3. 删除数据库"></a>3. 删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP DATABASE IF EXISTS `test_db`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、表操作"><a href="#二、表操作" class="headerlink" title="二、表操作"></a><strong>二、表操作</strong></h3><h4 id="1-创建表（含字段约束）"><a href="#1-创建表（含字段约束）" class="headerlink" title="1. 创建表（含字段约束）"></a>1. 创建表（含字段约束）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE `users` (</span><br><span class="line">  `id` INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` VARCHAR(50) NOT NULL,</span><br><span class="line">  `email` VARCHAR(100) UNIQUE,</span><br><span class="line">  `age` INT DEFAULT 18,</span><br><span class="line">  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>字段说明</strong>：</p>
+<ul>
+<li><code>PRIMARY KEY</code>：主键约束</li>
+<li><code>AUTO_INCREMENT</code>：自增</li>
+<li><code>UNIQUE</code>：唯一约束</li>
+<li><code>DEFAULT</code>：默认值</li>
+</ul>
+<h4 id="2-修改表结构"><a href="#2-修改表结构" class="headerlink" title="2. 修改表结构"></a>2. 修改表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 添加新列</span><br><span class="line">ALTER TABLE `users` ADD COLUMN `gender` ENUM(&#x27;male&#x27;, &#x27;female&#x27;) AFTER `age`;</span><br><span class="line"></span><br><span class="line">-- 修改列类型</span><br><span class="line">ALTER TABLE `users` MODIFY COLUMN `name` VARCHAR(100);</span><br><span class="line"></span><br><span class="line">-- 删除列</span><br><span class="line">ALTER TABLE `users` DROP COLUMN `gender`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-删除表"><a href="#3-删除表" class="headerlink" title="3. 删除表"></a>3. 删除表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `users`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="三、数据操作（CRUD）"><a href="#三、数据操作（CRUD）" class="headerlink" title="三、数据操作（CRUD）"></a><strong>三、数据操作（CRUD）</strong></h3><h4 id="1-插入数据"><a href="#1-插入数据" class="headerlink" title="1. 插入数据"></a>1. 插入数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 插入单条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`, `age`) </span><br><span class="line">VALUES (&#x27;Alice&#x27;, &#x27;alice@example.com&#x27;, 25);</span><br><span class="line"></span><br><span class="line">-- 插入多条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`) </span><br><span class="line">VALUES (&#x27;Bob&#x27;, &#x27;bob@test.com&#x27;), (&#x27;Charlie&#x27;, &#x27;charlie@test.com&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查询数据"><a href="#2-查询数据" class="headerlink" title="2. 查询数据"></a>2. 查询数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查询所有字段</span><br><span class="line">SELECT * FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 条件查询（WHERE）</span><br><span class="line">SELECT `name`, `age` FROM `users` WHERE `age` &gt; 20;</span><br><span class="line"></span><br><span class="line">-- 排序（ORDER BY）</span><br><span class="line">SELECT * FROM `users` ORDER BY `created_at` DESC;</span><br><span class="line"></span><br><span class="line">-- 分页（LIMIT）</span><br><span class="line">SELECT * FROM `users` LIMIT 10 OFFSET 0; -- 第1页，每页10条</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3. 更新数据"></a>3. 更新数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `users` </span><br><span class="line">SET `age` = 30, `email` = &#x27;alice_new@example.com&#x27; </span><br><span class="line">WHERE `id` = 1;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-删除数据"><a href="#4-删除数据" class="headerlink" title="4. 删除数据"></a>4. 删除数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM `users` WHERE `id` = 3;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="四、复杂查询"><a href="#四、复杂查询" class="headerlink" title="四、复杂查询"></a><strong>四、复杂查询</strong></h3><h4 id="1-聚合函数"><a href="#1-聚合函数" class="headerlink" title="1. 聚合函数"></a>1. 聚合函数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 统计总数、平均值</span><br><span class="line">SELECT COUNT(*) AS total_users, AVG(age) AS avg_age FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 分组统计（GROUP BY）</span><br><span class="line">SELECT `gender`, COUNT(*) AS count FROM `users` GROUP BY `gender`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-连接查询（JOIN）"><a href="#2-连接查询（JOIN）" class="headerlink" title="2. 连接查询（JOIN）"></a>2. 连接查询（JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建订单表</span><br><span class="line">CREATE TABLE `orders` (</span><br><span class="line">  `order_id` INT PRIMARY KEY,</span><br><span class="line">  `user_id` INT,</span><br><span class="line">  `amount` DECIMAL(10,2),</span><br><span class="line">  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 内连接（INNER JOIN）</span><br><span class="line">SELECT u.`name`, o.`order_id`, o.`amount`</span><br><span class="line">FROM `users` u</span><br><span class="line">INNER JOIN `orders` o ON u.`id` = o.`user_id`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-子查询"><a href="#3-子查询" class="headerlink" title="3. 子查询"></a>3. 子查询</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT `name` </span><br><span class="line">FROM `users` </span><br><span class="line">WHERE `id` IN (SELECT `user_id` FROM `orders` WHERE `amount` &gt; 100);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="五、高级功能"><a href="#五、高级功能" class="headerlink" title="五、高级功能"></a><strong>五、高级功能</strong></h3><h4 id="1-索引优化"><a href="#1-索引优化" class="headerlink" title="1. 索引优化"></a>1. 索引优化</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建索引</span><br><span class="line">CREATE INDEX `idx_email` ON `users` (`email`);</span><br><span class="line"></span><br><span class="line">-- 查看索引</span><br><span class="line">SHOW INDEX FROM `users`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-事务处理"><a href="#2-事务处理" class="headerlink" title="2. 事务处理"></a>2. 事务处理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">START TRANSACTION;</span><br><span class="line">UPDATE `account` SET balance = balance - 100 WHERE user_id = 1;</span><br><span class="line">UPDATE `account` SET balance = balance + 100 WHERE user_id = 2;</span><br><span class="line">COMMIT; -- 提交事务</span><br><span class="line">-- ROLLBACK; -- 回滚事务</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-用户权限管理"><a href="#3-用户权限管理" class="headerlink" title="3. 用户权限管理"></a>3. 用户权限管理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建用户并授权</span><br><span class="line">CREATE USER &#x27;dev_user&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password123&#x27;;</span><br><span class="line">GRANT SELECT, INSERT, UPDATE ON `test_db`.* TO &#x27;dev_user&#x27;@&#x27;%&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="六、实用命令"><a href="#六、实用命令" class="headerlink" title="六、实用命令"></a><strong>六、实用命令</strong></h3><h4 id="1-导入-导出数据"><a href="#1-导入-导出数据" class="headerlink" title="1. 导入&#x2F;导出数据"></a>1. 导入&#x2F;导出数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 导出整个数据库（命令行）</span><br><span class="line">mysqldump -u root -p test_db &gt; backup.sql</span><br><span class="line"></span><br><span class="line"># 导入数据</span><br><span class="line">mysql -u root -p test_db &lt; backup.sql</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-查看表结构"><a href="#2-查看表结构" class="headerlink" title="2. 查看表结构"></a>2. 查看表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DESC `users`;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-查看建表语句"><a href="#3-查看建表语句" class="headerlink" title="3. 查看建表语句"></a>3. 查看建表语句</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE TABLE `users`;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="高频场景示例"><a href="#高频场景示例" class="headerlink" title="高频场景示例"></a><strong>高频场景示例</strong></h3><h4 id="场景1：分页查询用户列表（每页5条）"><a href="#场景1：分页查询用户列表（每页5条）" class="headerlink" title="场景1：分页查询用户列表（每页5条）"></a>场景1：分页查询用户列表（每页5条）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">ORDER BY `id` </span><br><span class="line">LIMIT 5 OFFSET 0; -- 第1页</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景2：模糊查询（查找名字包含-“DB”-的用户）"><a href="#场景2：模糊查询（查找名字包含-“DB”-的用户）" class="headerlink" title="场景2：模糊查询（查找名字包含 “DB” 的用户）"></a>场景2：模糊查询（查找名字包含 “DB” 的用户）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">WHERE `name` LIKE &#x27;%DB%&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="场景3：批量更新状态"><a href="#场景3：批量更新状态" class="headerlink" title="场景3：批量更新状态"></a>场景3：批量更新状态</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `products` </span><br><span class="line">SET `status` = &#x27;offline&#x27; </span><br><span class="line">WHERE `stock` = 0;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mysql 连接查询</title>
     <url>/2025/03/02/mysql_join_connect/</url>
     <content><![CDATA[<h3 id="1-内连接（INNER-JOIN）"><a href="#1-内连接（INNER-JOIN）" class="headerlink" title="1. 内连接（INNER JOIN）"></a>1. <strong>内连接（INNER JOIN）</strong></h3><ul>
@@ -947,71 +1104,30 @@ Bonus table:
       </tags>
   </entry>
   <entry>
-    <title>Mysql常用操作</title>
-    <url>/2025/02/27/mysql/</url>
-    <content><![CDATA[<h3 id="一、数据库操作"><a href="#一、数据库操作" class="headerlink" title="一、数据库操作"></a><strong>一、数据库操作</strong></h3><h4 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1. 创建数据库"></a>1. 创建数据库</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS `test_db` DEFAULT CHARACTER SET utf8mb4;</span><br></pre></td></tr></table></figure>
+    <title>C++中复杂用法小计</title>
+    <url>/2025/03/03/noteC-1/</url>
+    <content><![CDATA[<h1 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h1><p>例：二维数组分配。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> **array;</span><br><span class="line"><span class="comment">// 假定数组第一维长度为 m， 第二维长度为 n</span></span><br><span class="line"><span class="comment">// 动态分配空间</span></span><br><span class="line">array = <span class="keyword">new</span> <span class="type">int</span> *[m];</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    array[i] = <span class="keyword">new</span> <span class="type">int</span> [n];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> [] array[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">delete</span> [] array;</span><br></pre></td></tr></table></figure>
 
-<p><strong>示例</strong>：创建名为 <code>test_db</code> 的数据库，字符集为 <code>utf8mb4</code>（支持中文和表情符号）。</p>
-<h4 id="2-切换数据库"><a href="#2-切换数据库" class="headerlink" title="2. 切换数据库"></a>2. 切换数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">USE `test_db`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-删除数据库"><a href="#3-删除数据库" class="headerlink" title="3. 删除数据库"></a>3. 删除数据库</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP DATABASE IF EXISTS `test_db`;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="二、表操作"><a href="#二、表操作" class="headerlink" title="二、表操作"></a><strong>二、表操作</strong></h3><h4 id="1-创建表（含字段约束）"><a href="#1-创建表（含字段约束）" class="headerlink" title="1. 创建表（含字段约束）"></a>1. 创建表（含字段约束）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE `users` (</span><br><span class="line">  `id` INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` VARCHAR(50) NOT NULL,</span><br><span class="line">  `email` VARCHAR(100) UNIQUE,</span><br><span class="line">  `age` INT DEFAULT 18,</span><br><span class="line">  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p><strong>字段说明</strong>：</p>
-<ul>
-<li><code>PRIMARY KEY</code>：主键约束</li>
-<li><code>AUTO_INCREMENT</code>：自增</li>
-<li><code>UNIQUE</code>：唯一约束</li>
-<li><code>DEFAULT</code>：默认值</li>
+<h1 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h1><h1 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h1><ul>
+<li>shared_ptr：共享一个对象</li>
+<li>unique_ptr：独占一个对象</li>
+<li>weak_ptr：</li>
 </ul>
-<h4 id="2-修改表结构"><a href="#2-修改表结构" class="headerlink" title="2. 修改表结构"></a>2. 修改表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 添加新列</span><br><span class="line">ALTER TABLE `users` ADD COLUMN `gender` ENUM(&#x27;male&#x27;, &#x27;female&#x27;) AFTER `age`;</span><br><span class="line"></span><br><span class="line">-- 修改列类型</span><br><span class="line">ALTER TABLE `users` MODIFY COLUMN `name` VARCHAR(100);</span><br><span class="line"></span><br><span class="line">-- 删除列</span><br><span class="line">ALTER TABLE `users` DROP COLUMN `gender`;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>shared_ptr常用 <code>std::make_shared &lt;&gt; ()</code>来创建</p>
+</blockquote>
+<p>shared_ptr使用引用计数来判断是否销毁指针空间，但也存在内存泄漏问题</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">B</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    std::shared_ptr&lt;B&gt; pointer;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;A 被销毁&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    std::shared_ptr&lt;A&gt; pointer;</span><br><span class="line">    ~<span class="built_in">B</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;B 被销毁&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> a = std::<span class="built_in">make_shared</span>&lt;A&gt;();</span><br><span class="line">    <span class="keyword">auto</span> b = std::<span class="built_in">make_shared</span>&lt;B&gt;();</span><br><span class="line">    a-&gt;pointer = b;</span><br><span class="line">    b-&gt;pointer = a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-删除表"><a href="#3-删除表" class="headerlink" title="3. 删除表"></a>3. 删除表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `users`;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="三、数据操作（CRUD）"><a href="#三、数据操作（CRUD）" class="headerlink" title="三、数据操作（CRUD）"></a><strong>三、数据操作（CRUD）</strong></h3><h4 id="1-插入数据"><a href="#1-插入数据" class="headerlink" title="1. 插入数据"></a>1. 插入数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 插入单条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`, `age`) </span><br><span class="line">VALUES (&#x27;Alice&#x27;, &#x27;alice@example.com&#x27;, 25);</span><br><span class="line"></span><br><span class="line">-- 插入多条数据</span><br><span class="line">INSERT INTO `users` (`name`, `email`) </span><br><span class="line">VALUES (&#x27;Bob&#x27;, &#x27;bob@test.com&#x27;), (&#x27;Charlie&#x27;, &#x27;charlie@test.com&#x27;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-查询数据"><a href="#2-查询数据" class="headerlink" title="2. 查询数据"></a>2. 查询数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 查询所有字段</span><br><span class="line">SELECT * FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 条件查询（WHERE）</span><br><span class="line">SELECT `name`, `age` FROM `users` WHERE `age` &gt; 20;</span><br><span class="line"></span><br><span class="line">-- 排序（ORDER BY）</span><br><span class="line">SELECT * FROM `users` ORDER BY `created_at` DESC;</span><br><span class="line"></span><br><span class="line">-- 分页（LIMIT）</span><br><span class="line">SELECT * FROM `users` LIMIT 10 OFFSET 0; -- 第1页，每页10条</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3. 更新数据"></a>3. 更新数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `users` </span><br><span class="line">SET `age` = 30, `email` = &#x27;alice_new@example.com&#x27; </span><br><span class="line">WHERE `id` = 1;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-删除数据"><a href="#4-删除数据" class="headerlink" title="4. 删除数据"></a>4. 删除数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM `users` WHERE `id` = 3;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="四、复杂查询"><a href="#四、复杂查询" class="headerlink" title="四、复杂查询"></a><strong>四、复杂查询</strong></h3><h4 id="1-聚合函数"><a href="#1-聚合函数" class="headerlink" title="1. 聚合函数"></a>1. 聚合函数</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 统计总数、平均值</span><br><span class="line">SELECT COUNT(*) AS total_users, AVG(age) AS avg_age FROM `users`;</span><br><span class="line"></span><br><span class="line">-- 分组统计（GROUP BY）</span><br><span class="line">SELECT `gender`, COUNT(*) AS count FROM `users` GROUP BY `gender`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-连接查询（JOIN）"><a href="#2-连接查询（JOIN）" class="headerlink" title="2. 连接查询（JOIN）"></a>2. 连接查询（JOIN）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建订单表</span><br><span class="line">CREATE TABLE `orders` (</span><br><span class="line">  `order_id` INT PRIMARY KEY,</span><br><span class="line">  `user_id` INT,</span><br><span class="line">  `amount` DECIMAL(10,2),</span><br><span class="line">  FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">-- 内连接（INNER JOIN）</span><br><span class="line">SELECT u.`name`, o.`order_id`, o.`amount`</span><br><span class="line">FROM `users` u</span><br><span class="line">INNER JOIN `orders` o ON u.`id` = o.`user_id`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-子查询"><a href="#3-子查询" class="headerlink" title="3. 子查询"></a>3. 子查询</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT `name` </span><br><span class="line">FROM `users` </span><br><span class="line">WHERE `id` IN (SELECT `user_id` FROM `orders` WHERE `amount` &gt; 100);</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="五、高级功能"><a href="#五、高级功能" class="headerlink" title="五、高级功能"></a><strong>五、高级功能</strong></h3><h4 id="1-索引优化"><a href="#1-索引优化" class="headerlink" title="1. 索引优化"></a>1. 索引优化</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建索引</span><br><span class="line">CREATE INDEX `idx_email` ON `users` (`email`);</span><br><span class="line"></span><br><span class="line">-- 查看索引</span><br><span class="line">SHOW INDEX FROM `users`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-事务处理"><a href="#2-事务处理" class="headerlink" title="2. 事务处理"></a>2. 事务处理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">START TRANSACTION;</span><br><span class="line">UPDATE `account` SET balance = balance - 100 WHERE user_id = 1;</span><br><span class="line">UPDATE `account` SET balance = balance + 100 WHERE user_id = 2;</span><br><span class="line">COMMIT; -- 提交事务</span><br><span class="line">-- ROLLBACK; -- 回滚事务</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-用户权限管理"><a href="#3-用户权限管理" class="headerlink" title="3. 用户权限管理"></a>3. 用户权限管理</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 创建用户并授权</span><br><span class="line">CREATE USER &#x27;dev_user&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password123&#x27;;</span><br><span class="line">GRANT SELECT, INSERT, UPDATE ON `test_db`.* TO &#x27;dev_user&#x27;@&#x27;%&#x27;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="六、实用命令"><a href="#六、实用命令" class="headerlink" title="六、实用命令"></a><strong>六、实用命令</strong></h3><h4 id="1-导入-导出数据"><a href="#1-导入-导出数据" class="headerlink" title="1. 导入&#x2F;导出数据"></a>1. 导入&#x2F;导出数据</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 导出整个数据库（命令行）</span><br><span class="line">mysqldump -u root -p test_db &gt; backup.sql</span><br><span class="line"></span><br><span class="line"># 导入数据</span><br><span class="line">mysql -u root -p test_db &lt; backup.sql</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-查看表结构"><a href="#2-查看表结构" class="headerlink" title="2. 查看表结构"></a>2. 查看表结构</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DESC `users`;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-查看建表语句"><a href="#3-查看建表语句" class="headerlink" title="3. 查看建表语句"></a>3. 查看建表语句</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHOW CREATE TABLE `users`;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="高频场景示例"><a href="#高频场景示例" class="headerlink" title="高频场景示例"></a><strong>高频场景示例</strong></h3><h4 id="场景1：分页查询用户列表（每页5条）"><a href="#场景1：分页查询用户列表（每页5条）" class="headerlink" title="场景1：分页查询用户列表（每页5条）"></a>场景1：分页查询用户列表（每页5条）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">ORDER BY `id` </span><br><span class="line">LIMIT 5 OFFSET 0; -- 第1页</span><br></pre></td></tr></table></figure>
-
-<h4 id="场景2：模糊查询（查找名字包含-“DB”-的用户）"><a href="#场景2：模糊查询（查找名字包含-“DB”-的用户）" class="headerlink" title="场景2：模糊查询（查找名字包含 “DB” 的用户）"></a>场景2：模糊查询（查找名字包含 “DB” 的用户）</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM `users` </span><br><span class="line">WHERE `name` LIKE &#x27;%DB%&#x27;;</span><br></pre></td></tr></table></figure>
-
-<h4 id="场景3：批量更新状态"><a href="#场景3：批量更新状态" class="headerlink" title="场景3：批量更新状态"></a>场景3：批量更新状态</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE `products` </span><br><span class="line">SET `status` = &#x27;offline&#x27; </span><br><span class="line">WHERE `stock` = 0;</span><br></pre></td></tr></table></figure>
+<p>运行结果是 A, B 都不会被销毁，这是因为 a,b 内部的 pointer 同时又引用了 <code>a,b</code>，这使得 <code>a,b</code> 的引用计数均变为了 2，而离开作用域时，<code>a,b</code> 智能指针被析构，却只能造成这块区域的引用计数减一，这样就导致了 <code>a,b</code> 对象指向的内存区域引用计数不为零，而外部已经没有办法找到这块区域了，也就造成了内存泄露。</p>
+<p>解决这个问题的办法就是使用弱引用指针 <code>std::weak_ptr</code>，<code>std::weak_ptr</code>是一种弱引用（相比较而言 <code>std::shared_ptr</code> 就是一种强引用）。弱引用不会引起引用计数增加。</p>
 ]]></content>
       <categories>
-        <category>Hello</category>
+        <category>编程语言</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
+        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>
@@ -1047,59 +1163,6 @@ Triangle 表:
       </categories>
       <tags>
         <tag>mysql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS3学习记录</title>
-    <url>/2025/03/11/webNote/</url>
-    <content><![CDATA[<hr>
-<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><p>关键属性：<code>float</code></p>
-<p>值：left、right</p>
-<p>清除浮动：本质是闭合浮动</p>
-<ul>
-<li>方法1：overflow: hidden</li>
-<li>方法2：伪元素</li>
-<li>方法3</li>
-<li>方法4</li>
-</ul>
-<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>关键属性：<code>position</code></p>
-<p>值：static、relative、absolute、fixed、sticky</p>
-<blockquote>
-<p>子绝父相</p>
-</blockquote>
-<p>相对定位可以使用 <code>margin:auto</code>设置居中，绝对定位无法使用，需要计算设置</p>
-<h2 id="其他字段"><a href="#其他字段" class="headerlink" title="其他字段"></a>其他字段</h2><p>z-index:提高层级</p>
-<p>display：none</p>
-<p>visibility：visible &#x2F; hidden</p>
-<p>overflow：</p>
-<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h1 id="CSS3结构伪类选择器"><a href="#CSS3结构伪类选择器" class="headerlink" title="CSS3结构伪类选择器"></a>CSS3结构伪类选择器</h1><p>E::first-child</p>
-<p>E::last-child</p>
-<p>E:nth-child：nth-child(even)、nth-child(odd)、nth-child(表达式)[n,2n,2n-1,n+1,-n+1] 指定元素E的第几个，先匹配类型后匹配几个</p>
-<p>E:nth-of-type(): 指定元素E的第几个，先匹配指定元素后匹配类型</p>
-<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>并不是真正元素，在文档中找不到。</p>
-<p>E::before()</p>
-<p>E::after()</p>
-<p>都必须存在content属性</p>
-<h1 id="CSS3盒模型"><a href="#CSS3盒模型" class="headerlink" title="CSS3盒模型"></a>CSS3盒模型</h1><p>box-size：border-size、content-size</p>
-<h1 id="css3其他特性"><a href="#css3其他特性" class="headerlink" title="css3其他特性"></a>css3其他特性</h1><p>calc(): calc(100%-15px)</p>
-<p>filter: blur(15px)</p>
-<p>transition: 变化属性  花费时间 运动曲线 开始时间</p>
-<p>transition: all</p>
-<p><strong>动画：</strong></p>
-<p>定义动画</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@keyframes 动画名</span><br><span class="line">&#123;</span><br><span class="line"> 	0%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	100%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>配合使用属性</p>
-<p><code>animation-name</code></p>
-<p><code>animation-duration</code></p>
-<p>translate()：移动元素，并不会改变其他盒子</p>
-<p>animation属性</p>
-]]></content>
-      <categories>
-        <category>语法</category>
-      </categories>
-      <tags>
-        <tag>CSS3</tag>
       </tags>
   </entry>
   <entry>
@@ -1578,30 +1641,576 @@ Weather 表：
       </tags>
   </entry>
   <entry>
-    <title>C++中复杂用法小计</title>
-    <url>/2025/03/03/noteC-1/</url>
-    <content><![CDATA[<h1 id="动态内存分配"><a href="#动态内存分配" class="headerlink" title="动态内存分配"></a>动态内存分配</h1><p>例：二维数组分配。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> **array;</span><br><span class="line"><span class="comment">// 假定数组第一维长度为 m， 第二维长度为 n</span></span><br><span class="line"><span class="comment">// 动态分配空间</span></span><br><span class="line">array = <span class="keyword">new</span> <span class="type">int</span> *[m];</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    array[i] = <span class="keyword">new</span> <span class="type">int</span> [n];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//释放</span></span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i=<span class="number">0</span>; i&lt;m; i++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> [] array[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">delete</span> [] array;</span><br></pre></td></tr></table></figure>
-
-<h1 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h1><h1 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h1><ul>
-<li>shared_ptr：共享一个对象</li>
-<li>unique_ptr：独占一个对象</li>
-<li>weak_ptr：</li>
+    <title>CSS3学习记录</title>
+    <url>/2025/03/11/webNote/</url>
+    <content><![CDATA[<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><p>关键属性：<code>float</code></p>
+<p>值：left、right</p>
+<p>清除浮动：本质是闭合浮动</p>
+<ul>
+<li>方法1：overflow: hidden</li>
+<li>方法2：伪元素</li>
+<li>方法3</li>
+<li>方法4</li>
 </ul>
+<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><p>关键属性：<code>position</code></p>
+<p>值：static、relative、absolute、fixed、sticky</p>
 <blockquote>
-<p>shared_ptr常用 <code>std::make_shared &lt;&gt; ()</code>来创建</p>
+<p>子绝父相</p>
 </blockquote>
-<p>shared_ptr使用引用计数来判断是否销毁指针空间，但也存在内存泄漏问题</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">B</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    std::shared_ptr&lt;B&gt; pointer;</span><br><span class="line">    ~<span class="built_in">A</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;A 被销毁&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    std::shared_ptr&lt;A&gt; pointer;</span><br><span class="line">    ~<span class="built_in">B</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;B 被销毁&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> a = std::<span class="built_in">make_shared</span>&lt;A&gt;();</span><br><span class="line">    <span class="keyword">auto</span> b = std::<span class="built_in">make_shared</span>&lt;B&gt;();</span><br><span class="line">    a-&gt;pointer = b;</span><br><span class="line">    b-&gt;pointer = a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相对定位可以使用 <code>margin:auto</code>设置居中，绝对定位无法使用，需要计算设置</p>
+<h2 id="其他字段"><a href="#其他字段" class="headerlink" title="其他字段"></a>其他字段</h2><p>z-index:提高层级</p>
+<p>display：none</p>
+<p>visibility：visible &#x2F; hidden</p>
+<p>overflow：</p>
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h1 id="CSS3结构伪类选择器"><a href="#CSS3结构伪类选择器" class="headerlink" title="CSS3结构伪类选择器"></a>CSS3结构伪类选择器</h1><p>E::first-child</p>
+<p>E::last-child</p>
+<p>E:nth-child：nth-child(even)、nth-child(odd)、nth-child(表达式)[n,2n,2n-1,n+1,-n+1] 指定元素E的第几个，先匹配类型后匹配几个</p>
+<p>E:nth-of-type(): 指定元素E的第几个，先匹配指定元素后匹配类型</p>
+<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>并不是真正元素，在文档中找不到。</p>
+<p>E::before()</p>
+<p>E::after()</p>
+<p>都必须存在content属性</p>
+<h1 id="CSS3盒模型"><a href="#CSS3盒模型" class="headerlink" title="CSS3盒模型"></a>CSS3盒模型</h1><p>box-size：border-size、content-size</p>
+<h1 id="css3其他特性"><a href="#css3其他特性" class="headerlink" title="css3其他特性"></a>css3其他特性</h1><p>calc(): calc(100%-15px)</p>
+<p>filter: blur(15px)</p>
+<p>transition: 变化属性  花费时间 运动曲线 开始时间</p>
+<p>transition: all</p>
+<p><strong>动画：</strong></p>
+<p>定义动画</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@keyframes 动画名</span><br><span class="line">&#123;</span><br><span class="line"> 	0%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	100%&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>运行结果是 A, B 都不会被销毁，这是因为 a,b 内部的 pointer 同时又引用了 <code>a,b</code>，这使得 <code>a,b</code> 的引用计数均变为了 2，而离开作用域时，<code>a,b</code> 智能指针被析构，却只能造成这块区域的引用计数减一，这样就导致了 <code>a,b</code> 对象指向的内存区域引用计数不为零，而外部已经没有办法找到这块区域了，也就造成了内存泄露。</p>
-<p>解决这个问题的办法就是使用弱引用指针 <code>std::weak_ptr</code>，<code>std::weak_ptr</code>是一种弱引用（相比较而言 <code>std::shared_ptr</code> 就是一种强引用）。弱引用不会引起引用计数增加。</p>
+<p>配合使用属性</p>
+<p><code>animation-name</code></p>
+<p><code>animation-duration</code></p>
+<p>translate()：移动元素，并不会改变其他盒子</p>
+<p>animation属性</p>
 ]]></content>
       <categories>
-        <category>编程语言</category>
+        <category>语法</category>
       </categories>
       <tags>
-        <tag>C/C++</tag>
+        <tag>CSS3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RESTful API介绍</title>
+    <url>/2025/04/04/RESTfulAPI/</url>
+    <content><![CDATA[<h1 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>RESTful API 是一种基于 <strong>REST（Representational State Transfer）</strong> 架构风格设计的接口，核心特点包括：</p>
+<ol>
+<li><strong>资源导向</strong>：通过 URL 定位资源（如 <code>/users</code> 表示用户）。</li>
+<li><strong>HTTP 方法</strong>：用 <code>GET</code>&#x2F;<code>POST</code>&#x2F;<code>PUT</code>&#x2F;<code>DELETE</code> 对应资源的 <strong>查增改删</strong>（CRUD）。</li>
+<li><strong>无状态</strong>：每次请求包含足够信息，服务端不保存客户端状态。</li>
+<li><strong>返回格式</strong>：通常返回 JSON&#x2F;XML 格式数据。</li>
+</ol>
+<blockquote>
+<p>**RESTful 是一种****后端接口架构风格**，定义如何通过 HTTP 协议暴露资源（如用户、订单等）。</p>
+</blockquote>
+<hr>
+<h2 id="设计规范"><a href="#设计规范" class="headerlink" title="设计规范"></a>设计规范</h2><table>
+<thead>
+<tr>
+<th><strong>操作类型</strong></th>
+<th><strong>HTTP 方法</strong></th>
+<th><strong>URL 示例</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>查询列表</strong></td>
+<td><code>GET</code></td>
+<td><code>/users</code></td>
+<td><strong>获取所有用户</strong></td>
+</tr>
+<tr>
+<td><strong>查询单个</strong></td>
+<td><code>GET</code></td>
+<td><code>/users/:id</code></td>
+<td><strong>获取 ID 为 1 的用户</strong></td>
+</tr>
+<tr>
+<td><strong>新增</strong></td>
+<td><code>POST</code></td>
+<td><code>/users</code></td>
+<td><strong>创建新用户</strong></td>
+</tr>
+<tr>
+<td><strong>修改全部</strong></td>
+<td><code>PUT</code></td>
+<td><code>/users/:id</code></td>
+<td><strong>替换 ID 为 1 的用户数据</strong></td>
+</tr>
+<tr>
+<td><strong>修改部分</strong></td>
+<td><code>PATCH</code></td>
+<td><code>/users/:id</code></td>
+<td><strong>更新 ID 为 1 的用户部分字段</strong></td>
+</tr>
+<tr>
+<td><strong>删除</strong></td>
+<td><code>DELETE</code></td>
+<td><code>/users/:id</code></td>
+<td><strong>删除 ID 为 1 的用户</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><blockquote>
+<p><strong>基于 Express5.x 框架</strong></p>
+</blockquote>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><h3 id="实现-CRUD-接口"><a href="#实现-CRUD-接口" class="headerlink" title="实现 CRUD 接口"></a>实现 CRUD 接口</h3><p><strong>查询所有用户</strong></p>
+<p><strong>查询单个用户</strong></p>
+<p><strong>创建用户</strong></p>
+<p><strong>更新用户</strong></p>
+<p><strong>删除用户</strong></p>
+]]></content>
+      <categories>
+        <category>标准</category>
+      </categories>
+      <tags>
+        <tag>RESTful-API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>React使用手册</title>
+    <url>/2025/04/08/React/</url>
+    <content><![CDATA[<h1 id="React"><a href="#React" class="headerlink" title="React"></a>React</h1><h2 id="Next-js"><a href="#Next-js" class="headerlink" title="Next.js"></a>Next.js</h2><p><strong>Next.js 的页面路由 是一个全栈的 React 框架。它用途广泛，可让你创建任何规模的 React 应用程序——从大部分的静态博客到复杂的动态应用程序。要创建新的 Next.js 项目，请在终端中运行：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npx create-next-app@latest</span><br></pre></td></tr></table></figure>
+
+<h2 id="Vite-构建环境"><a href="#Vite-构建环境" class="headerlink" title="Vite 构建环境"></a>Vite 构建环境</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm create vite@latest my-react-app --template react</span><br><span class="line"># 或使用 TypeScript</span><br><span class="line">npm create vite@latest my-react-app --template react-ts</span><br></pre></td></tr></table></figure>
+
+<h2 id="UI-树"><a href="#UI-树" class="headerlink" title="UI 树"></a>UI 树</h2><p><strong>React 使用树形关系建模以展示组件和模块之间的关系。</strong></p>
+<p><strong>位于树顶部、靠近根组件的组件被视为顶层组件。没有子组件的组件被称为叶子组件。对组件的这种分类对于理解数据流和渲染性能非常有用。</strong></p>
+<h2 id="JSX-编写标签"><a href="#JSX-编写标签" class="headerlink" title="JSX 编写标签"></a>JSX 编写标签</h2><blockquote>
+<p>**React 组件是常规的 JavaScript 函数，但 ****组件的名称必须以大写字母开头**，否则它们将无法运行！</p>
+</blockquote>
+<h3 id="大括号使用："><a href="#大括号使用：" class="headerlink" title="大括号使用："></a>大括号使用：</h3><p><strong>css 内联样式：内联 <strong><code>style</code> 属性 使用</strong>驼峰命名法</strong>编写。例如，HTML</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;ul style=&quot;background-color: black&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>**在你的组件里应该写成 **</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;ul style=&#123;&#123; backgroundColor: &#x27;black&#x27; &#125;&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>**所以当你下次在 JSX 中看到 **<code>&#123;&#123;` 和 `&#125;&#125;</code>时，就知道它只不过是包在大括号里的一个对象罢了！</p>
+<h3 id="Fragment-语法"><a href="#Fragment-语法" class="headerlink" title="Fragment 语法"></a>Fragment 语法</h3><p>**使用 Fragment 可以将多个组件包裹（通常写作 **<code>&lt;&gt;</code>）， 包裹 JSX 节点可以避免引入额外的 <code>div</code> 元素！</p>
+<h2 id="props-组件通信"><a href="#props-组件通信" class="headerlink" title="props 组件通信"></a>props 组件通信</h2><h3 id="传递值"><a href="#传递值" class="headerlink" title="传递值"></a>传递值</h3><h3 id="传递对象"><a href="#传递对象" class="headerlink" title="传递对象"></a>传递对象</h3><h3 id="传递-children"><a href="#传递-children" class="headerlink" title="传递 children"></a>传递 children</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function Card(&#123; children &#125;: &#123; children: any &#125;) &#123;</span><br><span class="line">  return &lt;div&gt;&#123;children&#125;&lt;/div&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function CardChildren() &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;hr /&gt;</span><br><span class="line">      &lt;p&gt;传递children&lt;/p&gt;</span><br><span class="line">      &lt;Card&gt;</span><br><span class="line">        &lt;p&gt;我是孩子内的内容&lt;/p&gt;</span><br><span class="line">      &lt;/Card&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><p><strong>切勿将数字放在 <code>&amp;&amp;</code> 左侧.</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface arg1 &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  isTrue: boolean;</span><br><span class="line">&#125;</span><br><span class="line">function MyItem(&#123; name, isTrue &#125;: arg1) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &#123;name&#125;:&#123;isTrue &amp;&amp; &quot;√&quot;&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">function MyList() &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;ul&gt;</span><br><span class="line">        &lt;MyItem name=&quot;a&quot; isTrue=&#123;true&#125; /&gt;</span><br><span class="line">        &lt;MyItem name=&quot;b&quot; isTrue=&#123;true&#125; /&gt;</span><br><span class="line">        &lt;MyItem name=&quot;c&quot; isTrue=&#123;false&#125; /&gt;</span><br><span class="line">      &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">export default MyList;</span><br></pre></td></tr></table></figure>
+
+<h2 id="渲染列表"><a href="#渲染列表" class="headerlink" title="渲染列表"></a>渲染列表</h2><ul>
+<li><strong>每日一个小知识：</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">()=&gt;&#123;&#125;// 无返回值</span><br><span class="line">()=&gt;()// 返回值为null</span><br><span class="line">//如上两种写法不同</span><br><span class="line">()=&gt;&#123;return &#x27;ok&#x27;&#125;</span><br><span class="line">// 等价于</span><br><span class="line">()=&gt;&#x27;ok&#x27;</span><br><span class="line">//或者</span><br><span class="line">()=&gt;(&#x27;ok&#x27;)</span><br><span class="line"></span><br><span class="line">// ------------------------------</span><br><span class="line">const people = [</span><br><span class="line">&#123;id:1&#125;,</span><br><span class="line">&#123;id:2&#125;,</span><br><span class="line">...</span><br><span class="line">]</span><br><span class="line">// 过滤器</span><br><span class="line">const idEqual1 = people.filter(p=&gt;p.id===1)</span><br><span class="line">/// map遍历</span><br><span class="line">const peopleList = people.map(</span><br><span class="line">    p=&gt;</span><br><span class="line">    &lt;li&gt;&#123;p.id&#125;&lt;/li&gt;</span><br><span class="line">)</span><br><span class="line">// 这渲染起来看上去像</span><br><span class="line">//&lt;li&gt;1&lt;/li&gt;</span><br><span class="line">//&lt;li&gt;2&lt;/li&gt;</span><br><span class="line">//&lt;li&gt;..&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>关于 js 中 Array.map 函数的使用</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const newArray = arr.map(callback(currentValue, index, array), thisArg)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong><code>callback</code></strong>：处理每个元素的函数，接收三个参数：<ul>
+<li><code>currentValue</code>：当前处理的元素（必选）</li>
+<li><code>index</code>：当前元素的索引（可选）</li>
+<li><code>array</code>：原数组（可选）</li>
+</ul>
+</li>
+<li><strong><code>thisArg</code></strong>（可选）：指定 <code>callback</code> 里的 <code>this</code> 指向（一般很少用）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface item &#123;</span><br><span class="line">  id: number;</span><br><span class="line">  name: string;</span><br><span class="line">&#125;</span><br><span class="line">const lists: Array&lt;item&gt; = [</span><br><span class="line">  &#123;</span><br><span class="line">    id: 1,</span><br><span class="line">    name: &quot;a&quot;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    id: 2,</span><br><span class="line">    name: &quot;bb&quot;,</span><br><span class="line">  &#125;,</span><br><span class="line">];</span><br><span class="line">function MapList() &#123;</span><br><span class="line">  const listItems = lists.map((person) =&gt; (</span><br><span class="line">    &lt;li key=&#123;person.id&#125;&gt;</span><br><span class="line">      &#123;person.id&#125;:&#123;person.name&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  ));</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;ul&gt;&#123;listItems&#125;&lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default MapList;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="保持组件纯粹"><a href="#保持组件纯粹" class="headerlink" title="保持组件纯粹"></a>保持组件纯粹</h2><p><strong>保持组件不改变引用的值。防止渲染出现错误。</strong></p>
+<h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><p>**React 提供了 “严格模式”，在严格模式下开发时，它将会调用每个组件函数两次。****通过重复调用组件函数，严格模式有助于找到违反这些规则的组件**。</p>
+<p>**严格模式在生产环境下不生效，因此它不会降低应用程序的速度。如需引入严格模式，你可以用 **<code>&lt;React.StrictMode&gt;</code> 包裹根组件。一些框架会默认这样做。</p>
+<h4 id="Key-的作用"><a href="#Key-的作用" class="headerlink" title="Key 的作用"></a>Key 的作用</h4><ul>
+<li><code>key</code> 帮助 React 识别哪些元素被<strong>添加、修改或删除</strong>，从而提高 <code>diff</code> 算法的效率。</li>
+<li>**它用于****同级元素**的列表（如 <code>map</code> 或循环生成的组件）。</li>
+<li><strong>一个组件必须是纯粹的，就意味着：</strong><ul>
+<li><strong>只负责自己的任务。</strong> 它不会更改在该函数调用前就已存在的对象或变量。</li>
+<li><strong>输入相同，则输出相同。</strong> 给定相同的输入，组件应该总是返回相同的 JSX。</li>
+</ul>
+</li>
+</ul>
+<h2 id="添加交互"><a href="#添加交互" class="headerlink" title="添加交互"></a>添加交互</h2><p><strong>小知识：</strong></p>
+<ul>
+<li><code>event.preventDefault();</code>阻止事件的默认行为，比如阻止 submit 按钮的提交表单。</li>
+<li>**如果在代码中复制对象感觉乏味，可以使用 **<a href="https://github.com/immerjs/use-immer">Immer</a> 之类的库来减少重复代码。</li>
+</ul>
+<h3 id="响应事件"><a href="#响应事件" class="headerlink" title="响应事件"></a>响应事件</h3><p><strong>事件处理函数有如下特点:</strong></p>
+<ul>
+<li>**通常在你的组件 ****内部** 定义。</li>
+<li>**名称以 **<code>handle</code> 开头，后跟事件名称。</li>
+<li><strong>然后 将其作为 prop 传入。</strong></li>
+</ul>
+<blockquote>
+<p><strong>事件传递顺序：事件处理函数还将捕获任何来自子组件的事件。通常，我们会说事件会沿着树向上“冒泡”或“传播”：它从事件发生的地方开始，然后沿着树向上传播。</strong></p>
+</blockquote>
+<p><strong>若要阻止事件向上传递，使用</strong> <code>event.stopPropagation();</code></p>
+<p><strong>捕获子元素的所有事件：</strong></p>
+<p>**极少数情况下，你可能需要捕获子元素上的所有事件，****即便它们阻止了传播**。例如，你可能想对每次点击进行埋点记录，传播逻辑暂且不论。那么你可以通过在事件名称末尾添加 <code>Capture</code> 来实现这一点：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div onClickCapture=&#123;() =&gt; &#123; /* 这会首先执行 */ &#125;&#125;&gt;</span><br><span class="line">  &lt;button onClick=&#123;e =&gt; e.stopPropagation()&#125; /&gt;</span><br><span class="line">  &lt;button onClick=&#123;e =&gt; e.stopPropagation()&#125; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>每个事件分三个阶段传播：</strong></p>
+<ol>
+<li>**它向下传播，调用所有的 **<code>onClickCapture</code> 处理函数。</li>
+<li>**它执行被点击元素的 **<code>onClick</code> 处理函数。</li>
+<li>**它向上传播，调用所有的 **<code>onClick</code> 处理函数。</li>
+</ol>
+<p><strong>捕获事件对于路由或数据分析之类的代码很有用，但你可能不会在应用程序代码中使用它们。</strong></p>
+<p><strong>阻止默认行为：</strong><code>event.preventDefault();</code></p>
+<blockquote>
+<p><strong>不要混淆 e.stopPropagation() 和 e.preventDefault()。它们都很有用，但二者并不相关：</strong></p>
+<ul>
+<li><strong>e.stopPropagation() 阻止触发绑定在外层标签上的事件处理函数。</strong></li>
+<li><strong>e.preventDefault() 阻止少数事件的默认浏览器行为。</strong></li>
+</ul>
+</blockquote>
+<p><strong>副作用</strong></p>
+<p><strong>事件处理函数是最佳的执行副作用的位置，但是，为了更改某些信息，你首先需要某种方式存储它。在 React 中，这是通过 state（组件的记忆） 来完成的。</strong></p>
+<h3 id="更新函数"><a href="#更新函数" class="headerlink" title="更新函数"></a>更新函数</h3><h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><p><strong>来看存在问题的代码：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function StateClick() &#123;</span><br><span class="line">  let num = 0;</span><br><span class="line">  const doClick = () =&gt; &#123;</span><br><span class="line">    num += 1;</span><br><span class="line">  &#125;;</span><br><span class="line">  return (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;hr /&gt;</span><br><span class="line">      &lt;p&gt;&#123;num&#125;&lt;/p&gt;</span><br><span class="line">      &lt;MyButton onClick=&#123;doClick&#125;&gt;点我看看能不能改变num&lt;/MyButton&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">const MyButton = (&#123; onClick, children &#125;) =&gt; (</span><br><span class="line">  &lt;&gt;</span><br><span class="line">    &lt;button onClick=&#123;onClick&#125;&gt;&#123;children&#125;&lt;/button&gt;</span><br><span class="line">  &lt;/&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p><strong>显然并不可以改变 num 的值。原因如下：</strong></p>
+<ol>
+<li><strong>局部变量无法在多次渲染中持久保存。</strong> 当 React 再次渲染这个组件时，它会从头开始渲染——不会考虑之前对局部变量的任何更改。</li>
+<li><strong>更改局部变量不会触发渲染。</strong> React 没有意识到它需要使用新数据再次渲染组件。</li>
+</ol>
+<p><strong>要使用新数据更新组件，需要做两件事：</strong></p>
+<ol>
+<li><strong>保留</strong> 渲染之间的数据。</li>
+<li><strong>触发</strong> React 使用新数据渲染组件（重新渲染）。</li>
+</ol>
+<p><code>useState Hook</code> 提供了这两个功能：</p>
+<ol>
+<li><strong>State</strong> 变量 用于保存渲染间的数据。</li>
+<li><strong>State setter</strong> 函数 更新变量并触发 React 再次渲染组件。</li>
+<li>**惯例是将这对返回值命名为 **<code>const [thing, setThing]</code></li>
+<li><code>useState</code> 的唯一参数是 state 变量的<strong>初始值</strong>。</li>
+</ol>
+<h3 id="渲染与提交"><a href="#渲染与提交" class="headerlink" title="渲染与提交"></a>渲染与提交</h3><p><strong>渲染的时机：</strong></p>
+<ul>
+<li><strong>组件初次渲染。</strong></li>
+<li><strong>组件或者其先祖之一的状态发生了改变。</strong></li>
+</ul>
+<blockquote>
+<p><strong>性能优化：如果更新的组件在树中的位置非常高，渲染更新后的组件内部所有嵌套组件的默认行为将不会获得最佳性能。</strong></p>
+<p><strong>不要过早进行优化！</strong></p>
+</blockquote>
+<h3 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h3><p><strong>State 像是一张快照，设置它不会改变已有的 state 变量，但会触发重新渲染。</strong></p>
+<h3 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h3><p><strong>在 React 中，</strong><code>useState</code> 以及任何其他以“<code>use</code>”开头的函数都被称为 <strong>Hook</strong>。</p>
+<p><code>Hook</code>是特殊的函数，只在 React 渲染时有效。它们能让你 “hook” 到不同的 React 特性中去。</p>
+<blockquote>
+<p><strong>Hooks ——以 <code>use</code> 开头的函数——只能在组件或自定义 Hook 的最顶层调用。</strong> 你不能在<strong>条件语句</strong>、<strong>循环语句</strong>或其他<strong>嵌套函数</strong>内调用 Hook。Hook 是函数，但将它们视为关于组件需求的无条件声明会很有帮助。在组件顶部 “use” React 特性，类似于在文件顶部“导入”模块。</p>
+</blockquote>
+<hr>
+<h2 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function Cup(&#123;guest &#125;) &#123;</span><br><span class="line">  return &lt;h2&gt;Tea cup&#123;id&#125; for guest #&#123;guest&#125;&lt;/h2&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default function TeaGathering() &#123;</span><br><span class="line">  let cups = [];</span><br><span class="line">  for (let i = 1; i &lt;= 12; i++) &#123;</span><br><span class="line">    cups.push(&lt;Cup key=&#123;i&#125; guest=&#123;i&#125; /&gt;);</span><br><span class="line">  &#125;</span><br><span class="line">  return cups;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>在 React 中，</strong><code>key</code> 是一个特殊的 prop，<strong>它不会传递给子组件</strong>（即子组件无法直接通过 <code>props.key</code> 访问）。这是 React 的刻意设计，因为 <code>key</code> 是 React 内部用于<strong>优化渲染性能</strong>的标识符，而不是组件逻辑的一部分。</p>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>React</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue3使用手册</title>
+    <url>/2025/04/05/Vue3/</url>
+    <content><![CDATA[<h1 id="项目开发过程"><a href="#项目开发过程" class="headerlink" title="项目开发过程"></a>项目开发过程</h1><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p><strong>vue3+typescript</strong></p>
+<p><strong>vite 构建，打包</strong></p>
+<p><strong>axios 网络请求</strong></p>
+<p><strong>ant design for vue 组件库</strong></p>
+<p><strong>pinia 全局状态管理</strong></p>
+<p><strong>mock 技术</strong></p>
+<h2 id="构建-vue-环境"><a href="#构建-vue-环境" class="headerlink" title="构建 vue 环境"></a>构建 vue 环境</h2><p><strong>通过脚手架创建 vue 环境</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm create vue@latest</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过以下步骤安装依赖并启动开发服务器</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd &lt;your-project-name&gt;</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="vue-项目创建"><a href="#vue-项目创建" class="headerlink" title="vue 项目创建"></a>vue 项目创建</h2><p>**每个 Vue 应用都是通过 **<a href="https://cn.vuejs.org/api/application.html#createapp"><code>createApp</code></a> 函数创建一个新的 <strong>应用实例</strong> ：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; createApp &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const app = createApp(&#123;</span><br><span class="line">  /* 根组件选项 */</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="根组件"><a href="#根组件" class="headerlink" title="根组件"></a>根组件</h3><p>**我们传入 **<code>createApp</code> 的对象实际上是一个组件，每个应用都需要一个“根组件”，其他组件将作为其子组件。</p>
+<p><strong>如果你使用的是单文件组件，我们可以直接从另一个文件中导入根组件。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; createApp &#125; from &#x27;vue&#x27;</span><br><span class="line">// 从一个单文件组件中导入根组件</span><br><span class="line">import App from &#x27;./App.vue&#x27;</span><br><span class="line"></span><br><span class="line">const app = createApp(App)</span><br></pre></td></tr></table></figure>
+
+<p><strong>虽然本指南中的许多示例只需要一个组件，但大多数真实的应用都是由一棵嵌套的、可重用的组件树组成的。例如，一个待办事项 (Todos) 应用的组件树可能是这样的：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">App (root component)</span><br><span class="line">├─ TodoList</span><br><span class="line">│  └─ TodoItem</span><br><span class="line">│     ├─ TodoDeleteButton</span><br><span class="line">│     └─ TodoEditButton</span><br><span class="line">└─ TodoFooter</span><br><span class="line">   ├─ TodoClearButton</span><br><span class="line">   └─ TodoStatistics</span><br></pre></td></tr></table></figure>
+
+<h3 id="挂载应用"><a href="#挂载应用" class="headerlink" title="挂载应用"></a>挂载应用</h3><p>**应用实例必须在调用了 **<code>.mount()</code> 方法后才会渲染出来。该方法接收一个“容器”参数，可以是一个实际的 DOM 元素或是一个 CSS 选择器字符串：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- xxx.html --&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// .ts</span><br><span class="line">app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>**应用根组件的内容将会被渲染在容器元素里面。容器元素自己将****不会**被视为应用的一部分。</p>
+<p>**当根组件没有设置 **<code>template</code> 选项时，Vue 将自动使用容器的 <code>innerHTML</code> 作为模板。</p>
+<h2 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h2><h3 id="文本插值"><a href="#文本插值" class="headerlink" title="文本插值"></a>文本插值</h3><p><strong>最基本的数据绑定形式是文本插值，它使用的是“Mustache”语法 (即双大括号)：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;span&gt;Message: &#123;&#123; msg &#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>双大括号标签会被替换为相应组件实例中 msg 属性的值。同时每次 msg 属性更改时它也会同步更新。</strong></p>
+<h3 id="原始-html"><a href="#原始-html" class="headerlink" title="原始 html"></a>原始 html</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const rawHtml: string =</span><br><span class="line">  &#x27;&lt;span style=&quot;color: red&quot;&gt;This should be red.&lt;/span&gt;&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;Using text interpolation: &#123;&#123; rawHtml &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">  Using v-html directive: &lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>页面渲染为:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Using text interpolation: `&lt;span style=&quot;color: red&quot;&gt;`This should be red.</span><br><span class="line"></span><br><span class="line">Using v-html directive: This should be red.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Attribute-绑定"><a href="#Attribute-绑定" class="headerlink" title="Attribute 绑定"></a>Attribute 绑定</h3><p>**双大括号不能在 HTML attributes 中使用。想要响应式地绑定一个 attribute，应该使用 **<code>v-bind</code> 指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div v-bind:id=&quot;dynamicId&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>v-bind</code> 指令指示 Vue 将元素的 <code>id</code> attribute 与组件的 <code>dynamicId</code> 属性保持一致。如果绑定的值是 <code>null</code> 或者 <code>undefined</code>，那么该 attribute 将会从渲染的元素上移除。</p>
+<p><strong>简写</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div :id=&quot;dynamicId&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 与 :id=&quot;id&quot; 相同 --&gt;</span><br><span class="line">&lt;div :id&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>动态绑定类标签</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// .ts</span><br><span class="line">const isActive = ref(true)</span><br><span class="line">const hasError = ref(false)</span><br><span class="line">// .html</span><br><span class="line">&lt;div</span><br><span class="line">  class=&quot;static&quot;</span><br><span class="line">  :class=&quot;&#123; active: isActive, &#x27;text-danger&#x27;: hasError &#125;&quot;</span><br><span class="line">&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染的结果为：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;static active&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>也可直接用一个完整对象</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// .ts</span><br><span class="line">const classObject = reactive(&#123;</span><br><span class="line">  active: true,</span><br><span class="line">  &#x27;text-danger&#x27;: false</span><br><span class="line">&#125;)</span><br><span class="line">// .html</span><br><span class="line">&lt;div :class=&quot;classObject&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>渲染结果与上面相同</strong></p>
+<h4 id="在组件上使用类型绑定"><a href="#在组件上使用类型绑定" class="headerlink" title="在组件上使用类型绑定"></a>在组件上使用类型绑定</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- 子组件模板 --&gt;</span><br><span class="line">&lt;p class=&quot;foo bar&quot;&gt;Hi!&lt;/p&gt;</span><br><span class="line">&lt;!-- 在使用组件时 --&gt;</span><br><span class="line">&lt;MyComponent class=&quot;baz boo&quot; /&gt;</span><br><span class="line">&lt;!--渲染出的 HTML 为：--&gt;</span><br><span class="line">&lt;p class=&quot;foo bar baz boo&quot;&gt;Hi!&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="绑定内敛样式"><a href="#绑定内敛样式" class="headerlink" title="绑定内敛样式"></a>绑定内敛样式</h3><p><strong>绑定对象</strong><br><code>:style</code>支持绑定 JavaScript 对象值，对应的是 HTML 元素的 <code>style</code>属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div :style=&quot;&#123; color: activeColor, fontSize: fontSize + &#x27;px&#x27; &#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const activeColor = ref(&#x27;red&#x27;)</span><br><span class="line">const fontSize = ref(30)</span><br></pre></td></tr></table></figure>
+
+<p><strong>你可以对一个样式属性提供多个 (不同前缀的) 值，举例来说：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div :style=&quot;&#123; display: [&#x27;-webkit-box&#x27;, &#x27;-ms-flexbox&#x27;, &#x27;flex&#x27;] &#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>**数组仅会渲染浏览器支持的最后一个值。在这个示例中，在支持不需要特别前缀的浏览器中都会渲染为 **<code>display: flex</code>。</p>
+<h3 id="渲染列表"><a href="#渲染列表" class="headerlink" title="渲染列表"></a>渲染列表</h3><p>**在 Vue 中，当使用 **<code>v-for</code> 渲染列表时，必须为每个迭代的元素绑定一个唯一的 <strong><code>key</code></strong> 属性。ESLint 的 <code>vue/require-v-for-key</code> 规则会强制检查这一点，目的是确保 Vue 的虚拟 DOM Diff 算法能正确识别和高效更新节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;li v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">  &#123;&#123; item.id &#125;&#125;:&#123;&#123; item.message &#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><p><code>v-if</code> 、<code>v-else-if</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div v-if=&quot;type === &#x27;A&#x27;&quot;&gt;</span><br><span class="line">  A</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else-if=&quot;type === &#x27;B&#x27;&quot;&gt;</span><br><span class="line">  B</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else-if=&quot;type === &#x27;C&#x27;&quot;&gt;</span><br><span class="line">  C</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div v-else&gt;</span><br><span class="line">  Not A/B/C</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里，</strong><code>v-if</code> 指令会基于表达式 <code>seen</code> 的值的真假来移除&#x2F;插入该 <code>&lt;p&gt;</code> 元素。</p>
+<p>**你也可以使用 **<code>v-else</code> 为 <code>v-if</code> 添加一个“else 区块”。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;button @click=&quot;awesome = !awesome&quot;&gt;Toggle&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1 v-if=&quot;awesome&quot;&gt;Vue is awesome!&lt;/h1&gt;</span><br><span class="line">&lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>v-else</code> 和 <code>v-else-if</code> 也可以在 <code>&lt;template&gt;</code> 上使用。</p>
+<p><code>v-show</code></p>
+<p>**不同之处在于 **<code>v-show</code> 会在 DOM 渲染中保留该元素；<code>v-show</code> 仅切换了该元素上名为 <code>display</code> 的 CSS 属性。</p>
+<p><code>v-show</code> 不支持在 <code>&lt;template&gt;</code> 元素上使用，也不能和 <code>v-else</code> 搭配使用。</p>
+<p><code>v-show</code> VS <code>v-if</code></p>
+<p><code>v-if</code> 是“真实的”按条件渲染，因为它确保了在切换时，条件区块内的事件监听器和子组件都会被销毁与重建。</p>
+<p><code>v-if</code> 也是<strong>惰性</strong>的：如果在初次渲染时条件值为 false，则不会做任何事。条件区块只有当条件首次变为 true 时才被渲染。</p>
+<p><strong>相比之下，</strong><code>v-show</code> 简单许多，元素无论初始条件如何，始终会被渲染，只有 CSS <code>display</code> 属性会被切换。</p>
+<p><strong>总的来说，</strong><code>v-if</code> 有更高的切换开销，而 <code>v-show</code> 有更高的初始渲染开销。因此，如果需要频繁切换，则使用 <code>v-show</code> 较好；如果在运行时绑定条件很少改变，则 <code>v-if</code> 会更合适。</p>
+<blockquote>
+<p>**当 **<code>v-if</code> 和 <code>v-for</code> 同时存在于一个元素上的时候，<code>v-if</code> 会首先被执行。</p>
+</blockquote>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p><code>v-on</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;a v-on:click=&quot;doSomething&quot;&gt; ... &lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 简写 --&gt;</span><br><span class="line">&lt;a @click=&quot;doSomething&quot;&gt; ... &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>v-on</code> 指令，它将监听 DOM 事件</p>
+<h3 id="模板引用"><a href="#模板引用" class="headerlink" title="模板引用"></a>模板引用</h3><p><strong>看上去像是自定义模板的 id</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, useTemplateRef, onMounted &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const list = ref([</span><br><span class="line">  /* ... */</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">// 获取模板ref为items的dom元素</span><br><span class="line">const itemRefs = useTemplateRef(&#x27;items&#x27;)</span><br><span class="line">// 当模板被加载时打印获取的dom元素</span><br><span class="line">onMounted(() =&gt; console.log(itemRefs.value))</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">	&lt;!-- 给模板加ref标签 --&gt;</span><br><span class="line">    &lt;li v-for=&quot;item in list&quot; ref=&quot;items&quot;&gt;</span><br><span class="line">      &#123;&#123; item &#125;&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>……</strong></p>
+<h2 id="响应式基础"><a href="#响应式基础" class="headerlink" title="响应式基础"></a>响应式基础</h2><p><strong>声明响应式状态</strong></p>
+<p>**在组合式 API 中，推荐使用 **<a href="https://cn.vuejs.org/api/reactivity-core.html#ref"><code>ref()</code></a> 函数来声明响应式状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const count = ref(0)</span><br></pre></td></tr></table></figure>
+
+<p><code>ref()</code> 接收参数，并将其包裹在一个带有 <code>.value</code> 属性的 ref 对象中返回：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const count = ref(0)</span><br><span class="line"></span><br><span class="line">console.log(count) // &#123; value: 0 &#125;</span><br><span class="line">console.log(count.value) // 0</span><br><span class="line"></span><br><span class="line">count.value++</span><br><span class="line">console.log(count.value) // 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意，在模板中使用 ref 时，我们不需要附加 .value。为了方便起见，当在模板中使用时，ref 会自动解包 。</strong></p>
+<h3 id="深层响应性"><a href="#深层响应性" class="headerlink" title="深层响应性"></a>深层响应性</h3><p><strong>Ref 可以持有任何类型的值，包括深层嵌套的对象、数组或者 JavaScript 内置的数据结构</strong></p>
+<p><strong>Ref 会使它的值具有深层响应性。这意味着即使改变嵌套对象或数组时，变化也会被检测到：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const obj = ref(&#123;</span><br><span class="line">  nested: &#123; count: 0 &#125;,</span><br><span class="line">  arr: [&#x27;foo&#x27;, &#x27;bar&#x27;]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">function mutateDeeply() &#123;</span><br><span class="line">  // 以下都会按照期望工作</span><br><span class="line">  obj.value.nested.count++</span><br><span class="line">  obj.value.arr.push(&#x27;baz&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>也可以通过 shallow ref 来放弃深层响应性。对于浅层 ref，只有 .value 的访问会被追踪。浅层 ref 可以用于避免对大型数据的响应性开销来优化性能、或者有外部库管理其内部状态的情况。</strong></p>
+<hr>
+<p>**还有另一种声明响应式状态的方式，即使用 **<code>reactive()</code> API。与将内部值包装在特殊对象中的 ref 不同，<code>reactive()</code> 将使对象本身具有响应性：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; reactive &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const state = reactive(&#123; count: 0 &#125;)</span><br></pre></td></tr></table></figure>
+
+<p><code>reactive()</code> 的局限性</p>
+<p><strong>1.有限的值类型：它只能用于对象类型 (对象、数组和如 Map、Set 这样的集合类型)。它不能持有如 string、number 或 boolean 这样的原始类型。</strong></p>
+<p><strong>2.不能替换整个对象：由于 Vue 的响应式跟踪是通过属性访问实现的，因此我们必须始终保持对响应式对象的相同引用。这意味着我们不能轻易地“替换”响应式对象，因为这样的话与第一个引用的响应性连接将丢失：</strong></p>
+<p><strong>3.对解构操作不友好：当我们将响应式对象的原始类型属性解构为本地变量时，或者将该属性传递给函数时，我们将丢失响应性连接</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let state = reactive(&#123; count: 0 &#125;)</span><br><span class="line"></span><br><span class="line">// 上面的 (&#123; count: 0 &#125;) 引用将不再被追踪</span><br><span class="line">// (响应性连接已丢失！)</span><br><span class="line">state = reactive(&#123; count: 1 &#125;)</span><br><span class="line"></span><br><span class="line">const state = reactive(&#123; count: 0 &#125;)</span><br><span class="line"></span><br><span class="line">// 当解构时，count 已经与 state.count 断开连接</span><br><span class="line">let &#123; count &#125; = state</span><br><span class="line">// 不会影响原始的 state</span><br><span class="line">count++</span><br><span class="line"></span><br><span class="line">// 该函数接收到的是一个普通的数字</span><br><span class="line">// 并且无法追踪 state.count 的变化</span><br><span class="line">// 我们必须传入整个对象以保持响应性</span><br><span class="line">callSomeFunction(state.count)</span><br></pre></td></tr></table></figure>
+
+<h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p>**推荐使用****计算属性**来描述依赖响应式状态的复杂逻辑</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; reactive, computed &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const author = reactive(&#123;</span><br><span class="line">  name: &#x27;John Doe&#x27;,</span><br><span class="line">  books: [</span><br><span class="line">    &#x27;Vue 2 - Advanced Guide&#x27;,</span><br><span class="line">    &#x27;Vue 3 - Basic Guide&#x27;,</span><br><span class="line">    &#x27;Vue 4 - The Mystery&#x27;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 一个计算属性 ref</span><br><span class="line">const publishedBooksMessage = computed(() =&gt; &#123;</span><br><span class="line">  return author.books.length &gt; 0 ? &#x27;Yes&#x27; : &#x27;No&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p&gt;Has published books:&lt;/p&gt;</span><br><span class="line">  &lt;span&gt;&#123;&#123; publishedBooksMessage &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>我们在这里定义了一个计算属性 publishedBooksMessage。computed() 方法期望接收一个 getter 函数，返回值为一个计算属性 ref。和其他一般的 ref 类似，你可以通过 publishedBooksMessage.value 访问计算结果。计算属性 ref 也会在模板中自动解包，因此在模板表达式中引用时无需添加 .value。</strong></p>
+<p>**Vue 的计算属性会自动追踪响应式依赖。它会检测到 **<code>publishedBooksMessage</code> 依赖于 <code>author.books</code>，所以当 <code>author.books</code> 改变时，任何依赖于 <code>publishedBooksMessage</code> 的绑定都会同时更新。</p>
+<h3 id="计算属性缓存-vs-方法"><a href="#计算属性缓存-vs-方法" class="headerlink" title="计算属性缓存 vs 方法"></a>计算属性缓存 vs 方法</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; calculateBooksMessage() &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>你可能注意到我们在表达式中像这样调用一个函数也会获得和计算属性相同的结果：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 组件中</span><br><span class="line">function calculateBooksMessage() &#123;</span><br><span class="line">  return author.books.length &gt; 0 ? &#x27;Yes&#x27; : &#x27;No&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>**若我们将同样的函数定义为一个方法而不是计算属性，两种方式在结果上确实是完全相同的，然而，不同之处在于 ****计算属性值会基于其响应式依赖被缓存** 。一个计算属性仅会在其响应式依赖更新时才重新计算。这意味着只要 <code>author.books</code> 不改变，无论多少次访问 <code>publishedBooksMessage</code> 都会立即返回先前的计算结果，而不用重复执行 getter 函数。</p>
+<p>**这也解释了为什么下面的计算属性永远不会更新，因为 **<code>Date.now()</code> 并不是一个响应式依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const now = computed(() =&gt; Date.now())</span><br></pre></td></tr></table></figure>
+
+<p>**相比之下，方法调用****总是**会在重渲染发生时再次执行函数。</p>
+<p><strong>为什么需要缓存呢？如果没有缓存，多次调用一个庞大的数据是非常消耗内存资源的。</strong></p>
+<h3 id="可写计算属性"><a href="#可写计算属性" class="headerlink" title="可写计算属性"></a>可写计算属性</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">computer(&#123;</span><br><span class="line">get() &#123;</span><br><span class="line">// getter方法实现</span><br><span class="line">// return</span><br><span class="line">&#125;</span><br><span class="line">set()&#123;</span><br><span class="line">// setter方法实现</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>**计算属性的 getter 应只做计算而没有任何其他的副作用，这一点非常重要，请务必牢记。举例来说， ****不要改变其他状态、在 getter 中做异步请求或者更改 DOM** ！</p>
+<p><strong>从计算属性返回的值是派生状态。可以把它看作是一个“临时快照”，每当源状态发生变化时，就会创建一个新的快照。更改快照是没有意义的，因此计算属性的返回值应该被视为只读的，并且永远不应该被更改——应该更新它所依赖的源状态以触发新的计算。</strong></p>
+<h2 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h2><p><strong>在前端处理表单时，我们常常需要将表单输入框的内容同步给 JavaScript 中相应的变量。手动连接值绑定和更改事件监听器可能会很麻烦：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;input</span><br><span class="line">  :value=&quot;text&quot;</span><br><span class="line">  @input=&quot;</span><br><span class="line">    (event) =&gt;</span><br><span class="line">      (text = (event.target as HTMLInputElement).value)</span><br><span class="line">  &quot;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>v-model</code> 指令帮我们简化了这一步骤：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;input v-model=&quot;text&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h2><p><strong>当某一变量值发生改变，在每次响应式状态发生变化时触发回调函数。</strong></p>
+<p><code>watch</code> 的第一个参数可以是不同形式的“数据源”：它可以是一个 ref (包括计算属性)、一个响应式对象、一个 getter 函数、或多个数据源组成的数组：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const x = ref(0)</span><br><span class="line">const y = ref(0)</span><br><span class="line"></span><br><span class="line">// 单个 ref</span><br><span class="line">watch(x, (newX) =&gt; &#123;</span><br><span class="line">  console.log(`x is $&#123;newX&#125;`)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// getter 函数</span><br><span class="line">watch(</span><br><span class="line">  () =&gt; x.value + y.value,</span><br><span class="line">  (sum) =&gt; &#123;</span><br><span class="line">    console.log(`sum of x + y is: $&#123;sum&#125;`)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">// 多个来源组成的数组</span><br><span class="line">watch([x, () =&gt; y.value], ([newX, newY]) =&gt; &#123;</span><br><span class="line">  console.log(`x is $&#123;newX&#125; and y is $&#123;newY&#125;`)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意，你不能直接侦听响应式对象的属性值，例如:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const obj = reactive(&#123; count: 0 &#125;)</span><br><span class="line"></span><br><span class="line">// 错误，因为 watch() 得到的参数是一个 number</span><br><span class="line">watch(obj.count, (count) =&gt; &#123;</span><br><span class="line">  console.log(`Count is: $&#123;count&#125;`)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里需要用一个返回该属性的 getter 函数：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 提供一个 getter 函数</span><br><span class="line">watch(</span><br><span class="line">  () =&gt; obj.count,</span><br><span class="line">  (count) =&gt; &#123;</span><br><span class="line">    console.log(`Count is: $&#123;count&#125;`)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>**默认状态 **<code>watch</code>会创建一个深层次监听对象，使用 <code>&#123;deep:true&#125;</code>显示创建深层次 <code>watch</code></p>
+<p><code>watchEffect()</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const todoId = ref(1)</span><br><span class="line">const data = ref(null)</span><br><span class="line"></span><br><span class="line">watch(</span><br><span class="line">  todoId,</span><br><span class="line">  async () =&gt; &#123;</span><br><span class="line">    const response = await fetch(</span><br><span class="line">      `https://jsonplaceholder.typicode.com/todos/$&#123;todoId.value&#125;`</span><br><span class="line">    )</span><br><span class="line">    data.value = await response.json()</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; immediate: true &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>**可以使用 **<code>watchEffect()</code>简写</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">watchEffect(async () =&gt; &#123;</span><br><span class="line">  const response = await fetch(</span><br><span class="line">    `https://jsonplaceholder.typicode.com/todos/$&#123;todoId.value&#125;`</span><br><span class="line">  )</span><br><span class="line">  data.value = await response.json()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>**每当 **<code>todoId.value</code> 变化时，回调会再次执行。有了 <code>watchEffect()</code>，我们不再需要明确传递 <code>todoId</code> 作为源值。</p>
+<p><strong>对于这种只有一个依赖项的例子来说，</strong><code>watchEffect()</code> 的好处相对较小。但是对于有多个依赖项的侦听器来说，使用 <code>watchEffect()</code> 可以消除手动维护依赖列表的负担。此外，如果你需要侦听一个嵌套数据结构中的几个属性，<code>watchEffect()</code> 可能会比深度侦听器更有效，因为它将只跟踪回调中被使用到的属性，而不是递归地跟踪所有的属性。</p>
+<p><strong>另外，</strong><code>watchEffect()</code>会立刻执行一次。</p>
+<hr>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p><strong>注册组件</strong></p>
+<p><strong>组件名格式：</strong><code>PascalCase</code> 作为组件名的注册格式</p>
+<p><code>&lt;PascalCase /&gt;</code> 在模板中更明显地表明了这是一个 Vue 组件，而不是原生 HTML 元素。同时也能够将 Vue 组件和自定义元素 (web components) 区分开来。</p>
+<p>**为了方便，Vue 支持将模板中使用 kebab-case 的标签解析为使用 PascalCase 注册的组件。这意味着一个以 **<code>MyComponent</code> 为名注册的组件，在模板 (或由 Vue 渲染的 HTML 元素) 中可以通过 <code>&lt;MyComponent&gt;</code> 或 <code>&lt;my-component&gt;</code> 引用。</p>
+<h3 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h3><p><strong>具名插槽</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--父组件--&gt;</span><br><span class="line">&lt;HomeView&gt;</span><br><span class="line">  // 具名插槽简写</span><br><span class="line">  &lt;template #header&gt;点我&lt;/template&gt;</span><br><span class="line">  // 具名插槽全称</span><br><span class="line">  &lt;template v-slot:main&gt;content&lt;/template&gt;</span><br><span class="line">&lt;/HomeView&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 子组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  // 条件插槽,如果该div下有名为header的插槽时候，才会显示</span><br><span class="line">  &lt;div v-if=&quot;$slots.header&quot;&gt;</span><br><span class="line">    &lt;button&gt;&lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button&gt;&lt;slot name=&quot;main&quot;&gt;&lt;/slot&gt;&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>作用域插槽</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--父组件--&gt;</span><br><span class="line">&lt;HomeView&gt;</span><br><span class="line">  // #header=&quot;&#123; massage &#125;作用为接受slot传送参数</span><br><span class="line">  &lt;template #header=&quot;&#123; massage &#125;&quot;&gt; &#123;&#123; massage &#125;&#125; &lt;/template&gt;</span><br><span class="line">&lt;/HomeView&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--子组件--&gt;</span><br><span class="line">  &lt;div id=&quot;HomeView&quot;&gt;</span><br><span class="line">    &lt;button&gt;</span><br><span class="line">// 传递参数massage</span><br><span class="line">      &lt;slot name=&quot;header&quot; massage=&quot;hello&quot;&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>作用域插槽实例</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--父组件--&gt;</span><br><span class="line">&lt;HomeView&gt;</span><br><span class="line">  &lt;template #item=&quot;&#123; item &#125;&quot;&gt;</span><br><span class="line">    &#123;&#123; item.id &#125;&#125; : &#123;&#123; item.name &#125;&#125;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/HomeView&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--子组件--&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">    &lt;!--v-bind 来传递插槽的 props--&gt;</span><br><span class="line">    &lt;slot name=&quot;item&quot; :item&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h3><p><strong>有些场景会需要在两个组件间来回切换，比如 Tab 界面</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;demo&quot;&gt;</span><br><span class="line">      &lt;button</span><br><span class="line">        v-for=&quot;(item, tab) in tabs&quot;</span><br><span class="line">        :key=&quot;tab&quot;</span><br><span class="line">        @click=&quot;currentTab = tab&quot;</span><br><span class="line">      &gt;</span><br><span class="line">        &#123;&#123; tab &#125;&#125;</span><br><span class="line">      &lt;/button&gt;</span><br><span class="line">      &lt;component :is=&quot;tabs[currentTab]&quot;&gt;&lt;/component&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">  import Home from &#x27;@/components/HomeView.vue&#x27;</span><br><span class="line">  import About from &#x27;@/components/AboutView.vue&#x27;</span><br><span class="line">  import &#123; ref, type Component &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">  // 强制声明为动态键对象，并不是一个数组，而是一个对象（Object）。</span><br><span class="line">  // 它的类型会根据 Home 和 About 的具体类型自动推断。</span><br><span class="line">  const tabs: Record&lt;string, Component&gt; = &#123;</span><br><span class="line">    Home,</span><br><span class="line">    About,</span><br><span class="line">  &#125;</span><br><span class="line">  const currentTab = ref(&#x27;Home&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="props"><a href="#props" class="headerlink" title="props"></a>props</h3><p><strong>传递 props：名字格式 camelCase</strong></p>
+<p>**所有的 props 都遵循着****单向绑定**原则，props 因父组件的更新而变化，自然地将新的状态向下流往子组件，而不会逆向传递。这避免了子组件意外修改父组件的状态的情况，不然应用的数据流将很容易变得混乱而难以理解。</p>
+<p>**另外，每次父组件更新后，所有的子组件中的 props 都会被更新到最新值，这意味着你****不应该**在子组件中去更改一个 prop。若你这么做了，Vue 会在控制台上向你抛出警告：<code>警告！prop 是只读的！</code></p>
+<p><strong>你可以在子组件中定义一个局部变量，从 props 中获取数据的值，或者定义一个计算属性，依靠父组件传递的 props 而改变</strong></p>
+<p>**在使用 **<code>&lt;script setup&gt;</code> 的单文件组件中，props 可以使用 <code>defineProps()</code> 宏来声明：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">const props = defineProps([&#x27;foo&#x27;])</span><br><span class="line"></span><br><span class="line">console.log(props.foo)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>除了使用字符串数组来声明 props 外，还可以使用对象的形式：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 使用 &lt;script setup&gt;</span><br><span class="line">defineProps(&#123;</span><br><span class="line">  title: String,</span><br><span class="line">  likes: Number,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>**如果你正在搭配 TypeScript 使用 **<code>&lt;script setup&gt;</code>，也可以使用类型标注来声明 props</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">  defineProps&lt;&#123;</span><br><span class="line">    title?: string</span><br><span class="line">    likes?: number</span><br><span class="line">  &#125;&gt;()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>**当对象或数组作为 props 被传入时，虽然子组件无法更改 props 绑定，但仍然****可以**更改对象或数组内部的值。这是因为 JavaScript 的对象和数组是按引用传递，对 Vue 来说，阻止这种更改需要付出的代价异常昂贵。</p>
+<p><strong>这种更改的主要缺陷是它允许了子组件以某种不明显的方式影响父组件的状态，可能会使数据流在将来变得更难以理解。在最佳实践中，你应该尽可能避免这样的更改，除非父子组件在设计上本来就需要紧密耦合。</strong></p>
+<h4 id="TS-解构语法"><a href="#TS-解构语法" class="headerlink" title="TS 解构语法"></a>TS 解构语法</h4><p><strong>1. 对象解构</strong></p>
+<p><strong>基础解构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 定义对象</span><br><span class="line">const user = &#123;</span><br><span class="line">  name: &#x27;Alice&#x27;,</span><br><span class="line">  age: 30,</span><br><span class="line">  email: &#x27;alice@example.com&#x27;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 解构并添加类型注解</span><br><span class="line">const &#123; name, age &#125;: &#123; name: string; age: number &#125; = user</span><br><span class="line"></span><br><span class="line">console.log(name) // &quot;Alice&quot;</span><br><span class="line">console.log(age) // 30</span><br></pre></td></tr></table></figure>
+
+<p><strong>重命名 + 默认值</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const &#123; name: userName, role = &#x27;guest&#x27; &#125; = user</span><br><span class="line">// userName: string, role: string（默认值为 &quot;guest&quot;）</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>2. 数组解构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 定义数组</span><br><span class="line">const numbers = [1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line">// 解构并添加类型注解</span><br><span class="line">const [first, second]: [number, number] = numbers</span><br><span class="line"></span><br><span class="line">console.log(first) // 1</span><br><span class="line">console.log(second) // 2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>3. 函数参数解构</strong></p>
+<p><strong>对象参数解构</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">interface User &#123;</span><br><span class="line">  name: string</span><br><span class="line">  age: number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 解构参数并指定类型</span><br><span class="line">function printUser(&#123; name, age &#125;: User) &#123;</span><br><span class="line">  console.log(`$&#123;name&#125; is $&#123;age&#125; years old`)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printUser(&#123; name: &#x27;Bob&#x27;, age: 25 &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件-1"><a href="#事件-1" class="headerlink" title="事件"></a>事件</h3><h4 id="组件事件"><a href="#组件事件" class="headerlink" title="组件事件"></a>组件事件</h4><p><strong>监听事件：父组件文件</strong></p>
+<p><strong>方法 1</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// html</span><br><span class="line">&lt;HomeView @increace-by=&quot;increaceBy&quot; /&gt;</span><br><span class="line"></span><br><span class="line">// ts</span><br><span class="line">function increaceBy() &#123;</span><br><span class="line">  count.value += 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法 2</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;HomeView @increace-by=&quot;(n) =&gt; (count += 1)&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>触发事件：子组件文件</strong></p>
+<p><strong>配合方法 1</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// html</span><br><span class="line">    &lt;button @click=&quot;emit(&#x27;increaceBy&#x27;, 1)&quot;&gt;</span><br><span class="line">      increace By 1</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">// ts</span><br><span class="line">const emit = defineEmits([&#x27;increaceBy&#x27;])</span><br></pre></td></tr></table></figure>
+
+<p><strong>配合方法 2</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;button @click=&quot;$emit(&#x27;increaceBy&#x27;, 1)&quot;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件校验"><a href="#事件校验" class="headerlink" title="事件校验"></a>事件校验</h4><p><strong>存疑处…..</strong></p>
+<h3 id="组件-v-model"><a href="#组件-v-model" class="headerlink" title="组件 v-model"></a>组件 v-model</h3><p><strong>原理实现 3.4 以前</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//父组件</span><br><span class="line">    &lt;HomeView</span><br><span class="line">// 单项传递值</span><br><span class="line">      :modelValue=&quot;value&quot;</span><br><span class="line">// 监听事件，并且更新传递值</span><br><span class="line">      @update:modelValue=&quot;($event) =&gt; (value = $event)&quot;</span><br><span class="line">    /&gt;</span><br><span class="line"></span><br><span class="line">// 子组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;HomeView&quot;&gt;</span><br><span class="line">    &lt;input</span><br><span class="line">// 绑定单向值</span><br><span class="line">      :value=&quot;props.modelValue&quot;</span><br><span class="line">// 触发事件</span><br><span class="line">      @input=&quot;</span><br><span class="line">        emit(</span><br><span class="line">          &#x27;update:modelValue&#x27;,</span><br><span class="line">          ($event.target as HTMLInputElement).value,</span><br><span class="line">        )</span><br><span class="line">      &quot;</span><br><span class="line">    /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">const props = defineProps([&#x27;modelValue&#x27;])</span><br><span class="line">const emit = defineEmits([&#x27;update:modelValue&#x27;])</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>简化实现</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// html</span><br><span class="line">    &lt;HomeView v-model=&quot;value&quot; /&gt;&lt;template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div id=&quot;HomeView&quot;&gt;</span><br><span class="line">    &lt;button @click=&quot;updata&quot;&gt;&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">// ts</span><br><span class="line">const model = defineModel(&#123; default: 1 &#125;)</span><br><span class="line">function updata() &#123;</span><br><span class="line">  model.value++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="透传属性"><a href="#透传属性" class="headerlink" title="透传属性"></a>透传属性</h3><p>**“透传 attribute”指的是传递给一个组件，却没有被该组件声明为 props 或 emits 的 attribute 或者 **<code>v-on</code> 事件监听器。最常见的例子就是 <code>class</code>、<code>style</code> 和 <code>id</code>。</p>
+<h4 id="禁用透传属性"><a href="#禁用透传属性" class="headerlink" title="禁用透传属性"></a>禁用透传属性</h4><p>**如果你****不想要**一个组件自动地继承 attribute，你可以在组件选项中设置 <code>inheritAttrs: false</code>。从 3.3 开始你也可以直接在 <code>&lt;script setup&gt;</code> 中使用 <a href="https://cn.vuejs.org/api/sfc-script-setup.html#defineoptions"><code>defineOptions</code></a>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">defineOptions(&#123;</span><br><span class="line">  inheritAttrs: false</span><br><span class="line">&#125;)</span><br><span class="line">// ...setup 逻辑</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>**这些透传进来的 attribute 可以在模板的表达式中直接用 **<code>$attrs</code> 访问到。</p>
+<h4 id="多根节点继承问题"><a href="#多根节点继承问题" class="headerlink" title="多根节点继承问题"></a>多根节点继承问题</h4><p>**和单根节点组件有所不同，有着多个根节点的组件没有自动 attribute 透传行为。如果 **<code>$attrs</code> 没有被显式绑定，将会抛出一个运行时警告。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;CustomLayout id=&quot;custom-layout&quot; @click=&quot;changeValue&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header&gt;...&lt;/header&gt;</span><br><span class="line">&lt;main&gt;...&lt;/main&gt;</span><br><span class="line">&lt;footer&gt;...&lt;/footer&gt;</span><br></pre></td></tr></table></figure>
+
+<p>**如果 **<code>$attrs</code> 被显式绑定，则不会有警告：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;header&gt;...&lt;/header&gt;</span><br><span class="line">&lt;main v-bind=&quot;$attrs&quot;&gt;...&lt;/main&gt;</span><br><span class="line">&lt;footer&gt;...&lt;/footer&gt;</span><br></pre></td></tr></table></figure>
+
+<p>**如果需要，你可以在 **<code>&lt;script setup&gt;</code> 中使用 <code>useAttrs()</code> API 来访问一个组件的所有透传 attribute：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; useAttrs &#125; from &#x27;vue&#x27;</span><br><span class="line"></span><br><span class="line">const attrs = useAttrs()</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h3><p><strong>父组件向自己的祖孙组件传递数据，若使用 props 则会逐级透传，但是中间组件根本不关心这些数据，</strong><code>provide</code> 和 <code>inject</code> 可以帮助我们解决这一问题。一个父组件相对于其所有的后代组件，会作为 <strong>依赖提供者</strong> 。任何后代的组件树，无论层级有多深，都可以<strong>注入</strong>由父组件提供给整条链路的依赖。</p>
+<h2 id="闭包理解"><a href="#闭包理解" class="headerlink" title="闭包理解"></a>闭包理解</h2><p><strong>函数闭包：维护函数内变量，函数返回值是一个函数。</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const add = (function () &#123;</span><br><span class="line">  let count = 0</span><br><span class="line">  return function () &#123;</span><br><span class="line">    return (count += 1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="Pinia-全局状态管理"><a href="#Pinia-全局状态管理" class="headerlink" title="Pinia 全局状态管理"></a>Pinia 全局状态管理</h2><p>**Store (如 Pinia) 是一个保存状态和业务逻辑的实体，它并不与你的组件树绑定。换句话说， **<strong>它承载着全局状态</strong> 。它有点像一个永远存在的组件，每个组件都可以读取和写入它。它有 **三个概念** state、getter、action</p>
+<p><strong>引入:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; createPinia &#125; from &#x27;pinia&#x27;</span><br><span class="line">const pinia = createPinia()</span><br><span class="line">app.use(pinia)</span><br></pre></td></tr></table></figure>
+
+<p><strong>定义 Store</strong></p>
+<p><strong>在深入研究核心概念之前，我们得知道 Store 是用 <strong><code>defineStore()</code> 定义的，它的第一个参数要求是一个</strong>独一无二的</strong>名字：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; defineStore &#125; from &#x27;pinia&#x27;</span><br><span class="line"></span><br><span class="line">// 你可以任意命名 `defineStore()` 的返回值，但最好使用 store 的名字，同时以 `use` 开头且以 `Store` 结尾。</span><br><span class="line">// (比如 `useUserStore`，`useCartStore`，`useProductStore`)</span><br><span class="line">// 第一个参数是你的应用中 Store 的唯一 ID。</span><br><span class="line">export const useAlertsStore = defineStore(&#x27;alerts&#x27;, &#123;</span><br><span class="line">  // 其他配置...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>**这个***<em>名字*</em> ，也被用作 <em>id</em> ，是必须传入的， Pinia 将用它来连接 store 和 devtools。为了养成习惯性的用法，将返回的函数命名为 *use…* 是一个符合组合式函数风格的约定。</p>
+<p><code>defineStore()</code> 的第二个参数可接受两类值：Setup 函数或 Option 对象。</p>
+<p><strong>选项式 store：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export const useCounterStore = defineStore(&#x27;counter&#x27;, &#123;</span><br><span class="line">  state: () =&gt; (&#123; count: 0, name: &#x27;Eduardo&#x27; &#125;),</span><br><span class="line">  getters: &#123;</span><br><span class="line">    doubleCount: (state) =&gt; state.count * 2,</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    increment() &#123;</span><br><span class="line">      this.count++</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>组合式 store</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export const useCounterStore = defineStore(&#x27;counter&#x27;, () =&gt; &#123;</span><br><span class="line">  const count = ref(0)</span><br><span class="line">  const doubleCount = computed(() =&gt; count.value * 2)</span><br><span class="line">  function increment() &#123;</span><br><span class="line">    count.value++</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return &#123; count, doubleCount, increment &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>**在 ***Setup Store* 中：</p>
+<ul>
+<li><code>ref()</code> 就是 <code>state</code> 属性</li>
+<li><code>computed()</code> 就是 <code>getters</code></li>
+<li><code>function()</code> 就是 <code>actions</code></li>
+</ul>
+<h2 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h2><ul>
+<li><strong>查询字符串传参 Vs 路径传参</strong></li>
+<li><strong>命名路由 Vs 别名路由</strong></li>
+<li><strong>编程式导航</strong></li>
+<li><strong>嵌套路由</strong></li>
+<li><strong>路由重定向</strong></li>
+<li><strong>路由守卫</strong></li>
+<li><strong>命名视图</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>Vue3</tag>
       </tags>
   </entry>
 </search>
